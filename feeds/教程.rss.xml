@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged '教程'</title>
+  <description>清空谈角之操: Posts tagged '教程'</description>
+  <link>https://yanyingwang.github.io/tags/%E6%95%99%E7%A8%8B.html</link>
+  <lastBuildDate>Sat, 08 Aug 2020 15:37:13 UT</lastBuildDate>
+  <pubDate>Sat, 08 Aug 2020 15:37:13 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Racket语言的match</title>
+   <link>https://yanyingwang.github.io/2020/08/racket%E8%AF%AD%E8%A8%80%E7%9A%84match.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-08-racket-E8-AF-AD-E8-A8-80-E7-9A-84match-html</guid>
+   <pubDate>Sat, 08 Aug 2020 15:37:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;table cellpadding="0" cellspacing="0"&gt;
+ &lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e5~89~8d~e8~a8~80%29"&gt;1&lt;span class="hspace"&gt;&amp;nbsp;&lt;/span&gt;&amp;#21069;&amp;#35328;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._.Choosing_the_.Right_.Construct%29"&gt;2&lt;span class="hspace"&gt;&amp;nbsp;&lt;/span&gt;Choosing the Right Construct&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e4~be~8b~e5~ad~901_~e5~ad~97~e7~ac~a6~e4~b8~b2~e5~af~b9~e6~af~94~e7~9a~84~e6~9d~a1~e4~bb~b6~e5~88~a4~e6~96~ad%29"&gt;3&lt;span class="hspace"&gt;&amp;nbsp;&lt;/span&gt;&amp;#20363;&amp;#23376;1&amp;#65306;&amp;#23383;&amp;#31526;&amp;#20018;&amp;#23545;&amp;#27604;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e4~be~8b~e5~ad~902_~e9~95~bf~e5~ba~a6~e7~9b~b8~e5~85~b3~e7~9a~84~e6~9d~a1~e4~bb~b6~e5~88~a4~e6~96~ad%29"&gt;4&lt;span class="hspace"&gt;&amp;nbsp;&lt;/span&gt;&amp;#20363;&amp;#23376;2&amp;#65306;&amp;#38271;&amp;#24230;&amp;#30456;&amp;#20851;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e4~be~8b~e5~ad~903_hash~e9~94~ae~e5~80~bc~e5~af~b9~e6~af~94~e7~9a~84~e6~9d~a1~e4~bb~b6~e5~88~a4~e6~96~ad%29"&gt;5&lt;span class="hspace"&gt;&amp;nbsp;&lt;/span&gt;&amp;#20363;&amp;#23376;3&amp;#65306;hash&amp;#38190;&amp;#20540;&amp;#23545;&amp;#27604;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;a href="https://yanyingwang.github.io/2020/08/racket%E8%AF%AD%E8%A8%80%E7%9A%84match.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Frog</title>
+   <link>https://yanyingwang.github.io/2020/04/frog.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-04-frog-html</guid>
+   <pubDate>Mon, 06 Apr 2020 02:00:55 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;12&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;在我之前写&lt;a href="/2019/12/一次博客的洗礼.html"&gt;《一次博客的洗礼》&lt;/a&gt;的时候，我已经将我原本使用jekyll搭建的博客迁移到了使用&lt;a href="https://docs.racket-lang.org/frog/index.html"&gt;Frog&lt;/a&gt;搭建的新博客之上。期间曾为了自己博客的某种特定文章格式，写过一个插件&lt;a href="https://docs.racket-lang.org/scribble-frog-helper/index.html"&gt;scribble-frog-helper&lt;/a&gt;。现如今，因为某种原因，打算以private仓库的方式来提供我博客的对外访问服务，所以使用了heroku来完成的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>黑苹果</title>
+   <link>https://yanyingwang.github.io/2020/04/%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-04-E9-BB-91-E8-8B-B9-E6-9E-9C-html</guid>
+   <pubDate>Sun, 05 Apr 2020 01:08:19 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;从2010年第一次使用Ubuntu之后，我一直都是Linux系统的坚实用户。2014年的时候，业余上的尝鲜心理以及工作上所任职的公司程序员被配置的默认工作平台均为macOS的事实，导致我打算迁移工作平台到macOS上，但发现macOS远不如自己想想那样的好用，比如诸多原本习惯的快捷键冲突的适应性问题，以及&lt;a href="https://en.wikipedia.org/wiki/Alt-Tab"&gt;alt+tab&lt;/a&gt;在macOS下面特殊的表现等问题。这更加坚定了我Linux才是最最适合自己的工作平台系统的认知。这样的认为着就从没有再次想迁移工作平台到macOS下，直到2017年的某一天，偶然在网上看到一款字体的截图效果进而想要将这字体应用到自己的Emacs上的时候，发现Ubuntu似乎无论如何都无法调整到macOS下那样的字体渲染效果。所以再次萌生了想要切换平台到macOS系统之下的想法。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>一次博客的洗礼</title>
+   <link>https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-E4-B8-80-E6-AC-A1-E5-8D-9A-E5-AE-A2-E7-9A-84-E6-B4-97-E7-A4-BC-html</guid>
+   <pubDate>Sun, 08 Dec 2019 18:31:40 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;我早先的博客是使用&lt;a href="https://jekyllrb.com/"&gt;jekyll&lt;/a&gt;框架搭建的，那应该最起码已经是五年前的事情了。那时候的我正在全力的学习和提高自己对ruby语言的认知，是爱好，也更是为了增强自己的工作能力。时间转眼即逝，眼下ruby语言早已经是我养家糊口的技能了，我也自认为自己早已可以行云流水般的使用它到了炉火纯青的地步，对他的优点缺点也早已是心中有数，在工作中算是无所挂碍了的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged 'programming'</title>
+  <description>清空谈角之操: Posts tagged 'programming'</description>
+  <link>https://yanyingwang.github.io/tags/programming.html</link>
+  <lastBuildDate>Mon, 29 Mar 2021 01:30:34 UT</lastBuildDate>
+  <pubDate>Mon, 29 Mar 2021 01:30:34 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Fathoming out Racket Package's version</title>
+   <link>https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=programming&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-03-fathoming-out-racket-package-s-version-html</guid>
+   <pubDate>Mon, 29 Mar 2021 01:30:34 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I received an email of &lt;a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895"&gt;a github comment&lt;/a&gt; on a Racket Package of mine named &lt;a href="https://github.com/yanyingwang/http-client/"&gt;http-client&lt;/a&gt;, which was announced to release by my post of &lt;a href="2020/09/announcing-the-release-of-http-client.html"&gt;Announcing the release of http-client&lt;/a&gt;. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&amp;rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=programming&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Managing to coordinate Ruby with a legacy DB</title>
+   <link>https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=programming&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-09-managing-to-coordinate-ruby-with-a-legacy-db-html</guid>
+   <pubDate>Fri, 18 Sep 2020 16:26:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I&amp;rsquo;ve been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft&amp;rsquo;s SQL Server 2005.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=programming&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

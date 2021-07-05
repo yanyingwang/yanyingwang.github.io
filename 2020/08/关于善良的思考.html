@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>关于善良的思考</title>
+    <meta name="description" content="21世纪的中国，浩浩荡荡的大踏步进行着前所未有的工业化的进程，大家物质上的改善可谓天翻地覆，但是就在心灵上而言，我们未必好过古人很多。  从长远意义上来说，善良的品性对自己是有极大好处的，善有善报也是存在的。这也是社会整体对个人的要求，大众整体的趋势评价是以善良为美德的，因为如果社会整体上的每个个体都是善良的，这种善良所衍生出来的效果如果平均在每一个人身上，每个人都是受益的。...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="思辨">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/08/%E5%85%B3%E4%BA%8E%E5%96%84%E8%89%AF%E7%9A%84%E6%80%9D%E8%80%83.html">
+    <link rel="next" href="/2020/08/racket%E8%AF%AD%E8%A8%80%E7%9A%84match.html">
+    <link rel="prev" href="/2020/09/announcing-the-release-of-http-client.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-153803148-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">关于善良的思考</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/programming.html">programming</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/tutorial.html">tutorial</a><a class="dropdown-item" href="/tags/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E5%85%B8%E6%96%87%E5%AD%A6.html">中国古典文学</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%97%B6%E4%BA%8B.html">时事</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>关于善良的思考</h1>
+    <p class="meta">
+<time datetime="2020-08-09" pubdate="true">2020-08-09</time> / <span class="tags"><a href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-08-09" pubdate="true">2020-08-09</time> / <span class="tags"><a href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>21世纪的中国，浩浩荡荡的大踏步进行着前所未有的工业化的进程，大家物质上的改善可谓天翻地覆，但是就在心灵上而言，我们未必好过古人很多。</p>
+
+<p>从长远意义上来说，善良的品性对自己是有极大好处的，善有善报也是存在的。这也是社会整体对个人的要求，大众整体的趋势评价是以善良为美德的，因为如果社会整体上的每个个体都是善良的，这种善良所衍生出来的效果如果平均在每一个人身上，每个人都是受益的。</p>
+<!-- more-->
+
+<h1 id="为什么会有不善良">为什么会有不善良</h1>
+
+<p>很多情况下，除了先天心理问题外，很多人之所以会有不善良的行动，都是基于自己的既得利益受到损失而做出的短暂性决定。只是很多时候在自己情绪的作用下，自己并不能意识到自身的这种不善良。</p>
+
+<p>现实中的很多人都难以做到心地善良，甚至在行不善之事严重损害了他人利益的时候，都还会觉得自己是善良的，这包含着一种很强大的不自知的自我欺骗惯性。例如，网上曾有个女生说撩了她几天的男孩删除了她，她后来人肉发现那男孩之前快要结婚的时候未婚妻跑了，据此推断那男孩有问题，言语之中全是讽刺和自己被撩走了又被删除之余的恨的不满的发泄。很明显，这就不是心底善良，和天龙八部上面追求乔峰乔峰却一眼不看，因此到处污蔑乔峰的蛇蝎女人相似。事实是，人心内总是有各种不满，单就现实而言，首先要做的是要控制好自己的嘴，不随意的把这种不满与任何人说出来，其次才是要意识到这种恨并非是善良着手去修身养性。</p>
+
+<h1 id="要如何懂得善良">要如何懂得善良</h1>
+
+<p>世界上是否真的存没有任何恶的经历就行善的人呢？如果是的话，这样的人如何知道自己是在行善呢？</p>
+
+<p>是必须要有恶的经历的。有了被以恶之对待的经历，才能意识到善良。因为善良只是在相对意义上存在的，如果自己没有恶的经历，就不会了解恶的行为和恶的产出结果，所有事情在一个人看来都会是一种没有偏向的行为，或者他不能区分出来偏向，特别是在从自身利益出发而思考的时候。 这个时候心理上不会有真正意义上『善良』的概念存在，只是或许他本人以所谓的『善良』之名冠之，但这种善良可能是一种恶而他并不知道而已。所以，老子说：『天下皆知美之为美，斯恶已。皆知善之为善，斯不善已。故有无相生，难易相成，长短相形，高下相倾，音声相和，前后相随。』。</p>
+
+<h1 id="新善良的含义">新善良的含义</h1>
+
+<p>除去心灵上的善良，现实意义上的善良是需要让自己周围的大部分人受益的。这种善良，是需要构建在智商和情商之上的，需要可以看清楚所有事情发展的脉络，正确的做出决策，把跟所有人都有干系的事情推向好的方面趋发展。否则，心灵上的善良在现实意义上来说就可能是一种邪恶。</p>
+
+<p>一个人足够聪明和智慧的人，加上足够的社会阅历，就是他能成为一个善良人的基本前提。</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/08/%E5%85%B3%E4%BA%8E%E5%96%84%E8%89%AF%E7%9A%84%E6%80%9D%E8%80%83.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/08/%E5%85%B3%E4%BA%8E%E5%96%84%E8%89%AF%E7%9A%84%E6%80%9D%E8%80%83.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/08/racket%E8%AF%AD%E8%A8%80%E7%9A%84match.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Racket语言的match</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/09/announcing-the-release-of-http-client.html"
+               aria-label="Next">
+              <span aria-hidden="true">Announcing the release of http-client &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2021 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+  </body>
+</html>

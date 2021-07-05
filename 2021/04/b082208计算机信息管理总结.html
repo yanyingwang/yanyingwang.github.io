@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>B082208计算机信息管理总结</title>
+    <meta name="description" content="**注意：【B082208计算机信息管理】已经于教育部办公厅关于印发《高等教育自学考试专业设置实施细则》和《高等教育自学考试开考专业清单》的通知中调整为【082208计算机科学与技术专业】，详见其附件 高等教育自学考试新旧专业对照表。**  到今时今日为止，如标题所述的内容，终于差不多算是告一段落了。我今日上午刚刚考完最后一个科目，如无意外，写论文申请毕业即可。这考试持续了约略四年时间，时间远超我最初的预期。大抵上也是因为这个原因，我决定现在趁着热乎劲没下去，写下来我的经历和感悟，主要的目的是为了给后来人...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="自省">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2021/04/b082208%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E6%80%BB%E7%BB%93.html">
+    <link rel="next" href="/2021/03/announcing-the-release-of-wx-biz-data-crypt.html">
+    <link rel="prev" href="/2021/04/to-be-a-farmer.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-153803148-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">B082208计算机信息管理总结</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/programming.html">programming</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/tutorial.html">tutorial</a><a class="dropdown-item" href="/tags/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E5%85%B8%E6%96%87%E5%AD%A6.html">中国古典文学</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%97%B6%E4%BA%8B.html">时事</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>B082208计算机信息管理总结</h1>
+    <p class="meta">
+<time datetime="2021-04-11" pubdate="true">2021-04-11</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2021-04-11" pubdate="true">2021-04-11</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p><strong>注意：【B082208计算机信息管理】已经于<a href="http://www.moe.gov.cn/srcsite/A07/s7055/201802/t20180201_326321.html">教育部办公厅关于印发《高等教育自学考试专业设置实施细则》和《高等教育自学考试开考专业清单》的通知</a>中调整为【082208计算机科学与技术专业】，详见其附件 <a href="http://www.moe.gov.cn/srcsite/A07/s7055/201802/W020180201568181377149.docx">高等教育自学考试新旧专业对照表</a>。</strong></p>
+
+<p>到今时今日为止，如标题所述的内容，终于差不多算是告一段落了。我今日上午刚刚考完最后一个科目，如无意外，写论文申请毕业即可。这考试持续了约略四年时间，时间远超我最初的预期。大抵上也是因为这个原因，我决定现在趁着热乎劲没下去，写下来我的经历和感悟，主要的目的是为了给后来人做标注。因为假想我在一开始的时候，能找到一篇概括的文章作为引导，我的考试过程或许会顺利的多。</p>
+<!-- more-->
+
+<p>此前，我一贯的态度是：人的能力是首位的，其他都是次要的，所以我所应该执着追求的，就是自身能力、阅历、知识上的探索塑形和上限提升。再加上我认为此事的处理过程过于繁琐和浪费时间，所以长期不在我的考虑范围之内。直到2016年底的2017年初，因为一些面试经历上人的置疑，其作为导火索，我决定开始着手处理此事。</p>
+
+<h1 id="弄清楚自考">弄清楚自考</h1>
+
+<p>如上所讲，因为我一开始的功利心只在学位，根本就没有关心过这个问题（管他黑猫白猫，谁能给我学位我就跟着他喵喵喵）。直到后来专业停考的事情进来我才自发的主动去关心这个问题，而这个全局性的问题其实颇值得寻味。</p>
+
+<p>自考全称「高等教育自学考试」，可见其<a href="http://zikao.neea.edu.cn/">全国官网</a>，<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95">wiki条目</a>，<a href="https://baike.baidu.com/item/%E9%AB%98%E7%AD%89%E6%95%99%E8%82%B2%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95">百度百科条目</a>，大体上说，自考是中国特色独有的一种教育形式。</p>
+
+<p>除了百科上所讲内容，还有以下几点值得注意：</p>
+
+<ol>
+ <li><em>（跟统招不同）</em> 与学校相比，专业是首要的，并且是全国通用的，但在管理上却以省份为单位，这体现在：
+  <ol>
+   <li>相同一个专业在全国各个省份的不同高校均存在，且业所需考试的科目相同无二，每年所考的考试也都是统一命题，比如：编号为B082208的「计算机信息管理」专业，在<a href="http://www.cce.fudan.edu.cn/2c/f7/c14112a142583/page.htm">上海复旦大学</a>与<a href="http://www.cj.zjut.edu.cn/cj/zwl_static.asp">浙江工业大学</a>和<a href="https://www.zdzkzsw.com/article/1199.html">郑州大学</a>的<a href="http://www.heao.com.cn/main/html/zk/zkzy2020.html#082208">官网专业索引</a>和<a href="https://mp.weixin.qq.com/s/Dg3ys0030RwcSoOP5D9ARA">官网微信考专业分类索引</a>均有。或可在一个<a href="https://www.zikaosw.cn/zkzy/search.html?key=%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86">第三方网站上找到所有该专业的全国各省主考院校</a>（我认为自考官网应该做一个索引页面的）。</li>
+   <li>同一个省份为一个自辖单位，统一做考试考籍管理等工作，例如：<a href="http://ste.shmeea.edu.cn/login.html">上海市高等教育自学考试考生服务平台官网</a>、<a href="http://zkwb.heao.gov.cn/ZKService/default.aspx">河南省高等教育自学考试考生服务平台官网</a>。</li>
+   <li>同一个省份为一个自辖单位，同省成绩通用，跨省需要转出转入成绩(各省目前都是在依照<a href="http://www.moe.gov.cn/s78/A07/zcs_left/moe_743/201103/t20110307_115644.html">《教育部关于印发《高等教育自学考试考籍管理工作规定》的通知》</a>进行的)，比如：考试编号为02628的「管理经济学」这门考试科目，其在<a href="https://cce.shu.edu.cn/">上海大学</a>的「工程管理」专业也存在此科目的考试，如果你参加并且考过了这门考试，成绩直接可以在「复旦大学」的「计算机信息管理」专业生效，不需要做任何处理；但是名义上，各个高校却禁止你在其学校的自学考试中途，通过省外参加其他高校考试获得通过成绩来转入本校（我觉得这是中国政府管理的需要处理的问题）。</li></ol></li>
+ <li><em>（跟统招不同）</em> 考试和毕业是严格被限制的，秩序井然，没有任何妥协余地（你似乎能感受到高校对自考是与其无关的一种无情），这意味着：
+  <ol>
+   <li>当你错过了一个科目或者成绩不合格需要补考时，下次考试至少需要再等半年甚至一年。</li>
+   <li>如果你的全部考试没有通过，则你不能申请毕业论文；如果你毕业论文没有通过，则当然不能毕业。</li>
+   <li>毕业如要申请学士学位，则可能对英语成绩有要求或者要加试其他考试科目（例如复旦大学要求英语二成绩高于75分，且毕业一个月外不再办理）。</li></ol></li>
+ <li><em>（跟统招相同）</em> 好的学校能提供更好的师资服务等条件，比如：
+  <ol>
+   <li>复旦大学官网提供完善的考后成绩复查结果查询，上海大学却只能通过你主动打电话告知你复核结果（第几题得了几分）。</li>
+   <li>上海交通大学、复旦大学、上海大学、浙江工业大学官网均提供完善的自学考试信息公布通知等公告，郑州大学有微信公众号。</li></ol></li></ol>
+
+<h1 id="快速通过考试的诀窍">快速通过考试的诀窍</h1>
+
+<p>我觉得自始至终，都应该有清醒的认识，自考的目的是拿学位的，这是首等重要的事情。至于你对某一个科目异常感兴趣，那怎么说也是其次重要自己想要花时间研究的范畴。基于此，我前两次考试基本上已经通过了一半多的科目，后面的一些突发事情竟然拖拖拉拉，其经验很值得思考，我总结：</p>
+
+<ol>
+ <li><strong>轻教材而重真题</strong>：多做历年真题，是通过考试的唯一致胜策略（远胜过着眼于教材，这是歧路（某种程度上也让我意识到，我当年高考看一些药商所谓高考状元的广告而真的认为完全弄懂教材能有效的提高分数，这是不可能的事情，高中课本上的知识都很简单，这种简单虽然可以覆盖所有试卷上面的试题，但是理解了这些简单的知识，依旧是没有办法应对所有的考试的。换句话说，考试这种复杂的实际问题，和课本上的简单知识，是可以看成是完全不同层次的问题的，他们仅仅是有一些关联性的存在。））。</li>
+ <li><strong>考试大体分为背诵性知识科目和计算理解类知识科目</strong>：其如「00910网络经济与企业管理」和「02628管理经济学」，对于计算理解类科目，多做真题即可。</li>
+ <li><strong>教材变动与试题结构变动</strong>：如果因为考试科目改版，考试命题启用新版教材，只需弄清楚新版教材删除添加了什么内容，做旧真题的时候避开删除章节不做即可，例如：「02628管理经济学」旧的历届真题中的有关长期投资决策和企业决策的风险分析可以略去，2018版新增了第三章消费者效用分析和第四章雪球弹性和供给弹性分析。</li>
+ <li><strong>成绩复核</strong>：考试没通过成绩不合格时，记得成绩发放后，去主考院校提交申请成绩复核，查看得分状况。</li>
+ <li><strong>历年真题</strong>：我整理了本专业的历年真题，可通过<a href="https://github.com/yanyingwang/STHEE-B082208">Github</a>或<a href="https://pan.baidu.com/s/1Pugjpz56rKZolQgNTRAbbg">百度网盘链接</a>下载，密码:79h4。</li></ol>
+
+<p>即使是后来已经在行程中了，我所抱持的态度还是目的明确，对我而言就是拿个学位而已，我会轻而易举，而且要速战速决。因为对于计算机的知识而言，我已经知道了我所知道的，而我所想要学习扩展的专业知识，也不在这个考试的范围之内，况且这些考试的内容也都过于陈腐，对我的工作帮助也并不大，所以刚开始的一年，已经通过了一半以上的科目。</p>
+
+<p>不过后来工作生活中的其他事情的处理造成的精力的损耗有点自顾不暇，加上我的一些错误估计（已在上一章节总结），才致使拖延了时日。</p>
+
+<p>至后期我的看法有所改变，虽然过程印证了计算机专业上对我帮助确实也是不大，不过意外之外，其中关于管理或者流程、历史、政治相关的内容尤其是经济学（或许我本来就很有兴趣），让我有感价值远超预期，这种价值绝不是说这个教材或者这个科目的知识给予了自己很大的帮助，而是成功的引发了我的兴趣（兴趣是人最大的老师而不是考试或者学位）。</p>
+
+<p>风物长宜放眼量，把自己的目光放的长远些，人生漫漫，雾霭沉沉，很多事情都只是一个插曲或者说终将成为过去。</p>
+
+<p>而恰如现今，这一切已如过往云烟，变得不再重要了。</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2021/04/b082208%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E6%80%BB%E7%BB%93.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2021/04/b082208%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E6%80%BB%E7%BB%93.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2021/03/announcing-the-release-of-wx-biz-data-crypt.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Announcing the release of wx_biz_data_crypt</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2021/04/to-be-a-farmer.html"
+               aria-label="Next">
+              <span aria-hidden="true">To be a farmer &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2021 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+  </body>
+</html>

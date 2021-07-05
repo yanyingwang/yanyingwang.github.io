@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>关于离职离沪决定的思考</title>
+    <meta name="description" content="说起来，想离职这个事情已经想很久了，从早几年集团上海技术部大变动的时候就想了。而至于离沪这个事情，几年前不算是想，今日想感觉是新冠疫情对整个世界的影响泛化出来的自己对自己人生的新思考所决定的，某种程度对自身而言也是无可奈何的事情。...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="自省">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2021/03/%E5%85%B3%E4%BA%8E%E7%A6%BB%E8%81%8C%E7%A6%BB%E6%B2%AA%E5%86%B3%E5%AE%9A%E7%9A%84%E6%80%9D%E8%80%83.html">
+    <link rel="next" href="/2021/02/announcing-the-release-of-qweather.html">
+    <link rel="prev" href="/2021/03/fathoming-out-racket-package-s-version.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-153803148-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">关于离职离沪决定的思考</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/programming.html">programming</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/tutorial.html">tutorial</a><a class="dropdown-item" href="/tags/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E5%85%B8%E6%96%87%E5%AD%A6.html">中国古典文学</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%97%B6%E4%BA%8B.html">时事</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>关于离职离沪决定的思考</h1>
+    <p class="meta">
+<time datetime="2021-03-14" pubdate="true">2021-03-14</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2021-03-14" pubdate="true">2021-03-14</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>说起来，想离职这个事情已经想很久了，从早几年集团上海技术部大变动的时候就想了。而至于离沪这个事情，几年前不算是想，今日想感觉是新冠疫情对整个世界的影响泛化出来的自己对自己人生的新思考所决定的，某种程度对自身而言也是无可奈何的事情。</p>
+<!-- more-->
+
+<p>想来最近几年的文章，从之前迁移博客写<a href="/2019/12/一次博客的洗礼.html">《一次博客的洗礼》</a>开始，就说打算不浪费时间写这些无聊的心情，但若谈到离开上海会老家，也算是一件大事了。</p>
+
+<p>挣扎了很久，终于下下这个决定还是某个事件的心理冲突所引发的。本来计划是年底或明年初，但想来，这份工作对目前的自己而言，意义也非常小了，早走也算是自己直面人生，敢于前进的表现，所以就重新定在了今年夏初。</p>
+
+<p>这个决定不容易下，即使自己早先已经给自己做了很多心理建设，还是会反反复复的思索利弊，后来本是打算写一篇《离职离沪回老家的优劣分析》的，但是尝试之后发现细化分析对比这样的事情很困难。自己在上海待了这么久，当然是习惯了上海的生活，上海的便利性，但既然打算要走了，要来要走原因大都类同，我倒不如分析预见下回老家后会面临什么困境需要克服才更为有意义。</p>
+
+<h1 id="家人">家人</h1>
+
+<p>近年来，我父母岁近七十，体况已经是大不如从前，而且心态也大不如从前。过年回老家在家，我妈妈会道出“有儿子在家很安心”这样的话。我爸爸本就有很多老年人基础性疾病，现今身体显然也已大不如前。我现在每每回老家，都有一种百废待兴的感觉。</p>
+
+<p>这样的境况下，如果上海的工作再无乐趣，我就没有什么理由继续留在上海不回老家了。</p>
+
+<h1 id="工作生活">工作生活</h1>
+
+<p>但是若谈到工作，郑州的工作机会显然跟上海不能相提并论，但是现在上海的Ruby开发职位也是大不如从前了。</p>
+
+<p>所以我的初步计划是回老家后，先花时间修缮一下老家的居住环境，前年政府大力投资修缮了中国大部分的城镇乡村的水电气和道路基础设施，包括我老家，现在回老家已经具有跟几年前完全不同维度的生活改善空间了。</p>
+
+<p>需要先花时间把驾照考下来，再买辆汽车，然后再是逐步的装修改善老家的厨卫环境，起居环境。这些下来，可能约耗半年。</p>
+
+<p>期间可以看下远程工作的机会，没有远程的工作，就暂时偶尔兼职，或者就是真的在老家务农闲来时思考下国家国际变化，抑或专业领域的问题也说不定会有意外收获。</p>
+
+<p>网络环境会先弄好，即使暂时没有现实收入的工作可做，现在网上教育课程这么发达，可以多花时间学习些专业课程，前沿知识，抑或研究我的Racket语言相关领域的内容，Rainbow delimiter的完善，名语言，web开发等。</p>
+
+<p>跟父母相处也会有冲突，但是值得尝试的，即使在老家待半年所改善的父母的生活心理环境也是值得这段经历的。</p>
+
+<p>如果老家有合适的女孩，结婚生孩子也不是不可能，我也一直很想。而且或许回老家，这件事情比在上海还会现实非常多，毕竟上海是更加物质化的地方。</p>
+
+<h1 id="心态预期">心态预期</h1>
+
+<p>与之前的情况不同，现在是有计划的离职，有计划的回老家，不会出现无事可做，心态异常的情况。比之前的任何时候，自己也更加成熟了，有工作能力了，有积蓄了，相信自己在回去之前可以做好充分的心理建设和充分的准备。</p>
+
+<p>另外以我的观察，在上海某种程度上的因为商场和公园所能消除的心理情绪积压，在老家会因为有车可以更方便的自由出行而可以达到同样效果。</p>
+
+<p>以一个人整个一生的维度来思考，这总不会是我人生的终结的。不管这个选择的好坏，这段经历，总会有他的价值的。总是过于担心自己的前景，变得畏首畏尾，才更有负于自己的人生。</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2021/03/%E5%85%B3%E4%BA%8E%E7%A6%BB%E8%81%8C%E7%A6%BB%E6%B2%AA%E5%86%B3%E5%AE%9A%E7%9A%84%E6%80%9D%E8%80%83.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2021/03/%E5%85%B3%E4%BA%8E%E7%A6%BB%E8%81%8C%E7%A6%BB%E6%B2%AA%E5%86%B3%E5%AE%9A%E7%9A%84%E6%80%9D%E8%80%83.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2021/02/announcing-the-release-of-qweather.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Announcing the release of Qweather</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2021/03/fathoming-out-racket-package-s-version.html"
+               aria-label="Next">
+              <span aria-hidden="true">Fathoming out Racket Package&rsquo;s version &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2021 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+  </body>
+</html>
