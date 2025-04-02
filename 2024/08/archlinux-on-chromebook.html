@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Archlinux on Chromebook</title>
+    <meta name="description" content="I've heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workabl...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="Tutorial">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2024/08/archlinux-on-chromebook.html">
+    <link rel="next" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Archlinux on Chromebook</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Archlinux on Chromebook</h1>
+    <p class="meta">
+<time datetime="2024-08-16" pubdate="true">2024-08-16</time> / <span class="tags"><a href="/tags/Tutorial.html">Tutorial</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2024-08-16" pubdate="true">2024-08-16</time> / <span class="tags"><a href="/tags/Tutorial.html">Tutorial</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>I&rsquo;ve heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workable at present. What dictates me to use Archlinux is the prolonged audio issue spread through multiple versions of Ubuntu on my Chromebook.</p>
+<!-- more-->
+
+<p>I have a Toshiba Chromebook bought in 2015, the dust on which has not been swept out for years until the other days I was on demand to use a laptop for a few months.</p>
+
+<p>The first step I did was follow <a href="https://docs.mrchromebox.tech/docs/getting-started.html">https://docs.mrchromebox.tech/docs/getting-started.html</a> website and install the UEFI Full ROM. Then you would be able to boot your <a href="https://archlinux.org/download/">installation image</a> in UEFI mode from your USB device.</p>
+
+<p>After booting from it, you&rsquo;ll see the command line console already logged as root in your front, all the installations will be manually operated with command in this console. The installation steps are documented at <a href="https://wiki.archlinux.org/title/Installation_guide">official installation guide</a>.</p>
+
+<h1 id="archinsall-cmd">Archinsall CMD</h1>
+
+<p>Besides, to get rid of the annoying cmd process, we can simplify this with <code>archinstall</code>. In this case, the installing of Archlinux can be like procedures below: 1. burn the usb live CD. 2. boot up PC from this live CD. 3. When the cmd line pop up, connect to WIFI network with cmd <code>iwctl</code>. 4. Once connected to Internet, <code>pacman -Syy</code> to get a fresh of packages list for the Live CD. 5. Install <code>archinstall</code> with <code>pacman -S archinstall</code>. 6. Type in <code>archinstall</code> and then, following the instructions to install the Archlinux system to you disk.</p>
+
+<h1 id="tips">Tips</h1>
+
+<p>A few notice the guide does not mention put here:</p>
+
+<ol>
+ <li>Format the disk as GPT type and add a fat32 format partition with a size of 50M as the first partition. Remember to mount this partition to <code>/boot/EFI</code> before using the <code>genfstab</code> command. Well to know that if you mount this partition to <code>/boot</code>, the size of this partition needs to be at least 200M, since the <code>initramfs-linux</code>, <code>vmlinuz-linux</code>, and <code>grub</code> files are put to this partition as well.</li>
+ <li>Before using <code>pacstrap</code>, better update your mirror list in case of the slow downloading packages in your country: <code>pacman -Syy</code>, <code>pacman -S reflector</code>, <code>reflector -c "cn" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist</code>.</li>
+ <li>Create an extra user but not root as your daily usage: <code>pacman -S sudo</code>, <code>useradd -m yanying</code>, <code>passwd yanying</code>, <code>usermod -ag wheel,audio,video,storage yanying</code>.</li>
+ <li>Follow <a href="https://wiki.archlinux.org/title/lxqt">lxqt guide</a> and install the lightest lxqt desktop environment: <code>pacman -S xorg lxqt</code>.</li>
+ <li>If you have issues with starting your <a href="https://wiki.archlinux.org/title/fcitx5">fcitx5</a>, try to add <code>gtk_im_module=fcitx \n qt_im_module=fcitx \n sdl_im_module=fcitx \n xmodifiers=@im=fcitx</code> to your <code>~/.xprofile</code> file.</li>
+ <li>If you have issues with showing some special characters properly, try to install fonts: <code>pacman -S noto-fonts noto-fonts-emoji</code>.</li>
+ <li>To show archlinux logo instead of the command screen while you are starting your system, check the <a href="https://wiki.archlinux.org/title/Plymouth">Plymouth</a> project.</li>
+ <li>Uncomment <code>Color</code> and <code>ILoveCandy</code> in <code>/etc/pacman.conf</code> for a better output of <code>pacman</code>.</li>
+ <li>Place icons to <code>/usr/share/sddm/faces/yanying.face.icon</code> to show it as the user icon in the login screen.</li>
+ <li>Check <a href="https://wiki.archlinux.org/title/IOS">IOS wiki</a> to connect and transfer files with iPhone.</li>
+ <li>Follow <a href="https://wiki.archlinux.org/title/Waydroid">Waydroid wiki</a> to run android on Archlinux.</li>
+ <li>swap ctrl and search key: modify <code>/usr/share/X11/xkb/symbols/pc</code> with: <code>key &lt;LWIN&gt; {    [ Control_L ]   };</code> and <code>key &lt;LCTL&gt; {    [ Super_L     ]   };</code>. More: https://askubuntu.com/questions/33774/how-do-i-remap-the-caps-lock-and-ctrl-keys</li>
+ <li>function keys of volumes and backlight: https://github.com/yanyingwang/CBFixesAndTweaks</li>
+ <li>insall adb tools: <code>pacman -S android-sdk-cmdline-tools</code> and <code>yay -S android-sdk-cmdline-tools-latest</code></li>
+ <li><code>pacman -S bluetooth</code> and <code>sudo systemctl disable bluetooth.serrice</code> and <code>sudo systemctl status bluetooth</code></li>
+ <li>Turn on 150% scales for display: <code>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</code></li>
+ <li>Install yay: <code>git clone https://aur.archlinux.org/yay.git &amp;&amp; cd yay &amp;&amp; makepkg -si</code> ( In China, try this before installing to fix the network issues: <code>go env -w GO111MODULE=on; go env -w GOPROXY=https://goproxy.cn,direct; export GO111MODULE=on; export GOPROXY=https://goproxy.cn</code>)</li>
+ <li>Make <code>alt + tab</code> to swich windows instead of swith apps: open <code>dconf-edit</code> and change the shotcut keys in: <code>org/gnome/desktop/wm/keybindings</code></li></ol>
+
+<h1 id="beyond-chromebook">Beyond chromebook</h1>
+
+<ol>
+ <li>For other PC not chromebook that use sof audio card, you may need to following <a href="https://bbs.archlinux.org/viewtopic.php?id=262469">this link</a> and install: <code>sof-firmware</code> and <code>alsa-ucm-conf</code></li>
+ <li>To show the minimize windows button, use <code>gonme-tweaks</code> and turn on it in <code>Titlebar Buttons</code></li>
+ <li>For firefox alt menu, following <a href="https://support.mozilla.org/en-US/questions/1278533">this link</a> and change <code>ui.key.menuAccessKeyFocuses</code> to <code>false</code> in <code>about:config</code> to disable it.</li>
+ <li>To use gnome extensions, <code>yay -S chrome-gnome-shell</code>, <code>yay -S extension-manager</code></li>
+ <li>Gnome Extensions: Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock/</li>
+ <li>To input Chinese, you need to following <a href="https://wiki.archlinuxcn.org/wiki/Fcitx5">link</a> and install <code>fcitx5 fcitx5-chinese-addons fcitx5-pinyin-sogou</code></li></ol>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2024/08/archlinux-on-chromebook.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2024/08/archlinux-on-chromebook.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; GGFSM project and my next plan about Ming</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2025 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>
