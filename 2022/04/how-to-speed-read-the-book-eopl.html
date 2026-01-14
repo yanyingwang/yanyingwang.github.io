@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>how to speed-read the book EOPL</title>
+    <meta name="description" content="Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up th...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="racket, 教程, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html">
+    <link rel="next" href="/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html">
+    <link rel="prev" href="/2022/09/mzhengma.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">how to speed-read the book EOPL</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>how to speed-read the book EOPL</h1>
+    <p class="meta">
+<time datetime="2022-04-23" pubdate="true">2022-04-23</time> / <span class="tags"><a href="/tags/racket.html">racket</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2022-04-23" pubdate="true">2022-04-23</time> / <span class="tags"><a href="/tags/racket.html">racket</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up the reading and tried to learn programming through directly writing code to resovle tiny problems I&rsquo;d confronted.</p>
+<!-- more-->
+
+<h1 id="feeling-hard-to-go-on-reading">Feeling hard to go on reading</h1>
+
+<p>At the moment I&rsquo;m reading the book EOPL and as a matter of fact I treasure my time so much, I don&rsquo;t want to waste my time just sitting in front of my desk with staring at the charaters of this book in one hour but absorb nothing back to my brain.</p>
+
+<p>This is a comparable feeling just as striking as the time I was learning programming like I mentioned, and which feeling I have to tackle with it now.</p>
+
+<h1 id="how-to-speed-read-it">How to speed-read it</h1>
+
+<p>I notice that a large part of the reason I can&rsquo;t go on reading is originated from the boring feelings of the formulas throughout the book especially the first two chapters.</p>
+
+<p>I don&rsquo;t know others, but the formulas are always my drawbacks, it frustrates me, I&rsquo;m not capable to adapt that, I do it terribly and actually I never do very well in the formula stakes, it&rsquo;s toxic for me.</p>
+
+<p>Another thing rapidly declining immense amount of my passion and impetus is the perpetual vague feeling of the wordy content of this book.</p>
+
+<p>As a concession to my drawbacks of formulas and also to alleviate my vague feeling, I decide to resort to jumping into its source code and do the coding directly to counteract it. With taking advantage of my Racket coding experience, it is possible for me to combine the reading of this book with the reading of it&rsquo;s <a href="https://github.com/mwand/eopl3">source code</a>.</p>
+
+<p>As a result, this turns out to be tremendously useful to me. But it is premature to say I succeed because I haven&rsquo;t finish it yet.</p>
+
+<h1 id="take-chapter3-as-an-example">Take chapter3 as an example</h1>
+
+<p>Take a look at chapter3 of the EOPL book, it has three portions: <code>LET</code> <code>PROC</code> and <code>LETRC</code>. And the source codes of which are in: <a href="https://github.com/mwand/eopl3/tree/master/chapter3">https://github.com/mwand/eopl3/tree/master/chapter3</a>.</p>
+
+<p>Dive in the <code>let-lang</code> directory, the <code>top.scm</code> is the main file:</p>
+
+<ol>
+ <li>Run <code>racket</code> here to start up racket repl, and then type in <code>(require (file 'top.scm'))</code>, and then type in <code>(test-all)</code> to run all the test suites.</li>
+ <li>Also we can manually run the tests code in file<code>test.scm</code> separatively such as run <code>(run "-11")</code> and <code>-(-(44,33),22)</code> in order todeliberate over the implement code of <code>run</code>.</li>
+ <li>As long as we are trying to dive the code deeper and deeper, we would have to use <code>trace-define</code> provided by <code>racket/trace</code> and <code>report/file</code> provided by <code>sugar/debug</code> to conveniently observe behaviour the of code. Like using <code>(trace-define value-of ...)</code> and <code>(run "1")</code> <code>(run -1)</code> <code>(run -(1, 3))</code> to check <code>value-of</code> function.</li></ol>
+
+<p>In this way, we roughly read the code and make ourself understand the code first, and then we read the corresponding book content of it, by this time we would notice we can read the book 10 lines one time just with a glance.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; 使用Ubuntu</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2022/09/mzhengma.html"
+               aria-label="Next">
+              <span aria-hidden="true">MZhengma &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

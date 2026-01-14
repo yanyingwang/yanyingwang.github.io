@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: 清空谈角之操</title>
+  <description>清空谈角之操: 清空谈角之操</description>
+  <link>https://yanyingwang.github.io/index.html</link>
+  <lastBuildDate>Fri, 16 Aug 2024 17:20:49 UT</lastBuildDate>
+  <pubDate>Fri, 16 Aug 2024 17:20:49 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Archlinux installation</title>
+   <link>https://yanyingwang.github.io/2024/08/archlinux-installation.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2024-08-archlinux-installation-html</guid>
+   <pubDate>Fri, 16 Aug 2024 17:20:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;ve heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workable at present. What dictates me to use Archlinux is the prolonged audio issue spread through multiple versions of Ubuntu on my Chromebook.&lt;/p&gt;
+
+&lt;p&gt;(A few months later, I install ArchLinux again on my desktop, and then I extened this article and change the title from ArchLinux on Chromebook to Archlinux installation.)&lt;/p&gt;
+
+&lt;p&gt;updated at: 2026&amp;ndash;1&amp;ndash;13&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2024/08/archlinux-installation.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>GGFSM project and my next plan about Ming</title>
+   <link>https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2023-09-ggfsm-project-and-my-next-plan-about-ming-html</guid>
+   <pubDate>Sun, 03 Sep 2023 20:17:59 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;For the past month, I&amp;rsquo;ve been dedicating myself on the developing of &lt;a href="https://www.yanying.wang/ggfsm/"&gt;GGFSM&lt;/a&gt;, which is a website that draw graphs with the given prices and volumes data of stocks from Shanghai and Shengzhen stock exchange. As one of my toys wrote in racket and &lt;a href="https://www.yanying.wang/ming/"&gt;ming-language&lt;/a&gt;, the main purpose of this project is enhancing ming lang, and making clear what the next plan should be about it.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>How to run Fcitx5 and Rime on Ubuntu 20.04</title>
+   <link>https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-11-how-to-run-fcitx5-and-rime-on-ubuntu-20-04-html</guid>
+   <pubDate>Tue, 08 Nov 2022 18:16:51 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;In the recent few days, I tried to install and run Fcitx5 and Rime on my Ubuntu 20.04, and I&amp;rsquo;ll be summing it up in this post.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>The significance of using Chinese instead of English as the interface of LISP for human</title>
+   <link>https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-10-the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human-html</guid>
+   <pubDate>Sun, 02 Oct 2022 00:01:27 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;&amp;#26356;&amp;#26032;&amp;#20110;&amp;#65306;2022-10-13&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the &lt;a href="http://www.yanying.wang/ming"&gt;Ming Programing Language&lt;/a&gt;, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>MZhengma</title>
+   <link>https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-09-mzhengma-html</guid>
+   <pubDate>Thu, 15 Sep 2022 00:42:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I had hacked the &lt;a href="https://en.wikipedia.org/wiki/Zhengma_method"&gt;Zhengma method&lt;/a&gt; to make it more practical for people to input Chinese characters: &lt;a href="https://github.com/yanyingwang/mzhengma"&gt;https://github.com/yanyingwang/mzhengma&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>how to speed-read the book EOPL</title>
+   <link>https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-04-how-to-speed-read-the-book-eopl-html</guid>
+   <pubDate>Sat, 23 Apr 2022 22:47:47 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up the reading and tried to learn programming through directly writing code to resovle tiny problems I&amp;rsquo;d confronted.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>使用Ubuntu</title>
+   <link>https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-03-E4-BD-BF-E7-94-A8ubuntu-html</guid>
+   <pubDate>Sun, 20 Mar 2022 22:04:20 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;谈起Ubuntu系统，早在很早的时候2011年开始，我就渐渐的将其作为自己的桌面使用了。大概三年前，因为字体渲染和公司使用MacMini的原因，&lt;a href="/2020/04/使用黑苹果.html"&gt;我全方位的切换成了用MacOS&lt;/a&gt;。最近，因为某些契机，我重新安装使用了Ubuntu。三年多不见，Ubuntu在我看来，变得是更加好用了。从某种角度来说，Macos与Windows都难媲美他了。或者说，Ubuntu独有的开放风格，将他的使用性提升到了MacOS和Windows因为自身原因不能轻易企及的程度，就如移动时代的Android，只是他们际遇不同，结果不同罢了。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Racket's let and for</title>
+   <link>https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-12-racket-s-let-and-for-html</guid>
+   <pubDate>Tue, 14 Dec 2021 14:08:24 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;updated at: 2022-02-25&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Take a bite of racket&amp;rsquo;s &lt;a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html"&gt;Local Binding&lt;/a&gt;, at the first sight we might already acquire the gist about the usage of &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29"&gt;define&lt;/a&gt;&lt;/span&gt;. And then it will come to us with &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29"&gt;let&lt;/a&gt;&lt;/span&gt; and &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29"&gt;for&lt;/a&gt;&lt;/span&gt;, both of them can be used for loops.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>My thought and announcing of racket package Yijing</title>
+   <link>https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-12-my-thought-and-announcing-of-racket-package-yijing-html</guid>
+   <pubDate>Tue, 07 Dec 2021 17:21:18 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Most recently, I&amp;rsquo;m very passionate about chinese classical culture. If we take a deep look at the core of chinese culture, we are going to notice all of them include Traditional Chinese Medicine and 24 solar terms and even the way how ancient chinese recording time as their calendar, which is a mix of solar calendar and lunar calendar, are derived from Yijing. In a way, we can say that almost all the chinese things are built on the top of ideas of Yijing, although to this day the importance of it has been diminished by the developing of modern western science.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing scribble-rainbow-delimiters</title>
+   <link>https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-05-announcing-scribble-rainbow-delimiters-html</guid>
+   <pubDate>Mon, 31 May 2021 22:00:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I extract my code from a former project &lt;a href="https://github.com/yanyingwang/rainbow-delimiters"&gt;rainbow-delimiters&lt;/a&gt; to &lt;a href="https://github.com/yanyingwang/scribble-rainbow-delimiters"&gt;scribble-rainbow-delimiters&lt;/a&gt;, which is useful for reading code on HTML page generated by &lt;a href="https://docs.racket-lang.org/scribble/index.html"&gt;Racket&amp;rsquo;s Scribble&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of wx_biz_data_crypt</title>
+   <link>https://yanyingwang.github.io/2021/03/announcing-the-release-of-wx-biz-data-crypt.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-03-announcing-the-release-of-wx-biz-data-crypt-html</guid>
+   <pubDate>Tue, 30 Mar 2021 17:54:37 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I have been in the project to develop Wechat Mini programs, and when it comes to the part of decrypting data, I find out there does not exist a Ruby Gem for this although the Wechat official provides &lt;a href="https://res.wx.qq.com/wxdoc/dist/assets/media/aes-sample.eae1f364.zip"&gt;code sample&lt;/a&gt; but it is only for Python/PHP/C++. So I decided to resemble the Python source code and write a Ruby Gem based on it.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/announcing-the-release-of-wx-biz-data-crypt.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Fathoming out Racket Package's version</title>
+   <link>https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-03-fathoming-out-racket-package-s-version-html</guid>
+   <pubDate>Mon, 29 Mar 2021 01:30:34 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I received an email of &lt;a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895"&gt;a github comment&lt;/a&gt; on a Racket Package of mine named &lt;a href="https://github.com/yanyingwang/http-client/"&gt;http-client&lt;/a&gt;, which was announced to release by my post of &lt;a href="2020/09/announcing-the-release-of-http-client.html"&gt;Announcing the release of http-client&lt;/a&gt;. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&amp;rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of Qweather</title>
+   <link>https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-02-announcing-the-release-of-qweather-html</guid>
+   <pubDate>Sun, 28 Feb 2021 22:54:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket package called &lt;span style="font-weight: bold"&gt;Qweather&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/qweather"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/qweather&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>我的一种关于lisp方言式的汉语编程语言的构思</title>
+   <link>https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-10-E6-88-91-E7-9A-84-E4-B8-80-E7-A7-8D-E5-85-B3-E4-BA-8Elisp-E6-96-B9-E8-A8-80-E5-BC-8F-E7-9A-84-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E8-AF-AD-E8-A8-80-E7-9A-84-E6-9E-84-E6-80-9D-html</guid>
+   <pubDate>Sat, 31 Oct 2020 15:04:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#20174;&amp;#23567;&amp;#23398;&amp;#21040;&amp;#20013;&amp;#23398;&amp;#38454;&amp;#27573;&amp;#23545;&amp;#20889;&amp;#20316;&amp;#30340;&amp;#24863;&amp;#20852;&amp;#36259;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20986;&amp;#26469;&amp;#30340;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#30340;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#29305;&amp;#24449;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#21040;&amp;#24037;&amp;#20316;&amp;#20043;&amp;#21518;&amp;#20316;&amp;#20026;&amp;#19968;&amp;#20010;&amp;#31243;&amp;#24207;&amp;#21592;&amp;#20174;&amp;#20107;&amp;#32534;&amp;#31243;&amp;#24037;&amp;#20316;&amp;#23545;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#29305;&amp;#24449;&amp;#30340;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20102;&amp;#25105;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#36827;&amp;#32780;&amp;#20889;&amp;#36807;&amp;#19968;&amp;#31687;&lt;a href="/2019/12/由汉语编程所想到的.html"&gt;&amp;#12298;&amp;#30001;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#25152;&amp;#24819;&amp;#21040;&amp;#30340;&amp;#12299;&lt;/a&gt;&amp;#30340;&amp;#25991;&amp;#31456;&amp;#38646;&amp;#38646;&amp;#30862;&amp;#30862;&amp;#30340;&amp;#21435;&amp;#38416;&amp;#36848;&amp;#23545;&amp;#20013;&amp;#25991;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#21363;&amp;#26159;&amp;#20197;&amp;#27721;&amp;#35821;&amp;#20316;&amp;#20026;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#20803;&amp;#35821;&amp;#35328;&amp;#26469;&amp;#36827;&amp;#34892;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#36825;&amp;#20214;&amp;#20107;&amp;#24773;&amp;#30340;&amp;#24847;&amp;#20041;&amp;#30340;&amp;#19968;&amp;#20123;&amp;#31895;&amp;#30053;&amp;#30475;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of Rainbow Delimiters</title>
+   <link>https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-10-announcing-the-release-of-rainbow-delimiters-html</guid>
+   <pubDate>Sun, 25 Oct 2020 19:04:44 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new web browser plugin/extention/add-ons called &lt;strong&gt;Rainbow Delimiters&lt;/strong&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/rainbow-delimiters"&gt;https://www.github.com/yanyingwang/rainbow-delimiters&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Managing to coordinate Ruby with a legacy DB</title>
+   <link>https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-09-managing-to-coordinate-ruby-with-a-legacy-db-html</guid>
+   <pubDate>Fri, 18 Sep 2020 16:26:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I&amp;rsquo;ve been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft&amp;rsquo;s SQL Server 2005.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of http-client</title>
+   <link>https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-09-announcing-the-release-of-http-client-html</guid>
+   <pubDate>Fri, 04 Sep 2020 16:50:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket Package called &lt;span style="font-weight: bold"&gt;http-client&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/http-client"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/http-client&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>My experience of using Racket</title>
+   <link>https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-08-my-experience-of-using-racket-html</guid>
+   <pubDate>Sat, 08 Aug 2020 15:37:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;updated_at: 2022-02-27&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#25105;&amp;#36234;&amp;#26159;&amp;#20351;&amp;#29992;Racket&amp;#35821;&amp;#35328;&amp;#65292;&amp;#36234;&amp;#26159;&amp;#26126;&amp;#30333;&amp;#33258;&amp;#24049;&amp;#22312;&amp;#24178;&amp;#20123;&amp;#20160;&amp;#20040;&amp;#65292;&amp;#36234;&amp;#26159;&amp;#24863;&amp;#21040;&amp;#33258;&amp;#24049;&amp;#38656;&amp;#35201;&amp;#25506;&amp;#32034;&amp;#30340;&amp;#19996;&amp;#35199;&amp;#26159;&amp;#26377;&amp;#20215;&amp;#20540;&amp;#30340;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Racket's match</title>
+   <link>https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-08-racket-s-match-html</guid>
+   <pubDate>Sat, 08 Aug 2020 15:37:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;updated_at: 2022-02-27&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#35828;&amp;#21040;Racket&amp;#35821;&amp;#35328;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20854;&amp;#23454;&amp;#23427;&amp;#20027;&amp;#26159;&amp;#29992;&amp;#20110;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#30340;&amp;#65292;&amp;#32780;&amp;#35848;&amp;#21040;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#65292;&amp;#22312;&amp;#24403;&amp;#20195;&amp;#30340;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#20013;&amp;#65292;&amp;#26368;&amp;#20026;&amp;#22823;&amp;#23478;&amp;#29087;&amp;#30693;&amp;#30340;&amp;#33707;&amp;#36807;&amp;#20110;&lt;span class="RktInBG"&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;span class="RktIn"&gt;if&lt;/span&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/span&gt;&amp;#36825;&amp;#20010;&amp;#20851;&amp;#38190;&amp;#23383;&amp;#20102;&amp;#12290;&amp;#24403;&amp;#28982;Racket&amp;#35821;&amp;#35328;&amp;#20013;&amp;#20063;&amp;#26377;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29"&gt;if&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20294;&amp;#26159;&amp;#20854;&amp;#26159;&amp;#26368;&amp;#26368;&amp;#22522;&amp;#30784;&amp;#30340;&amp;#19968;&amp;#20010;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#12290;&amp;#20854;&amp;#20182;&amp;#35832;&amp;#22914;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29"&gt;case&lt;/a&gt;&lt;/span&gt;&amp;#12289;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29"&gt;cond&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20134;&amp;#25110;&amp;#26412;&amp;#25991;&amp;#22312;&amp;#21518;&amp;#38754;&amp;#21363;&amp;#23558;&amp;#38138;&amp;#23637;&amp;#24320;&amp;#26469;&amp;#35762;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#23588;&amp;#20854;&amp;#26159;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#22312;Racket&amp;#35821;&amp;#35328;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#20013;&amp;#65292;&amp;#22240;&amp;#20026;LISP&amp;#35821;&amp;#35328;&amp;#39640;&amp;#24230;&lt;a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E5%83%8F%E6%80%A7"&gt;&amp;#21516;&amp;#20687;&amp;#24615;&lt;/a&gt;&amp;#30340;S-expression&amp;#35821;&amp;#27861;&amp;#65292;&amp;#36171;&amp;#20104;&amp;#20854;&amp;#20102;&amp;#38750;&amp;#24120;&amp;#22810;&amp;#39640;&amp;#38454;&amp;#20351;&amp;#29992;&amp;#26041;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Frog</title>
+   <link>https://yanyingwang.github.io/2020/04/frog.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-04-frog-html</guid>
+   <pubDate>Mon, 06 Apr 2020 02:00:55 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;12&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;在我之前写&lt;a href="/2019/12/一次博客的洗礼.html"&gt;《一次博客的洗礼》&lt;/a&gt;的时候，我已经将我原本使用jekyll搭建的博客迁移到了使用&lt;a href="https://docs.racket-lang.org/frog/index.html"&gt;Frog&lt;/a&gt;搭建的新博客之上。期间曾为了自己博客的某种特定文章格式，写过一个插件&lt;a href="https://docs.racket-lang.org/scribble-frog-helper/index.html"&gt;scribble-frog-helper&lt;/a&gt;。现如今，因为某种原因，打算以private仓库的方式来提供我博客的对外访问服务，所以使用了heroku来完成的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>使用黑苹果</title>
+   <link>https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-04-E4-BD-BF-E7-94-A8-E9-BB-91-E8-8B-B9-E6-9E-9C-html</guid>
+   <pubDate>Sun, 05 Apr 2020 01:08:19 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;从2010年第一次使用Ubuntu之后，我一直都是Linux系统的坚实用户。2014年的时候，业余上的尝鲜心理以及工作上所任职的公司程序员被配置的默认工作平台均为macOS的事实，导致我打算迁移工作平台到macOS上，但发现macOS远不如自己想想那样的好用，比如诸多原本习惯的快捷键冲突的适应性问题，以及&lt;a href="https://en.wikipedia.org/wiki/Alt-Tab"&gt;alt+tab&lt;/a&gt;在macOS下面特殊的表现等问题。这更加坚定了我Linux才是最最适合自己的工作平台系统的认知。这样的认为着就从没有再次想迁移工作平台到macOS下，直到2017年的某一天，偶然在网上看到一款字体的截图效果进而想要将这字体应用到自己的Emacs上的时候，发现Ubuntu似乎无论如何都无法调整到macOS下那样的字体渲染效果。所以再次萌生了想要切换平台到macOS系统之下的想法。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>子非鱼焉知鱼之乐的思考</title>
+   <link>https://yanyingwang.github.io/2020/01/%E5%AD%90%E9%9D%9E%E9%B1%BC%E7%84%89%E7%9F%A5%E9%B1%BC%E4%B9%8B%E4%B9%90%E7%9A%84%E6%80%9D%E8%80%83.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-01-E5-AD-90-E9-9D-9E-E9-B1-BC-E7-84-89-E7-9F-A5-E9-B1-BC-E4-B9-8B-E4-B9-90-E7-9A-84-E6-80-9D-E8-80-83-html</guid>
+   <pubDate>Sun, 12 Jan 2020 23:50:59 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;我在某一天终于有点明白庄子借用&lt;a href="https://zh.wikipedia.org/zh-hans/%E6%BF%A0%E6%A2%81%E4%B9%8B%E8%BE%AF"&gt;濠梁之辩&lt;/a&gt;的『子非鱼焉知鱼之乐』是要表达些什么了：人对这个世界上的认知本质上是作用在自己的情绪之上的，人对世界上对错是非的判断很多时候也是基于群体性的这种意识而达成的，淡去这种作用而故意强调理性的判断是毫无意义的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/01/%E5%AD%90%E9%9D%9E%E9%B1%BC%E7%84%89%E7%9F%A5%E9%B1%BC%E4%B9%8B%E4%B9%90%E7%9A%84%E6%80%9D%E8%80%83.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>*处</title>
+   <link>https://yanyingwang.github.io/2020/01/-%E5%A4%84.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-01-E5-A4-84-html</guid>
+   <pubDate>Wed, 01 Jan 2020 01:01:01 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#21407;&amp;#26412;&amp;#24050;&amp;#32463;&amp;#26377;&amp;#19968;&amp;#31687;&amp;#24605;&amp;#65292;&amp;#20294;&amp;#26159;&amp;#25105;&amp;#35273;&amp;#24471;&amp;#36824;&amp;#33021;&amp;#22312;&amp;#32454;&amp;#20998;&amp;#12290;&amp;#20854;&amp;#20013;&amp;#26377;&amp;#19968;&amp;#37096;&amp;#20998;&amp;#26159;&amp;#30452;&amp;#25509;&amp;#38754;&amp;#21521;&amp;#35299;&amp;#20915;&amp;#20855;&amp;#20307;&amp;#38382;&amp;#39064;&amp;#30340;&amp;#65292;&amp;#25152;&amp;#20197;&amp;#25105;&amp;#36215;&amp;#21517;&amp;#21483;&amp;#8220;&amp;#22788;&amp;#8221;&amp;#65292;&amp;#21363;&amp;#35299;&amp;#20915;&amp;#38382;&amp;#39064;&amp;#21644;&amp;#22914;&amp;#20309;&amp;#36991;&amp;#20813;&amp;#38382;&amp;#39064;&amp;#12290;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/01/-%E5%A4%84.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>由汉语编程所想到的</title>
+   <link>https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-E7-94-B1-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E6-89-80-E6-83-B3-E5-88-B0-E7-9A-84-html</guid>
+   <pubDate>Mon, 09 Dec 2019 01:22:47 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span style="font-style: italic"&gt;&lt;span class="Smaller"&gt;&amp;#21407;&amp;#22238;&amp;#31572;&amp;#20110;&lt;a href="https://www.zhihu.com/question/33983820/answer/915352853"&gt;&amp;#30693;&amp;#20046;-&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#24847;&amp;#20041;&amp;#20309;&amp;#22312;&amp;#65311;&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#26356;&amp;#26032;&amp;#20110;: 2019-12-15&lt;/p&gt;
+
+&lt;table cellpadding="0" cellspacing="0"&gt;
+ &lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e6~88~91~e8~bf~99~e6~a0~b7~e7~9a~84~e4~b8~ad~e6~96~87~e6~af~8d~e8~af~ad~e8~80~85~e5~af~b9~e6~b1~89~e8~af~ad~e7~bc~96~e7~a8~8b~e7~9a~84~e7~9b~b4~e8~a7~82~e6~84~9f~e8~a7~89%29"&gt;&amp;#25105;&amp;#36825;&amp;#26679;&amp;#30340;&amp;#20013;&amp;#25991;&amp;#27597;&amp;#35821;&amp;#32773;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#30340;&amp;#30452;&amp;#35266;&amp;#24863;&amp;#35273;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e8~bf~9b~e4~b8~80~e6~ad~a5~e7~9a~84~e6~80~9d~e8~80~83~e5~92~8c~e6~8e~a2~e8~ae~a8%29"&gt;&amp;#36827;&amp;#19968;&amp;#27493;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#21644;&amp;#25506;&amp;#35752;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e5~b1~95~e6~9c~9b%29"&gt;&amp;#23637;&amp;#26395;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>一次博客的洗礼</title>
+   <link>https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-E4-B8-80-E6-AC-A1-E5-8D-9A-E5-AE-A2-E7-9A-84-E6-B4-97-E7-A4-BC-html</guid>
+   <pubDate>Sun, 08 Dec 2019 18:31:40 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;我早先的博客是使用&lt;a href="https://jekyllrb.com/"&gt;jekyll&lt;/a&gt;框架搭建的，那应该最起码已经是五年前的事情了。那时候的我正在全力的学习和提高自己对ruby语言的认知，是爱好，也更是为了增强自己的工作能力。时间转眼即逝，眼下ruby语言早已经是我养家糊口的技能了，我也自认为自己早已可以行云流水般的使用它到了炉火纯青的地步，对他的优点缺点也早已是心中有数，在工作中算是无所挂碍了的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>A Markdown Post</title>
+   <link>https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-a-markdown-post-html</guid>
+   <pubDate>Mon, 02 Dec 2019 00:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;这是一篇markdown格式写的样例文章。 Here is an example blog post.&lt;/p&gt;
+
+&lt;p&gt;Everything after this paragraph &amp;ldquo;after the break&amp;rdquo;. On index pages and Atom feeds, it will become &amp;ldquo;Continue reading&amp;hellip;&amp;rdquo;, if you configure them to include only the summary &amp;ldquo;blurb&amp;rdquo; before the break.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;some code&lt;/code&gt;&lt;/pre&gt;&lt;a href="https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>写在一九年新春后</title>
+   <link>https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-02-E5-86-99-E5-9C-A8-E4-B8-80-E4-B9-9D-E5-B9-B4-E6-96-B0-E6-98-A5-E5-90-8E-html</guid>
+   <pubDate>Mon, 11 Feb 2019 01:48:08 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;修订整理于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;农历新春的过完，在所有人的眼中，我想都应该是过去一年的真正终结了。现在都市中的人们，总觉得旅游是一件多么放松的事情，我是农村长大的孩子，没有太多的这种都市人需要旅游的情节。生活在大上海后，我也经历过一些游耍，但我最最真实的感受是，每次老家和上海的这种折返，才是真真正正可以触动我的事情。常常想来，短暂的活在老家爸妈照看中的日子里，才算是我最最惬意的旅行，我常常会在老家冬日漆黑的夜晚，或者夏秋平静的夜里，放掉所有工作亦或生活中的一切，我所在上海的生活工作人际中所有的焦虑也好，人生中无处选择无处安放自己的不安也罢，静静的想着这所有的一切，像是自己同时在做着两场不同的梦，梦互相交织缠绕着，自己在天平中不断的倾斜着。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>*考</title>
+   <link>https://yanyingwang.github.io/2019/01/-%E8%80%83.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-01-E8-80-83-html</guid>
+   <pubDate>Tue, 01 Jan 2019 01:01:01 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#21407;&amp;#26412;&amp;#25105;&amp;#24050;&amp;#32463;&amp;#26377;&amp;#19968;&amp;#31687;&amp;#25991;&amp;#31456;&amp;#21483;&amp;#8220;&amp;#24605;&amp;#8221;&amp;#29992;&amp;#26469;&amp;#35760;&amp;#36848;&amp;#25105;&amp;#24179;&amp;#26102;&amp;#24605;&amp;#32771;&amp;#25152;&amp;#24471;&amp;#12290;&amp;#20294;&amp;#25105;&amp;#21457;&amp;#29616;&amp;#36824;&amp;#33021;&amp;#32454;&amp;#20998;&amp;#65292;&amp;#20854;&amp;#20013;&amp;#26377;&amp;#19968;&amp;#37096;&amp;#20998;&amp;#26159;&amp;#30452;&amp;#25509;&amp;#38754;&amp;#21521;&amp;#21457;&amp;#29616;&amp;#29983;&amp;#27963;&amp;#20013;&amp;#20064;&amp;#20197;&amp;#20026;&amp;#24120;&amp;#20294;&amp;#26159;&amp;#19981;&amp;#38590;&amp;#21457;&amp;#29616;&amp;#30340;&amp;#38382;&amp;#39064;&amp;#30340;&amp;#12290;&amp;#19981;&amp;#31649;&amp;#26159;&amp;#29983;&amp;#27963;&amp;#36824;&amp;#26159;&amp;#23398;&amp;#20064;&amp;#65292;&amp;#21457;&amp;#29616;&amp;#38382;&amp;#39064;&amp;#26159;&amp;#24456;&amp;#37325;&amp;#30340;&amp;#19968;&amp;#29615;&amp;#65292;&amp;#25925;&amp;#27492;&amp;#21333;&amp;#29420;&amp;#35760;&amp;#24405;&amp;#12290;&lt;/p&gt;
+
+&lt;p&gt;
+ &lt;br /&gt;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/01/-%E8%80%83.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>*幻</title>
+   <link>https://yanyingwang.github.io/2018/02/-%E5%B9%BB.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2018-02-E5-B9-BB-html</guid>
+   <pubDate>Thu, 01 Feb 2018 01:01:01 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span style="font-style: italic"&gt;&amp;#25105;&amp;#36825;&amp;#20010;&amp;#20154;&amp;#21543;&amp;#65292;&amp;#33041;&amp;#27934;&amp;#20854;&amp;#23454;&amp;#25402;&amp;#22823;&amp;#30340;&amp;#65292;&amp;#24120;&amp;#24120;&amp;#22312;&amp;#32993;&amp;#24605;&amp;#20081;&amp;#24819;&amp;#30528;&amp;#38750;&amp;#24120;&amp;#22810;&amp;#30340;&amp;#20107;&amp;#24773;&amp;#12290;&amp;#22312;&amp;#25105;&amp;#36824;&amp;#27809;&amp;#26377;&amp;#24847;&amp;#35782;&amp;#21040;&amp;#33258;&amp;#24049;&amp;#21487;&amp;#20197;&amp;#25970;&amp;#20195;&amp;#30721;&amp;#20043;&amp;#21069;&amp;#65292;&amp;#26366;&amp;#32463;&amp;#19968;&amp;#24230;&amp;#22312;&amp;#26500;&amp;#24605;&amp;#30528;&amp;#19968;&amp;#37096;&amp;#31185;&amp;#24187;&amp;#23567;&amp;#35828;&amp;#65292;&amp;#21487;&amp;#24796;&amp;#22312;&amp;#20250;&amp;#20102;&amp;#32534;&amp;#31243;&amp;#20043;&amp;#21518;&amp;#23601;&amp;#19981;&amp;#20877;&amp;#26377;&amp;#26102;&amp;#38388;&amp;#21644;&amp;#31934;&amp;#21147;&amp;#20570;&amp;#36825;&amp;#20214;&amp;#20107;&amp;#24773;&amp;#20102;&amp;#65292;&amp;#20063;&amp;#24120;&amp;#24120;&amp;#23601;&amp;#24471;&amp;#36825;&amp;#20123;&amp;#31354;&amp;#24819;&amp;#19981;&amp;#22914;&amp;#19968;&amp;#20123;&amp;#26356;&amp;#21152;&amp;#23454;&amp;#38469;&amp;#30340;&amp;#20107;&amp;#24773;&amp;#26377;&amp;#29616;&amp;#23454;&amp;#24847;&amp;#20041;&amp;#65292;&amp;#20110;&amp;#26159;&amp;#23567;&amp;#35828;&amp;#30340;&amp;#20107;&amp;#24773;&amp;#20063;&amp;#23601;&amp;#27492;&amp;#25601;&amp;#27973;&amp;#20102;&amp;#12290;&amp;#19981;&amp;#36807;&amp;#25105;&amp;#24819;&amp;#65292;&amp;#22810;&amp;#24180;&amp;#20197;&amp;#21518;&amp;#30340;&amp;#19981;&amp;#30693;&amp;#20160;&amp;#20040;&amp;#26102;&amp;#20505;&amp;#65292;&amp;#35828;&amp;#19981;&amp;#23450;&amp;#25105;&amp;#20250;&amp;#37325;&amp;#26032;&amp;#25342;&amp;#36215;&amp;#33258;&amp;#24049;&amp;#20889;&amp;#20316;&amp;#30340;&amp;#20852;&amp;#36259;&amp;#12290;&lt;/span&gt;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2018/02/-%E5%B9%BB.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>此致2017</title>
+   <link>https://yanyingwang.github.io/2018/01/%E6%AD%A4%E8%87%B42017.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2018-01-E6-AD-A4-E8-87-B42017-html</guid>
+   <pubDate>Sun, 14 Jan 2018 23:51:04 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;整理于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;眼见2017就要这么悄无声息的过去了，每当要这么的辞旧迎新的时候，我总要想起那句『年年岁岁花相似，岁岁年年人不同』的诗词，然后忍不住的去感叹一番岁月远逝，伊人不在。信誓旦旦的人们都在2017年年初的时候发过什么样子的誓言啊，我想这样的誓言如同往年今日，不过是在今年今日继续雷同罢了。而2017年对我来说，无疑是非常悲苦的一年。我所经历的事情，过往记忆昔日中人们，不管言语交谈中是有多少的是非争论，情感控诉中使包含了多少的爱恨情仇，都是历历在目，清晰的如对镜自视。我想，我是没有办法轻易的淡忘掉这一切的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2018/01/%E6%AD%A4%E8%87%B42017.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>*解</title>
+   <link>https://yanyingwang.github.io/2018/01/-%E8%A7%A3.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2018-01-E8-A7-A3-html</guid>
+   <pubDate>Mon, 01 Jan 2018 01:01:01 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#20174;&amp;#23567;&amp;#23398;&amp;#24536;&amp;#35760;&amp;#20102;&amp;#26159;&amp;#19977;&amp;#36824;&amp;#26159;&amp;#22235;&amp;#24180;&amp;#32423;&amp;#23398;&amp;#26657;&amp;#24320;&amp;#22987;&amp;#25945;&amp;#20316;&amp;#25991;&amp;#35838;&amp;#19981;&amp;#20037;&amp;#65292;&amp;#25105;&amp;#23601;&amp;#21457;&amp;#29616;&amp;#20102;&amp;#33258;&amp;#24049;&amp;#25797;&amp;#38271;&amp;#20889;&amp;#20316;&amp;#24182;&amp;#19988;&amp;#20048;&amp;#20110;&amp;#20889;&amp;#20316;&amp;#65292;&amp;#20063;&amp;#26159;&amp;#22240;&amp;#27492;&amp;#65292;&amp;#33258;&amp;#24049;&amp;#23545;&amp;#28909;&amp;#34935;&amp;#25991;&amp;#23398;&amp;#65292;&amp;#32780;&amp;#19988;&amp;#38271;&amp;#22823;&amp;#20197;&amp;#21518;&amp;#65292;&amp;#21457;&amp;#29616;&amp;#33258;&amp;#24049;&amp;#23545;&amp;#20013;&amp;#22269;&amp;#21476;&amp;#20856;&amp;#25110;&amp;#32773;&amp;#26159;&amp;#25104;&amp;#35821;&amp;#20063;&amp;#22909;&amp;#65292;&amp;#20856;&amp;#25925;&amp;#20063;&amp;#32610;&amp;#65292;&amp;#32467;&amp;#21512;&amp;#33258;&amp;#24049;&amp;#30340;&amp;#29983;&amp;#27963;&amp;#24863;&amp;#24735;&amp;#65292;&amp;#36234;&amp;#26469;&amp;#36234;&amp;#33021;&amp;#24863;&amp;#21463;&amp;#21040;&amp;#20854;&amp;#28145;&amp;#21051;&amp;#30340;&amp;#21547;&amp;#20041;&amp;#65292;&amp;#25925;&amp;#27492;&amp;#65292;&amp;#25171;&amp;#31639;&amp;#24320;&amp;#20102;&amp;#27492;&amp;#31687;&amp;#25991;&amp;#31456;&amp;#21407;&amp;#21483;&amp;#12298;&amp;#35828;&amp;#25991;&amp;#35299;&amp;#23383;&amp;#12299;&amp;#65292;&amp;#21518;&amp;#25913;&amp;#20026;&amp;#12298;&amp;#25105;&amp;#24605;&amp;#12299;&amp;#65292;&amp;#24847;&amp;#24605;&amp;#26159;&amp;#24819;&amp;#35201;&amp;#32467;&amp;#21512;&amp;#33258;&amp;#24049;&amp;#30340;&amp;#29983;&amp;#27963;&amp;#32463;&amp;#21382;&amp;#25110;&amp;#32773;&amp;#24863;&amp;#24735;&amp;#26469;&amp;#38416;&amp;#26126;&amp;#33258;&amp;#24049;&amp;#23545;&amp;#19968;&amp;#20123;&amp;#35789;&amp;#35821;&amp;#30340;&amp;#35265;&amp;#35299;&amp;#12290;
+
+ &lt;br /&gt;
+&amp;#20294;&amp;#26159;&amp;#65292;&amp;#25105;&amp;#20204;&amp;#24212;&amp;#35813;&amp;#27704;&amp;#36828;&amp;#38125;&amp;#35760;&amp;#30340;&amp;#26159;&amp;#65292;&amp;#23545;&amp;#20110;&amp;#30495;&amp;#23454;&amp;#30340;&amp;#29983;&amp;#27963;&amp;#65292;&amp;#23545;&amp;#20154;&amp;#20154;&amp;#19982;&amp;#20154;&amp;#30340;&amp;#20851;&amp;#31995;&amp;#32780;&amp;#35328;&amp;#65292;&amp;#27704;&amp;#36828;&amp;#26159;&amp;#22797;&amp;#26434;&amp;#30340;&amp;#65292;&amp;#27704;&amp;#36828;&amp;#27809;&amp;#26377;&amp;#21150;&amp;#27861;&amp;#36890;&amp;#36807;&amp;#25991;&amp;#23383;&amp;#21435;&amp;#34920;&amp;#29616;&amp;#12290;&amp;#36825;&amp;#31181;&amp;#30495;&amp;#23454;&amp;#24615;&amp;#22312;&amp;#20110;&amp;#65292;&amp;#25105;&amp;#20204;&amp;#36890;&amp;#36807;&amp;#25991;&amp;#23383;&amp;#33719;&amp;#21462;&amp;#21040;&amp;#30340;&amp;#25152;&amp;#26377;&amp;#20107;&amp;#24773;&amp;#65292;&amp;#27704;&amp;#36828;&amp;#22312;&amp;#30495;&amp;#23454;&amp;#20107;&amp;#20214;&amp;#30340;&amp;#39564;&amp;#35777;&amp;#20013;&amp;#22833;&amp;#21435;&amp;#25928;&amp;#21147;&amp;#65292;&amp;#38500;&amp;#38750;&amp;#25105;&amp;#20204;&amp;#30340;&amp;#30495;&amp;#30495;&amp;#23454;&amp;#23454;&amp;#30340;&amp;#32463;&amp;#21382;&amp;#39564;&amp;#35777;&amp;#20986;&amp;#20102;&amp;#26576;&amp;#20123;&amp;#25991;&amp;#23383;&amp;#20869;&amp;#23481;&amp;#65292;&amp;#25165;&amp;#20250;&amp;#35753;&amp;#25991;&amp;#23383;&amp;#24471;&amp;#20197;&amp;#22312;&amp;#25105;&amp;#20204;&amp;#30495;&amp;#23454;&amp;#30340;&amp;#29983;&amp;#27963;&amp;#20013;&amp;#21457;&amp;#25381;&amp;#20986;&amp;#37096;&amp;#20998;&amp;#25928;&amp;#21147;&amp;#12290;
+
+ &lt;br /&gt;
+&lt;span class="Smaller"&gt;&amp;#21518;&amp;#35760;&amp;#65306;&amp;#21518;&amp;#26469;&amp;#22312;2019&amp;#24180;&amp;#24213;&amp;#36716;&amp;#31227;&amp;#21338;&amp;#23458;&amp;#30340;&amp;#26102;&amp;#20505;&amp;#65292;&amp;#21457;&amp;#29616;&amp;#20043;&amp;#21069;&amp;#38416;&amp;#36848;&amp;#38382;&amp;#39064;&amp;#30340;&amp;#19968;&amp;#20123;&amp;#35789;&amp;#35821;&amp;#21644;&amp;#20869;&amp;#23481;&amp;#34920;&amp;#36798;&amp;#26041;&amp;#24335;&amp;#26377;&amp;#27424;&amp;#25910;&amp;#25342;&amp;#65292;&amp;#20294;&amp;#26159;&amp;#26126;&amp;#26174;&amp;#20173;&amp;#20855;&amp;#24847;&amp;#20041;&amp;#65292;&amp;#25152;&amp;#20197;&amp;#23601;&amp;#30041;&amp;#23384;&amp;#65292;&amp;#24453;&amp;#26377;&amp;#26426;&amp;#20250;&amp;#30340;&amp;#26102;&amp;#20505;&amp;#21487;&amp;#33021;&amp;#20250;&amp;#36827;&amp;#19968;&amp;#27493;&amp;#25972;&amp;#29702;&amp;#20462;&amp;#39280;&amp;#35821;&amp;#35328;&amp;#34920;&amp;#36848;&amp;#12290;&lt;/span&gt;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2018/01/-%E8%A7%A3.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>我一直都未曾爱过的世界</title>
+   <link>https://yanyingwang.github.io/2017/07/%E6%88%91%E4%B8%80%E7%9B%B4%E9%83%BD%E6%9C%AA%E6%9B%BE%E7%88%B1%E8%BF%87%E7%9A%84%E4%B8%96%E7%95%8C.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2017-07-E6-88-91-E4-B8-80-E7-9B-B4-E9-83-BD-E6-9C-AA-E6-9B-BE-E7-88-B1-E8-BF-87-E7-9A-84-E4-B8-96-E7-95-8C-html</guid>
+   <pubDate>Sat, 01 Jul 2017 04:48:15 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;修订于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;7月1日凌晨5点，我回到家，坐在这里，这不是很好的感受：从一群嬉笑打闹的社交黑夜中逃离出来，见到窗外微熙的光亮，以及熙熙攘攘的吱吱呀呀，虫鸣没有，应是鸟叫。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2017/07/%E6%88%91%E4%B8%80%E7%9B%B4%E9%83%BD%E6%9C%AA%E6%9B%BE%E7%88%B1%E8%BF%87%E7%9A%84%E4%B8%96%E7%95%8C.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>如若的生活</title>
+   <link>https://yanyingwang.github.io/2017/05/%E5%A6%82%E8%8B%A5%E7%9A%84%E7%94%9F%E6%B4%BB.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2017-05-E5-A6-82-E8-8B-A5-E7-9A-84-E7-94-9F-E6-B4-BB-html</guid>
+   <pubDate>Sat, 27 May 2017 00:22:39 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;整理于：2017&amp;ndash;06&amp;ndash;04&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;穿着双红色高跟鞋，细柳一样垂至腰部的长发，冉冉的，像是有魔力的巫师，飘飘然的，远去着。我定睛看时，她像是已经远去，像是在走近来。我低头沉思，以为空荡荡的世界，暗淡的没有任何色彩，只有我眼中的红。但是远去又消淡的红，让我不再想要对视。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2017/05/%E5%A6%82%E8%8B%A5%E7%9A%84%E7%94%9F%E6%B4%BB.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>我唾弃虚妄之人类</title>
+   <link>https://yanyingwang.github.io/2015/05/%E6%88%91%E5%94%BE%E5%BC%83%E8%99%9A%E5%A6%84%E4%B9%8B%E4%BA%BA%E7%B1%BB.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2015-05-E6-88-91-E5-94-BE-E5-BC-83-E8-99-9A-E5-A6-84-E4-B9-8B-E4-BA-BA-E7-B1-BB-html</guid>
+   <pubDate>Sun, 24 May 2015 23:09:21 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;我讽刺这虚妄的人类，我唾弃这虚妄的世界，我讽刺这虚妄的计算机时代，我唾弃这虚妄的社交网络。因为这是一个迷失了自我的世界，因为在这个迷失了自我的世界里面，如同行尸走肉一般行走着的一个个人皮，所背负着的一个个或者上班的名义，或者金钱的抱负，甚至可以大过亲情的关怀，超越过友谊的高山，击破爱情的堡垒。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2015/05/%E6%88%91%E5%94%BE%E5%BC%83%E8%99%9A%E5%A6%84%E4%B9%8B%E4%BA%BA%E7%B1%BB.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>梦哥自</title>
+   <link>https://yanyingwang.github.io/2015/05/%E6%A2%A6%E5%93%A5%E8%87%AA.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2015-05-E6-A2-A6-E5-93-A5-E8-87-AA-html</guid>
+   <pubDate>Sat, 09 May 2015 12:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;梦境地点是在我新郑家乡楼房，因为梦的主题不祥，故此简略名字。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2015/05/%E6%A2%A6%E5%93%A5%E8%87%AA.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>A Scribble Post</title>
+   <link>https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2013-06-a-scribble-post-html</guid>
+   <pubDate>Wed, 19 Jun 2013 00:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#31687;scribble&amp;#26684;&amp;#24335;&amp;#20889;&amp;#30340;&amp;#26679;&amp;#20363;&amp;#25991;&amp;#31456;&amp;#12290;
+ &lt;br /&gt;
+the source of this post is Scribble format (not Markdown).
+Here is some intro text, above "the jump".&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>等待老去</title>
+   <link>https://yanyingwang.github.io/2012/08/%E7%AD%89%E5%BE%85%E8%80%81%E5%8E%BB.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2012-08-E7-AD-89-E5-BE-85-E8-80-81-E5-8E-BB-html</guid>
+   <pubDate>Wed, 22 Aug 2012 00:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;等待的恋人慢慢的青丝白发，等待着快快长大的孩童渐渐的感叹岁月匆匆。人生最漫长的是等待，不幸的是，人生确实匆匆如白驹过隙。是否人生都浪费在等待上面，还是一直用等待找借口，虚度光阴。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2012/08/%E7%AD%89%E5%BE%85%E8%80%81%E5%8E%BB.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>看不尽物是人非</title>
+   <link>https://yanyingwang.github.io/2012/06/%E7%9C%8B%E4%B8%8D%E5%B0%BD%E7%89%A9%E6%98%AF%E4%BA%BA%E9%9D%9E.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2012-06-E7-9C-8B-E4-B8-8D-E5-B0-BD-E7-89-A9-E6-98-AF-E4-BA-BA-E9-9D-9E-html</guid>
+   <pubDate>Fri, 01 Jun 2012 22:03:09 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;人来人往，看不尽物是人非。莫名而来的无聊，发短信给朋友说窗外有外星人，让他赶紧看，看到他回了句“你有病，赶紧看医生吧！”。我止不住的笑出了声音。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2012/06/%E7%9C%8B%E4%B8%8D%E5%B0%BD%E7%89%A9%E6%98%AF%E4%BA%BA%E9%9D%9E.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>*咏</title>
+   <link>https://yanyingwang.github.io/2007/01/-%E5%92%8F.html?utm_source=all&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2007-01-E5-92-8F-html</guid>
+   <pubDate>Mon, 01 Jan 2007 01:01:01 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#36825;&amp;#31687;&amp;#25991;&amp;#31456;&amp;#25972;&amp;#29702;&amp;#20102;&amp;#25105;&amp;#24179;&amp;#26102;&amp;#38646;&amp;#38646;&amp;#25955;&amp;#25955;&amp;#30340;&amp;#19968;&amp;#20123;&amp;#24819;&amp;#27861;&amp;#65292;&amp;#20197;&amp;#20379;&amp;#33258;&amp;#24049;&amp;#26469;&amp;#22238;&amp;#24518;&amp;#21644;&amp;#20511;&amp;#37492;&amp;#12290;&amp;#20869;&amp;#23481;&amp;#26029;&amp;#26029;&amp;#32493;&amp;#32493;&amp;#30340;&amp;#20250;&amp;#22686;&amp;#21152;&amp;#65292;&amp;#20854;&amp;#20013;&amp;#26368;&amp;#26089;&amp;#21487;&amp;#20197;&amp;#22238;&amp;#28335;&amp;#21040;2007&amp;#24180;&amp;#12290;&amp;#36965;&amp;#24819;&amp;#24403;&amp;#24180;&amp;#65292;&amp;#26361;&amp;#20844;&amp;#21271;&amp;#25375;&amp;#22825;&amp;#23376;&amp;#20196;&amp;#35832;&amp;#20399;&amp;#65292;&amp;#21335;&amp;#23567;&amp;#20052;&amp;#20165;&amp;#21021;&amp;#23233;&amp;#20102;&amp;#65292;&amp;#20844;&amp;#29822;&amp;#24847;&amp;#27668;&amp;#22859;&amp;#21457;&amp;#12290;&amp;#23380;&amp;#26126;&amp;#21021;&amp;#20986;&amp;#33541;&amp;#24208;&amp;#65292;&amp;#32701;&amp;#25159;&amp;#20896;&amp;#38182;&amp;#65292;&amp;#35270;&amp;#22825;&amp;#19979;&amp;#27442;&amp;#25351;&amp;#20013;&amp;#21407;&amp;#12290;&amp;#22114;&amp;#65292;&amp;#38169;&amp;#20102;&amp;#65292;&amp;#24403;&amp;#24180;&amp;#25105;&amp;#21018;&amp;#21018;&amp;#39640;&amp;#20013;&amp;#27605;&amp;#19994;&amp;#12290;
+
+ &lt;br /&gt;
+&lt;span style="vertical-align: sub; font-size: 80%"&gt;&lt;span style="font-style: italic"&gt;&amp;#27880;&amp;#65306; &amp;#26412;&amp;#25991;&amp;#26356;&amp;#22810;&amp;#26159;&amp;#20174;&amp;#25991;&amp;#23398;&amp;#35282;&amp;#24230;&amp;#22312;&amp;#35760;&amp;#24405;&amp;#24456;&amp;#22810;&amp;#33258;&amp;#24049;&amp;#24773;&amp;#24863;&amp;#24773;&amp;#32490;&amp;#21464;&amp;#21270;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#30340;&amp;#24863;&amp;#24936;&amp;#65292;&amp;#21478;&amp;#26377;&amp;#24456;&amp;#22810;&amp;#20851;&amp;#20110;&amp;#29702;&amp;#24615;&amp;#30340;&amp;#29983;&amp;#27963;&amp;#31561;&amp;#24456;&amp;#22810;&amp;#38382;&amp;#39064;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#21644;&amp;#36777;&amp;#35777;&amp;#24615;&amp;#35328;&amp;#35770;&amp;#65292;&amp;#21487;&amp;#35265;&amp;#12298;&amp;#35828;&amp;#25991;&amp;#35299;&amp;#23383;&amp;#12299;&amp;#19968;&amp;#25991;&amp;#12290;&lt;/span&gt;&lt;/span&gt;
+
+ &lt;br /&gt;
+
+ &lt;br /&gt;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2007/01/-%E5%92%8F.html?utm_source=all&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>使用黑苹果</title>
+    <meta name="description" content="更新于：2020-04-19  从2010年第一次使用Ubuntu之后，我一直都是Linux系统的坚实用户。2014年的时候，业余上的尝鲜心理以及工作上所任职的公司程序员被配置的默认工作平台均为macOS的事实，导致我打算迁移工作平台到macOS上，但发现macOS远不如自己想想那样的好用，比如诸多原本习惯的快捷键冲突的适应性问题，以及alt+tab在macOS下面特殊的表现等问题。这更加坚定了我Linux才是最最适合自己的工作平台系统的认知。这样的认为着就从没有再次想迁移工作平台到macOS下，直到20...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="教程">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html">
+    <link rel="next" href="/2020/01/%E5%AD%90%E9%9D%9E%E9%B1%BC%E7%84%89%E7%9F%A5%E9%B1%BC%E4%B9%8B%E4%B9%90%E7%9A%84%E6%80%9D%E8%80%83.html">
+    <link rel="prev" href="/2020/04/frog.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">使用黑苹果</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>使用黑苹果</h1>
+    <p class="meta">
+<time datetime="2020-04-05" pubdate="true">2020-04-05</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-04-05" pubdate="true">2020-04-05</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>
+ <sub>更新于：2020&ndash;04&ndash;19</sub></p>
+
+<p>从2010年第一次使用Ubuntu之后，我一直都是Linux系统的坚实用户。2014年的时候，业余上的尝鲜心理以及工作上所任职的公司程序员被配置的默认工作平台均为macOS的事实，导致我打算迁移工作平台到macOS上，但发现macOS远不如自己想想那样的好用，比如诸多原本习惯的快捷键冲突的适应性问题，以及<a href="https://en.wikipedia.org/wiki/Alt-Tab">alt+tab</a>在macOS下面特殊的表现等问题。这更加坚定了我Linux才是最最适合自己的工作平台系统的认知。这样的认为着就从没有再次想迁移工作平台到macOS下，直到2017年的某一天，偶然在网上看到一款字体的截图效果进而想要将这字体应用到自己的Emacs上的时候，发现Ubuntu似乎无论如何都无法调整到macOS下那样的字体渲染效果。所以再次萌生了想要切换平台到macOS系统之下的想法。</p>
+<!-- more-->
+
+<p><a href="https://github.com/yanyingwang/.emacs.d/tree/master/fonts">agave</a>字体在macOS下的渲染效果可见下图：</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/UoLybyxc2vMED54gAxLKdnEm5HFgA_o-xQ397qW9UuDBB_4ksiC_-PmoRuhpC6EspmiAG7GBnImFnr6TKZPVf--Goe4ISCgeNeVdqnLiHwDfJ-1yOtn1KPZ58Nz2nA4NddDvNPrBrRV4sUB_AkPEwZv0KU9bDaoFtrxY1TbUFvK9MrDbIQq8kjSbP6tYR7ssi5s84qsGgJ1ZFsgzJDiz8AuP6TAqm3JDkSXK_kb8sqK3ft37MO44J_Ux90tT9KPxdZiaWIkU5fNu6nZ2G60OrWUXgj2vCHH6ULGIaoZQeOv4XMaH9ZNjhW6vPj48lbjNPzv23V2pcm6HhtdLiffuzQkx5quXFzObsPf5B8X04f6vrvPaJj5WnywGEjL-zyjsnn7be-F1u99t6lOTglih3IeDcsI2AfZ36rYbVPe-IIr4ZMHXrJLra6f5B4Oc3UqgZO5PdwPLoS2GtFtZPiWYZds9Fui8tUO6l4MgEGWh86O0kR8rEyHXxHynFkuYcYe-fwT1eJ4Hm6QBvekZsI0EJYBKGYsazadMzyvO7Tqg2r6zgeAUTdKapliCHWCy2JnZV_mS8znMCDgLZEb4EEfqmZjgrSU5IPIZB85Ju0T-uGB7v2CM4Qw-508Z0ffaPwWwb8KLV1HLsa0GX-erV29OjtpgCKv4nR8KAZqGKKFQeO8cXA8rpv2eNLPGtdIEBnYw8CH9p2JcmY8bb-35AoK6DcFLANjP8QiOU1UTdesG8cIypcpnwRBYr0c=w577-h624-no" alt="font agave on the macOS Emacs" />
+ <p class="caption">font agave on the macOS Emacs</p></div>
+
+<p>但是仅仅因为一款字体就放弃掉自己使用长久了的Linux，对我而言，一时间是难以下定决心的。况且，关键的是自己早已深刻的认识到，macOS在系统的定制性以及快捷键的定制性上，完全及不上Linux。综合而言，这种情况下无论如何都是难以马上让自己做出决定买下一款苹果设备来当主力生产平台的。所以，一种折中的方案是，我在自己2014年配置好的这款台式主机上，安装一个黑苹果来尝试下看看自己是否能够按照自己在Linux上面已经定制好的使用感受和快捷键操作方式来改造好macOS系统。倘若不能改造好，又能否在心理上做出妥协适当的接受新迁移之后的改变。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/TUFmo91AGvtfHB6HyGX3FhM8TAtQOgc7AGEAdLwAK2gDIgGuWBATW5vG0KgVRgO53XycK4ZkXXnunHDaBBdiUbqESnfFFTy97Lj3nG4GSy5NQg4L-hC497yVZZXgKsQwKVkwkrmgrM5024f40odPIRwPYt84C7GhMm6U00w4RmAzDfny5i-g1R3J1cGkHSJYlBe3lgbndUXoJVRqoYZncCD2iez3MTAktZj5Lx8463uURmrnBiJ_0xaYXTXJMl2mvAuB0D6hOw1x8cd6ZV00Be2d3kup2DrG2atitdN7JeOTQgV5LVPDVszB93Hpc7xI1y_ytja-VH_6awsmzcL4iOA9K5BogV2eBxKyYiGvGEPPKzt5__Em6bS5X5GdiErGAjdSafW-an9PxojaKTf_-oe3rIaPqOhvHrhqK327tc_ZgRUgtOxnS9lq2qTN7z_kjoUPSvNEIx4FZnY-M8vld-RJ_2I7FyVuRxQ00o2KsJ8paNnKiDtlNdmL0ZpySc3ZD821SRacCCJ4qvl9Hep45PLyl27s09b1QmOxKJntQzr2DTZZIqVvXCVwcpBCvAL-I-C7sC18ABnGAn8dFO1h6Rkf9XH_NJugybAUPyoIbnajaSZt2HENAFUyNdhSjX_VnvL9YXP_om3zXetWNLo3dJCdpIKuluvqEgtuAj1KFMP74W4krSoExtTHWGRAjh1kxuH1FUeyDrveBCvR1yzeppTFss8BABUw7HpTwGdNzF9MnKpT0u9Q1SM=w733-h977-no" alt="我拆下外壳的迎广MINI主机" />
+ <p class="caption">我拆下外壳的迎广MINI主机</p></div>
+
+<p>时间转眼过去，略去很多过程的，结果上自己终于是部分改造部分适应的接受了macOS系统，最让我头疼感觉设计极其不符合当代的alt+tab问题（macOS是在应用间并非窗口间切换的）也找到了<a href="https://bahoom.com/hyperswitch/">可行的解决办法</a>。另外因为macOS的封闭性和商业性，显然我有了更多的可用应用，并且也很显然，macOS系统有着更加良好的GUI渲染效果，这样下来，基本上我已经有了充足的理由来购置一款苹果硬件设备来当做主力生产平台使用。然而的问题是，自己2014年购置的硬件至今却没有任何缺失或不满足我要求的地方，Windows+Ubuntu+macOS三系统在同一硬件中来去自如我切换，黑苹果甚至也运行的相当完美，我真的是找不到一个合适的理由来说服自己去挥霍一台新硬件出来。唯一有可能的是，我明年可能会改变现有的生活习惯，对移动性办公的要求可能会提升，这或许有可能会让我购置一款Macbook Pro。但不管怎么说，这远不是我当下需要着急要处理的事情。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/PBTFc1rt49S7JJ1UI43T7wfDDto8Njzyr_dNTxfL8p8ysJBu9n5IY0wc1E9Zj360uvl6l1nORYEhLitgnGWQuI5Pwk-eirH1Ic5bs_I3yF99KXNWfN6w_hF2b5_MSrBnQRwlCgUfPZNZdDu41vR8BJhs73n891L9TGZr1b53sW1T0twqR2mENEn-jsrf7E39U2uBPD4QWP1skFDqm9sSJKMAsXZP_U-dggNqr6oYtjSlfONCit7EVS9ov-NxNK_IUFw6zuPOxSolOupykboatySMZ6V3fd5b49mYIACuv8MDIpnnkxMrNZTaDvk1xaEYSFLJyRDnpPcXoNQ3MGfzSn0kZaslgmFZDoPTvT7j7sC8W5A30muJM-srICYs9GrgN5HOX1R8YNOyJW_8RZFKRTIWvr-SAwNLas2lYLR6X23eS6S5jjzOi95CdstUPnsLu4SgnnIEqBdUpDfS5B416_Bv870nZA7ll4Szgq2zCsAfXMxPSW34IN16Kd9jaxAUgV2jTOUWQAGtGtNoeCBNehXlP1QSx9srK8nrHJ2W4_4RLt2Mjwz_Bj0I3Mxvh6IZZnsiYk7JZ9d7eoVL1GWdyHY3bRdwY6xdmkvI2ASV6-NwDQT4dcaSoKYxmUgp4P1D78a84A5UkVk4IMUOQWhTcDBU9SYJE7D4fG-Kko8-8_SfMFhbloA_4CY_4tOuTlodY6JetDn0uJrmZOuaQXM3uu9kmIRScGx6uNt4mtaemF9aEyq61YYUmDA=w586-h357-no" alt="my hackintosh catalina's about" />
+ <p class="caption">my hackintosh catalina&rsquo;s about</p></div>
+
+<h1 id="我的安装过程">我的安装过程</h1>
+
+<p>黑苹果进化到2020年，它的安装已经是非常简单了的。以安装Catalina为例，简单来说，只要按照<a href="https://www.tonymacx86.com/threads/unibeast-install-macos-catalina-on-any-supported-intel-based-pc.285366/">此教程</a>就行了：下载macOS系统，通过UniBeast应用来创建启动盘，安装Catalina，然后通过应用MultiBeast来安装macOS启动程序和驱动程序就可以了。</p>
+
+<p>不过回想从我原本使用黑苹果装high sierra，到现在安装Catalina，因为我特殊的硬件，常常是在重新安装系统的时候遇到一些相同的问题反复在搜索进行着重复的解决，所以我打算写一遍博客记录一下。</p>
+
+<h2 id="我的系统配置">我的系统配置</h2>
+
+<ul>
+ <li>主板为BIOSTAR映泰的Hi-Fi B85N 3D (Intel B85/LGA 1150)</li>
+ <li>CPU为i3&ndash;4150</li>
+ <li>显卡内置为HD4400</li>
+ <li>主硬盘为淘宝买的一款名叫士必得的SSD固态硬盘，打算安装macOS和win10</li>
+ <li>辅硬盘为一个机械硬盘，安装有Ubuntu系统，剩下空间作为数据存储分区</li></ul>
+
+<h2 id="ssd硬盘问题">SSD硬盘问题</h2>
+
+<p>我配置的主机有两块硬盘，一块机械硬盘作为数据盘使用<a href="https://en.wikipedia.org/wiki/ExFAT">exFAT</a>分区（此硬盘另安装有Linux系统作为主硬盘系统无法启动时紧急修复系统使用），另有一块固态硬盘安装的macOS和Windows系统。但在安装时候，我遇到的第一个问题就是，macOS的安装程序无法识别我的固态硬盘，导致我无法安装系统。我的解决方案是，将此固态硬盘通过USB方式作为移动设备连接，启动macOS安装程序将Catalina安装在USB设备的分区中，等到完成安装后先通过USB设备启动新安装的macOS系统，再来安装驱动解决SATA无法识别SSD硬盘的问题。</p>
+
+<h2 id="用multibeast安装驱动">用MultiBeast安装驱动</h2>
+
+<p>等到Catalina安装完成并通过USB启动起来之后，先安装MultiBeast应用，打开后如下图依次选择VoodooHDA、intel Generic AHCI SATA、RealtekRTL8111 v2.2.2和Core Graphics Fixup AKA WhateverGreen来安装这些驱动。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/GgomPamFjbqP3dabdiSL9TnHHHeknF3KrU4wlWo9K-_ypYx1dLFEAkAG9K2zB8b7367V_R9pJtK6-mpMhYMt_zGuXjPeqWbfJmOUduwwXUkBBdlSm1GRZtXUmFmwc2XdoBiiPp9tHafZt851ObLdPwqcuZ3vDbNN2s-TOH-5oqxPcCsFQOt2QWfT1TpWLL5o5MAw7gl7e_1_N-yJpCk_VHnfev-LNXXENs0JM1wt47sGbAAOWUN0QEF6bxeqxV41EVCVBU8jj9ZyQ-oK4i4sKER242jO70tRJKsDr3bN0N0cw2ZUmI64db7oXtBT8dtQFwnuE3jVS1j5UpF8BAHAl2dXcgoLCDf85rJeoNFI2p0Jb-NDaBylRRs7t7MpCTUuFaxsNgUT2quJjZVcsr8P7AOerOt2_RQDrQEofnv4YZhtks89LF0MaMlm52qcPluXxb7p9xKPMxV7viTzbHtiGWC3_JaVxZsp5YiTaZqiCBV2KNNA9T8rWnBmHELi4Ye9RIBKpvE9TWNZAwI8D9J4Wt7rwQpU07pryW1-wKC5oq_brinIvwpi7BvKs2b6NOBdde-v8W524VvgTd_8ffIUogtOXr_0AqZtIUXJYUBBNJtPs-iBHD7rK5-4iDlVtuuSPUsmfaGZpjUvXhIa0Bk0XSw7ztDiBLRRtlu-FwcOwdpkTsjLiqGnDOldpUiGeCZV5r2DoaVPR5pmpGuF4UochPyVe0Gx3I5jhcFGl_yDW24cSvoOx0XPVsE=w803-h630-no" alt="driver1(也可选择VoodooHDA，其支持选择HDMI输出等)" />
+ <p class="caption">driver1(也可选择VoodooHDA，其支持选择HDMI输出等)</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/ubYDWfQL6s1vgXw8GGCNoeo6McLfKe71BetmNP0Jd_Mqh_3a4qvTzlsjaFWKsL_z_bNJoWTK-l_qVRL6gOrG1nLMmxSTjheec2N5Cg637-T2q8Nr6LbHMK9IKPBtoDIFCySF74cWFnqpPpRV5sHSJjtCDOzAw665l4JKHpHTmLFk9FvAKXJR-3UR7a6FfCi45xtovj9uvlOC9wBs_nQHYx2V8WoVcCoOE6nH_MXlrgrtCt5OVgDODQA-l2e6akXsIDG33d7ysj2IaZY5J5Q9_DUKzlmcD65TWuetkGMbawsCI_REPSdJouSWCXF1HxO1dLplsjGkNWcikBPtkP1ZZqURLFg8TnBbF8HNbh1sm4EhokfS9UDMVBiOrAtGbxC3sKLZDesT0E2uP5UD-7dJrbfHc0xv6DyX_X0SHnQmP_NjYT_bkKHlMQooW3QyRhqiJ3lqhqSFuxzREOgZVGVLxXaJTjUV4mQeZpxae1TzwUbOqruyzESXHYfAcbq4lwdFLOBVtcDP6QWi-mcSdN6AFaBGto-1k1jIBR8DsVWrCMG-TjZDqh80zva6vP_ti04dFYoAvMCdOV5tVskNRC1QQENMui5jhu2MTcta_hMVh_LSbifrX1dIYnGpDOaNiZBoQzDt2K_o88pNV-eVRzCC0GUqObPe-TMr8spbfpnrdTQZ_Kx5P3CBPQUrFUK0FYau0NERxaYelW9p9WhTIVa2biCzd1g8w0uZeemfYuaqgWB9-Du5uMRILd0=w809-h638-no" alt="driver2" />
+ <p class="caption">driver2</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/u861ev7zChrw5QBmoft3oo04xoBea-yehVkwuFLdoeqBKA_8AP92BFpCk-_YhjJZmn1kF3Y0yO7u8z3-BOAnlIfmrFABrSO5JcVTWYIM6YwoZLvXq1GA0ijlqNP5Jc4gWp25YfITayTrltd2wk_NVkUXLJdR4zoL2tSQFfJHVSmOmwL3Ztk9IZ36fwkjq7rYjOPy7SuQ4y3GcqkX3k1sq6L7QSUHWiaWM0iWD_dWBOPCvJZZAsiIpT1xaXrY10FUkbZSdMQxdiY1gC7lBNTMkK1bHPJ3eWvhYyL9S7-5F4kbopPM1ZwBKQg9VkznHxRdQeBEbCMqqDPzv2_yDVrqifPTxFV7DkxJ1VnhxO3xuqVd35KZ_JVM1O6-79iwdmfX18Qi8N0cygN1Kmpm6COkzYGGaU9KmEDsQUh7NJpVvB9rwvhY_hgnAj8GOMWarFByvHAHEnoMfUUdeU8MAxf1TySzfvxrfsIsgqk1zr-KCCZ4WuTbzIELo3edE3xAT-Stf0oqwOsN9_oj4r4fBaIcrjE_EoKalZZBYKGHi823fIVV9dVx24iXgVWdzDsFumrnqJm363_AArp4y1vKcoOpM3C02ask7ivIbX7dx5g1utaQrsiJ6_LxlTeYrXJNrqEpLXnrTml_bA3ODIbxzS1iJ5hVrpvvByi4Rl789kcnMb7d3erdMu2YhqrSbNybr4AT-s1lrnRm-aCjDyRxb1wdkf1xkIQ8qToL0HXu9akUdv5c6W6y2Ii14DU=w799-h632-no" alt="driver3" />
+ <p class="caption">driver3</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/oPT8jUbI9vnIAt5RnG8wQJRNfvFUjFxOr7O_MgtYIGHrtGC-UGuZn6F5gRvU0exdeKM51GhQYARYwlhMtFeHarjrZAHeFPe2UwUpTqz9j6LhHtu9wVYmBK-uePLWGecvGSwEsKKLd30OY6LRLKeZJAFgVuphTu3jDk7_DfTttOTMoxPwl7CaNMl1WR9i4I-OW9b5u1AYyuRkyN8203EVAMZFgMWIxS2hOF-espPfp07ZkFWCM4nlNuZFkD0vzRV9RXP8VklQq31qeg2pgxljgsA1NXewTsInmNy7g-bj2NMXu15VlaRCigfAVVMibQibVlR0DSNrvOduC2aHDA3QVlVe0G6C4g_jhP6CPtjHMBmH0yPtBsckcXdd2iq_gRYPncnX-s2bUuEGw6-VOdz-M5X861TZ_I5gFtgBrO6Krv3OQTGwpo3zab2fqEu7EUPfoQNt4vMv7pqezEfYGcNx8Tx0KshDlvTsvxweN5SASX4vHdvgEnV7xcQyNtVCyT2cF1nX_FMxG7zm0ihaPuz0zM3VrrB16nhyXGe_pkVUpZjkO94buGMaW-eIRPkvuYKRAZYICrQ0b7JzxB0QB4g5HDTwdwbJu1aXekfKk-5CvnH8xEKhJur7JZkFnGuPBA3RpHnhYgp3gOPC3rHCSWH5u2NypWtW8HjoRnieo0qKJNpqbk3HHhJhQ1BCb3YKyZ-CTok2oOGeLpQOwQy1GWLCFhSftabLZx4EyK1mQcDQHkrpWDgwBIelOPw=w805-h636-no" alt="driver4" />
+ <p class="caption">driver4</p></div>
+
+<h2 id="ssd硬盘处理appleahciportkext和相关configplist">SSD硬盘处理：AppleAHCIPort.kext和相关config.plist</h2>
+
+<p>安装完成后，再来解决SATA驱动SSD硬盘的问题：此时需要先挂载EFI分区，例如可以打开终端输入<code>sudo mount -t msdos /dev/disk0s1 ~/efi</code>来挂载分区，或者可以直接下载<a href="https://pan.baidu.com/s/1kli3pMeRcvVrJfJLYFB_AA">EFI Mounter应用(提取码3nl1)</a>来操作挂载EFI分区。</p>
+
+<p>为了可以<a href="https://lycabettus.wordpress.com/2019/03/03/asm1061-based-pcie-cards-for-os-x-mojave/">通过SATA来驱动我的SSD硬盘</a>，我需要把<code>AppleAHCIPort.kext</code>内核放在EFI分区的<code>CLOVER/kexts/Other</code>目录下，并且打开<code>CLOVER/config.plist</code>文件在如下图所示的位置添加如下代码：</p>
+
+<div class="brush: plist">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>......
+&lt;dict&gt;
+	&lt;key&gt;Comment&lt;/key&gt;
+	&lt;string&gt;ALPM IO Error AppleAHCIPort&lt;/string&gt;
+	&lt;key&gt;Disabled&lt;/key&gt;
+	&lt;false/&gt;
+	&lt;key&gt;Find&lt;/key&gt;
+	&lt;data&gt;QGACAA==&lt;/data&gt;
+	&lt;key&gt;InfoPlistPatch&lt;/key&gt;
+	&lt;false/&gt;
+	&lt;key&gt;Name&lt;/key&gt;
+	&lt;string&gt;AppleAHCIPort&lt;/string&gt;
+	&lt;key&gt;Replace&lt;/key&gt;
+	&lt;data&gt;AAAAAA==&lt;/data&gt;
+&lt;/dict&gt;
+......
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/8t_or2vxYsp3mR-WSdZvHgKi8AUrmstZeBRp9Cc_7IKTbKMPFT1bvx0g3JC4cPCFv5NDllUFeSoLwVWaz_QaXLJogy-j91VV2XmzUxDSLbXD4ETJm48HViQNt9HlbP46sKiGqRuaKIRMzs00Xbjrjg3xfycPuC1kEnwRU5lzKVWZfaFYKTleX15xlK3nBNNXCtvLbZFp1HqEHt931BrQa0ah1Ml4p7pXRFpLrpeLgJAUpPzKBTAGF29pMBjoFj8Qm8Xv2L1t7AmQCel2nS6xgm9EEBr5H-KB9Hxf432gJwE6ugB6UptVoJTNZUaxsFG8ohCY_tK6Y55m5TmhBKoqatveT0WXwH14faI9yvzH5W7BKdvyoZfWi4yW6y8g_FLsMjR9rOoHN-F8uCsqowHpYEyU_lhg4JZTnqFPjttOPST2U3Jfkk9sSZlbTzy5raT4Vd3zYq0C3aLCVfHH1I1z6rPd589PFWISrzplnPmLOmJ8ZN2X9H6QmVJKmRLSEUq6sRD0BDzM3G0GA6yqMIorw0DRLQgA48rESJ6RI7tX6ierw_CHNmAjp5eF_sPyZxBmkBgQBk6mH30O8gjNEbXPO4iQ2CmYXJE9jIyjoWSWq_egnNO2qui4p7XxeO4JaQY9pcPlwTCul6Zlg9EGnmJoj9lJMW9u24W98ow_Xzw7KJqz7KGOwCTMDz8KJS1Qsx6BMdgS1gYPEGFrSzw4ECqsWtIhEFZUeV_j2TNsfSYF07J02zPKK9fFGQ8=w806-h835-no" alt="content of the config.plist file" />
+ <p class="caption">content of the config.plist file</p></div>
+
+<h2 id="clover相关的问题">Clover相关的问题</h2>
+
+<h3 id="clover的启动项参数">Clover的启动项参数</h3>
+
+<p>在启动Clover的时候，选择[option]按钮，编辑启动参数，加入<code>-v</code>输出详细日志信息，<code>-s</code>进入但用户模式，<code>-x</code>进入安全模式，<code>-f</code>为no kext cache mode。</p>
+
+<h3 id="clover分辨率的问题">Clover分辨率的问题</h3>
+
+<p>这样操作完之后，重启电脑即可（为了方便，我通常都会通过Clover Configurator应用来修改添加<code>-v</code>参数来使之启动的时候默认展示出debug信息）。另外需要注意的是，我的电脑在Clover启动选择启动分区启动的时候，屏幕分辨率很低导致界面图标很大，是通过禁用BIOS中的CSM选项来搞定的。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/i_CoTlPJXlCFPwA07Q95Z1MrM7eMm2xhEUc1q69mCskoytk2788XBePji72FBYduEoRb9QDrX_ni45OePOcssaqkKX8ZUXpdC8V0CBWn4U3rDQPcymwV9W3S2r6flkS3-OcbxTLlqPLRhUkyLpc9_kjHwrRzEGO--W_VB-iO1a_10e9c-FAlUemFDJWGI0pj5mipsfHpXsQnt2wwMBNGeUX6mEzvGt6oIaJcegsNn83I1N-zHWKDeHjS88K2Nl_itpBu6v0iwjbtwGCIMNyHqdMs7Syt3XB3_KEByqHeiy2A9ATvXykJuX7msr4RX5-LRgCG0qgKaRPnyUHGg-q4EhhG9io4-p8mnKuxEtaXMmqQ8Hrt2hA7RJT5iFo5_ZEv6TujUD2CcdvR_aDPG6iNBpxcj-mtFgRSciPHUO5wSb7wyKnlsj1U-HBgMvEcXgnp3P66ftEIfR9a2Ed7lsdcxOQDsLRvIJeITesamCojMdaMPSSY1NfRd1fLzf1g77bO1cLddTNTvarqx-WMqPvPKNBU8TqK-DoKRwKg7k0xxFerCNEra6HHmDFM_fo4WB_fn2dgixKVhJVxk-_37i6OHLvcpMhn__pEw46LdfhsriQRB6gp72WRNMMC-OH38ekEp0yoseDHRMW1ndNtfeToGMnmcC_QBuR7s_8SaN7R1rsbgpuFpOFLmcj392H5tOajQPHp-hgKblAzWk5vYdhQ_fe0Z74GwIox3_xa4yQUuW98wSqBlVr-F-8=w1303-h977-no" alt="BIOS-CSM" />
+ <p class="caption">BIOS-CSM</p></div>
+
+<h3 id="开机boot-menu缺失clover引导选项的问题处理">开机Boot Menu缺失Clover引导选项的问题处理</h3>
+
+<p>此时，再拆掉USB移动硬盘，通过SATA接口将硬盘直接连接到电脑启动macOS（此时如果缺失CLOVER引导项，可以通过安装盘的CLOVER启动选择添加所有启动项来完成）。如果顺利，此时就能正常启动黑苹果了。</p>
+
+<h3 id="clover问题的debug命令">Clover问题的debug命令</h3>
+
+<ul>
+ <li>系统中打开终端，可以通过如下命令来查看加载了的内核：<code>kextstat |grep AHCI</code>。</li>
+ <li>如果Clover启动有任何问题，可以通过<code>bdmesg |more</code>来查看Clover的启动日志。</li>
+ <li>如果需要查看Disk / Partition UUID，macos下可以通过比如：<code>diskutil info /dev/disk1</code>（<code>/Volumes/name</code>也可以）。或者可以在「关于本机」&gt; 「系统报告」里面查看。</li></ul>
+
+<h3 id="移除clover中的启动项">移除Clover中的启动项</h3>
+
+<p>如果觉得Clover的启动项太多，可以通过编辑EFI分区的config.plist文件来隐藏：</p>
+
+<div class="brush: plist">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>......
+&lt;key&gt;GUI&lt;/key&gt;
+&lt;dict&gt;
+	&lt;key&gt;Hide&lt;/key&gt;
+	&lt;array&gt;
+        &lt;string&gt;data&lt;/string&gt;
+        &lt;string&gt;ndata&lt;/string&gt;
+    &lt;/array&gt;
+......
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h3 id="clover默认启动卷">Clover默认启动卷</h3>
+
+<p>另外的是，比如我遇到了在Clover的启动界面，无法从已定义的磁盘启动系统的问题，是通过<code>sudo bdmesg</code>看Clover的日志发现有如下错误<code>GetEfiBootDeviceFromNvram Default boot entry not found</code>来debug的。</p>
+
+<p>其实有一种指定分区可以在Clover下次启动的时候自动选择分区卷来自动启动的方式是：在 Mac 上，选取「苹果菜单」 &gt;「系统偏好设置」，然后点按「启动磁盘」，再点按想要使用的磁盘的图标，然后点按「重新启动」，可见：<a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp1034/mac">https://support.apple.com/zh-cn/guide/mac-help/mchlp1034/mac</a>。</p>
+
+<p>但是，我最后发现我的问题是，EFI分区的Clover启动共有两个引导文件，一个是<code>BOOT/BOOTx64.efi</code>，还有一个是<code>CLOVER/CLOVERX64.efi</code>。如果使用后者引导启动Clover，Clover的默认设置的自启动分区卷和鼠标均不正常工作，而使用前者则并无这个问题。</p>
+
+<h2 id="hd4400显卡显示问题">HD4400显卡显示问题</h2>
+
+<p>驱动似乎是自动识别的，并不需要额外处理，唯一等问题是，打开大型图片等时候卡顿，图片显示异常。</p>
+
+<h2 id="更新系统">更新系统</h2>
+
+<p>另外，如果macos官方有推送系统更新，直接更新重启即可，Clover会自动从Preboot启动来安装更新包进入系统的。</p>
+
+<h2 id="系统损坏处理">系统损坏处理</h2>
+
+<p>例如，如果不小心在安装kext的时候，系统不能正常启动了，可以使用原安装设备启动安全程序，不格式化安装分区，重新安装一次系统即可。</p>
+
+<p>如果系统启动后，旧管理员用户变成了普通用户，此时启动恢复模式或者安装程序，选择命令行工具，编辑<code>/private/etc/sudoers</code>文件，加入自己用户的所有权限，例如可为<code>yanying         ALL = (ALL) ALL</code>。</p>
+
+<p>或者，有说法是删除<code>/private/var/db/.AppleSetupDone</code>可另重新启动系统时进行引导操作。</p>
+
+<p>或者，使用<code>dscl</code>命令例如：<code>dscl . -append /groups/admin GroupMembership yanying</code>。</p>
+
+<h2 id="macos中应用的config文件位置">macOS中应用的config文件位置</h2>
+
+<p>可在： * <code>/Library/Preferences/</code>， <code>~/Library/Preferences</code> * <code>~/Library/Application Support/</code> <code>/Library/Application Support/</code> * <code>~/Library/Caches/</code></p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/01/%E5%AD%90%E9%9D%9E%E9%B1%BC%E7%84%89%E7%9F%A5%E9%B1%BC%E4%B9%8B%E4%B9%90%E7%9A%84%E6%80%9D%E8%80%83.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; 子非鱼焉知鱼之乐的思考</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/04/frog.html"
+               aria-label="Next">
+              <span aria-hidden="true">Frog &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

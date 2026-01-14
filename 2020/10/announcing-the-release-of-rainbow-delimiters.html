@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Announcing the release of Rainbow Delimiters</title>
+    <meta name="description" content="I'm writing this post to announce the release of a new web browser plugin/extention/add-ons called **Rainbow Delimiters**, the source code of it is at: https://www.github.com/yanyingwang/rainbow-delimiters....">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="lisp, javascript, package, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html">
+    <link rel="next" href="/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html">
+    <link rel="prev" href="/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Announcing the release of Rainbow Delimiters</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Announcing the release of Rainbow Delimiters</h1>
+    <p class="meta">
+<time datetime="2020-10-25" pubdate="true">2020-10-25</time> / <span class="tags"><a href="/tags/lisp.html">lisp</a>, <a href="/tags/javascript.html">javascript</a>, <a href="/tags/package.html">package</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-10-25" pubdate="true">2020-10-25</time> / <span class="tags"><a href="/tags/lisp.html">lisp</a>, <a href="/tags/javascript.html">javascript</a>, <a href="/tags/package.html">package</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>I&rsquo;m writing this post to announce the release of a new web browser plugin/extention/add-ons called <strong>Rainbow Delimiters</strong>, the source code of it is at: <a href="https://www.github.com/yanyingwang/rainbow-delimiters">https://www.github.com/yanyingwang/rainbow-delimiters</a>.</p>
+<!-- more-->
+
+<p>The reason why I called it &ldquo;Rainbow Delimiters&rdquo; is that I just directly pick this name up from Emacs&rsquo;s &ldquo;rainbow-delimiters-mode&rdquo;.</p>
+
+<p>And from the first line of <a href="https://www.emacswiki.org/emacs/RainbowDelimiters">the emacswiki page of rainbow-delimiters-mode</a>, it says and I quote:</p>
+
+<blockquote>
+ <p>RainbowDelimiters is a “rainbow parentheses”-like mode which highlights parens, brackets, and braces according to their depth. Each successive level is highlighted a different color. This makes it easy to spot matching delimiters, orient yourself in the code, and tell which statements are at the same depth.</p></blockquote>
+
+<p>So basically, this web browser plugin &ldquo;Rainbow Delimiters&rdquo; has the same effect with Emacs &ldquo;Rainbow Delimiters&rdquo;, except this one is supposed to be used for assisting the reading of source code on HTML pages. They are both very useful for viewing the source code of a Lisp-family dialect language.</p>
+
+<p>The very common scenarios that you would find this web browser plugin useful is at the time of going through code files of one repository from a website like github.com and checking a piece of source code of someone&rsquo;s answer from stackoverflow.com:</p>
+
+<div class="figure"><img src="https://raw.githubusercontent.com/yanyingwang/rainbow-delimiters/master/screenshot/github-com.gif" alt="appearance when this plugin was administered to github's file viewing pages" />
+ <p class="caption">appearance when this plugin was administered to github&rsquo;s file viewing pages</p></div>
+
+<p>When I was developing this plugin, firstly I do it with Google Chrome. But by the time of publishing this extension to <a href="https://chrome.google.com/webstore">Google Chrome&rsquo;s webstore</a>, I realized Google is charging 5 dollars(30RMB) for the register of a new developer.</p>
+
+<p>After research it for a while, I decided to migrate my browser&rsquo;s data and change my browser from Chrome to Firefox. This&rsquo;s because those two browsers almost hold the same package format for developing their&rsquo;s plugins, except Chrome is calling it extension and Firefox is calling it add-ons.</p>
+
+<p>And after using Firefox for a period of time, I would say Firefox has an open mind, and is more lightweight and faster than Chrome. It has a better user experience in some way.</p>
+
+<p>Overall, if you&rsquo;re using Firefox, please click <a href="https://addons.mozilla.org/en-US/firefox/addon/rainbow-delimiters/">here</a> and install it. And if you are using Chrome, you&rsquo;ll have to follow the instruction of README.md by my repository, clone the source code and install it manually.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Managing to coordinate Ruby with a legacy DB</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html"
+               aria-label="Next">
+              <span aria-hidden="true">我的一种关于lisp方言式的汉语编程语言的构思 &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

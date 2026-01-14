@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>使用Ubuntu</title>
+    <meta name="description" content="谈起Ubuntu系统，早在很早的时候2011年开始，我就渐渐的将其作为自己的桌面使用了。大概三年前，因为字体渲染和公司使用MacMini的原因，我全方位的切换成了用MacOS。最近，因为某些契机，我重新安装使用了Ubuntu。三年多不见，Ubuntu在我看来，变得是更加好用了。从某种角度来说，Macos与Windows都难媲美他了。或者说，Ubuntu独有的开放风格，将他的使用性提升到了MacOS和Windows因为自身原因不能轻易企及的程度，就如移动时代的Android，只是他们际遇不同，结果不同罢了。...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="教程">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html">
+    <link rel="next" href="/2021/12/racket-s-let-and-for.html">
+    <link rel="prev" href="/2022/04/how-to-speed-read-the-book-eopl.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">使用Ubuntu</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>使用Ubuntu</h1>
+    <p class="meta">
+<time datetime="2022-03-20" pubdate="true">2022-03-20</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2022-03-20" pubdate="true">2022-03-20</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>谈起Ubuntu系统，早在很早的时候2011年开始，我就渐渐的将其作为自己的桌面使用了。大概三年前，因为字体渲染和公司使用MacMini的原因，<a href="/2020/04/使用黑苹果.html">我全方位的切换成了用MacOS</a>。最近，因为某些契机，我重新安装使用了Ubuntu。三年多不见，Ubuntu在我看来，变得是更加好用了。从某种角度来说，Macos与Windows都难媲美他了。或者说，Ubuntu独有的开放风格，将他的使用性提升到了MacOS和Windows因为自身原因不能轻易企及的程度，就如移动时代的Android，只是他们际遇不同，结果不同罢了。</p>
+<!-- more-->
+
+<p>Ubuntu系统在我看来，完全是的结合了Windows和MacOS的优点，又具有高度的可定制性，发展至2022年对我来说，已经找不到使用另外两个系统的理由了。简单的就拿其系统的键盘快捷键来说，设置的非常合理且非常丰富，其他两个系统完全不是对手，例如：</p>
+
+<ul>
+ <li>[Alt + Esc] 直接切换窗口</li>
+ <li>[Alt + Tab] 在打开的窗口之间切换</li>
+ <li>[Alt + `] 切换至当前窗口应用的其他已打开窗口</li>
+ <li>[Super + Tab] 切换至其他应用的窗口</li>
+ <li>[Ctrl + Super + D] 隐藏所有正常窗口</li>
+ <li>[Shift + Ctrl + Alt + R] 开始或结束屏幕录像</li>
+ <li>[Alt + 鼠标右键] 移动窗口</li>
+ <li>[Super + V] 打开系统通知列表</li>
+ <li>[Shift + PrtSc] 屏幕截图一个选取的区域</li></ul>
+
+<h1 id="麦克风降噪">麦克风降噪</h1>
+
+<p><code>/etc/pulse/default.pa</code>文件的结尾加入： <code>shell
+#Active Noise Removal
+.ifexists module-echo-cancel.so
+load-module module-echo-cancel aec_method=webrtc source_name=mic source_properties=device.description=MicHD
+set-default-source "mic"
+.endif</code> 然后在系统设置中的麦克风输出中选择<code>micHD</code>，扬声器中选择<code>echo cancelled with ....</code>。</p>
+
+<h1 id="4k分辨率">4K分辨率</h1>
+
+<ol>
+ <li>如果使用「设置」中「显示器」的「缩放」进行150的比例缩放，鼠标的移动会变得很奇怪。所以直接使用<code>gnome-tweak-tool</code>工具作如下调整： <img src="https://lh3.googleusercontent.com/pw/AJFCJaVlweARA5hRmfRfQ52viESCfXAnkoql7wq36uA7ArPGMf72YK0vdhW89hQhBWlbyyXm3PuAE11h2wwnxwD_SsA5e6qxSt_eYEkeEE3vy0PrVZp7YerUXo2j21h7KncP7pE2fulCbjotF34GpyV4D6Aezw=w1003-h700-s-no?authuser=0" alt="AgaveXX-Bold字体在Ubuntu系统的Emacs下的代码" /></li>
+ <li>在<code>/etc/default/grub</code>中添加<code>RUB_CMDLINE_LINUX_DEFAULT="libata.noacpi=1"</code>，如果开机报错：<code>ACPI BIOS Error(bug)：Could not resolve symbol ［\SB.PCI0.SAT0.S</code>。</li></ol>
+
+<h1 id="emacs的字体渲染问题">Emacs的字体渲染问题</h1>
+
+<p>遥想三四年前，我那时候开始使用<a href="https://github.com/yanyingwang/favfonts">Agave字体</a>，但是发现在我的Ubuntu下的显示效果不如MacOS下。最近重新看了下这个问题，才明白这个本质上是Emacs字体渲染的问题，当在Emacs编辑器中设置一个字体时，如果并没有安装该字体的Bold版本，比如只安装了<a href="https://github.com/yanyingwang/favfonts/blob/master/Agave-Regular.ttf">Agave-Regular</a>字体却并没有安装<a href="https://github.com/yanyingwang/favfonts/blob/master/Agave-Bold.ttf">Agave-Bold</a>，则设置Bold在Emacs系统中是不能生效的。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AJFCJaUaZnN2M2hfjMmZ9ip0SEXaBgAWLsfkjdxHGX3ypdGqagGkVKBpxnJBGNWQ2rcIkn45ID2X8ywnWQ3U4_Nz1cCEkqKmOszze7b-hQ70IFAM-AVPePJohPVJL5oAKL5gmEk0yUzDHX3gHH4rUiQrMtyvHQ=w916-h1111-s-no?authuser=0" alt="AgaveXX-Bold字体在Ubuntu系统的Emacs下的代码" />
+ <p class="caption">AgaveXX-Bold字体在Ubuntu系统的Emacs下的代码</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AM-JKLWT7D-QTLRU1Iw72QjT1M0sCi2oo4gBucjw7YVm8fanCb72EC579yOIOy5gmv8t6CqBVza1JW738xrPlpfS6qBFK0G0th4_bKaY4RIqkelcZCpIKbzu4mm0R5LnJGtu0UACtdzt3Z6pLREuCiSaYVEusQ=w828-h968-no" alt="使MonacoBSemi字体的英文与使用文泉微米黑的中文字体对齐" />
+ <p class="caption">使MonacoBSemi字体的英文与使用文泉微米黑的中文字体对齐</p></div>
+
+<h2 id="bold字体">Bold字体</h2>
+
+<p>然而不管是在Ubuntu系统还是MacOS系统比如是在Terminal中，假设配置使用了一个字体的Bold但却并没有安装该字体的Bold版本，则系统会自动处理渲染出该字体的Bold。不同的是，因为MacOS系统的字体渲染非常的优秀（至此相信乔布斯曾经演讲说自己大学辍学前旁听过美术课所言不虚），所以即使是只安装了Regular字体比如Agave-Regualar，其系统的渲染效果肉眼看起来辨识度也好似安装在使用了Bold一样，我因此误以为我在MacOS下设置Agave字体的Bold代码生效了，但其实没有，这也是为什么我以前在MacOS的Emacs中设置Agave使用Book有时候看起来比Bold显示的字体还会更粗一些的原因。</p>
+
+<p>鉴于Ubuntu并没有MacOS系统的这种渲染效果，我索性安装FontForge手动调整了Agave字体的Weight，可见我的<a href="github.com/yanyingwang/agaveX">AgaveXX-Bold</a>和<a href="https://github.com/yanyingwang/favfonts">AgaveB</a>字体。另外我收集的加粗版的Monaco字体，和本身就加粗的苹果苹方字体（PingFangSC）也在里面。</p>
+
+<h2 id="中英文等宽">中英文等宽</h2>
+
+<p>Emacs另外的一个跟字体设置有关的问题是中文显示的问题，一个汉字对应的宽度应该和两个英文字母一样，而这本质上算是Emacs需要处理的问题，无关于系统，解决方法就是中英文使用不同字号的字体。</p>
+
+<p>Emacs中可用<code>(set-face-attribute 'default nil :font "Agave-12:bold")</code>来设置英文字体，使用<code>(dolist (charset '(kana han symbol cjk-misc bopomofo gb18030)) (set-fontset-font t charset "文泉驿等宽微米黑-12:normal"))</code>来设置中文字体，可见：<a href="https://github.com/yanyingwang/.emacs.d/blob/b9a3c93f6f1d3b02df9c849a6700251eb97d9d3c/init/face/font.el#L93">我的Emacs配置代码</a>。</p>
+
+<h2 id="行间距">行间距</h2>
+
+<p>另外的是，Emacs可以通过<code>(setq-default line-spacing 3)</code>来调整行间距的。</p>
+
+<h1 id="ubuntu下字体的调整">Ubuntu下字体的调整</h1>
+
+<h2 id="使用ubuntumono-bront字体">使用UbuntuMono-Bront字体</h2>
+
+<p>Ubuntu系统自带一款等宽字体叫Ubuntu Mono，该字体的中文部分应该使用的是文泉字体。而他的英文部分其实不够好看，可以安装他的一个修改版字体<a href="https://github.com/yanyingwang/favfonts/blob/master/UbuntuMono-Bront.ttf">Ubuntu Mono - Bront</a>，在终端中显示效果更好。</p>
+
+<h2 id="文泉微米黑的问题">文泉微米黑的问题</h2>
+
+<p>如上所说，Ubuntu系统中默认使用的字体的中文部分应该借自文泉正黑，正黑字体看起来更高，而文泉微米黑较之会更方正且会更粗一切。文泉字体的安装命令是：<code>aptitude install fonts-wqy-zenhei fonts-wqy-microhei xfonts-wqy ttf-wqy-microhei ttf-wqy-zenhei</code>。</p>
+
+<p>然而，安装完成会依然觉得效果不如MacOS，比如Ubuntu下的Ibus输入法的输入框字体即使改成使用文泉依旧觉得偏细，我起初以为这是Ubuntu系统渲染的问题，最后发现其实某种程度上跟文泉字体有些关系。</p>
+
+<p>查一下发现MacOS系统默认的中文字体叫苹方（PingFangSC），该字体共有6种粗细的变体字体（UltraLight/Thin/Light/Regular/Medium/Semibold）。相比之下，文泉字体只有一种常规字体并无任何变体字体，其Bold字体完全依赖于系统的字体渲染程序，而这就是Ibus的中文输入框字体不够粗的原因。</p>
+
+<h2 id="使用苹方pingfangsc简体中文字体">使用苹方（PingFangSC）简体中文字体</h2>
+
+<p>细看MacOS系统的苹方字体，会发现即使是该字体的Regular变种字体，也比其他类似的字体更粗一些，字体更粗我觉得是会让人看起来更舒服的，<a href="https://github.com/yanyingwang/favfonts">下载</a>后双击安装或者复制到<code>~/.local/share/fonts/</code>目录然后执行命令<code>fc-cache -fv</code>刷新下字体缓存。</p>
+
+<p>另外扩展开来，如果把苹方字体或其更粗的变体字体用作系统界面的主字体或浏览器默认字体，效果也非常的好。</p>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AM-JKLVX9WDzWvJQFqMGQ7TriVegdQV-bFdIHiA6NZzI30u3SBIWIR28L7BzvQRARxIlFraezYnTi_YlPvVNdibEclTrn3fnGA_gepHuU9L7m4aVI75tC85ZFfFWF7pGWAoucdJx9JTeZPi4CJ3bmKEv8zhaMw=w1012-h749-no?authuser=0" alt="Ubuntu优化" />
+ <p class="caption">Ubuntu优化</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AM-JKLV2gC-4CxY3Mz4Y7-8MqK7jkPeDawb91SN5dcOXx88giEAEoW1vsGAHjTCLSK6GlqV0cGOfbkoL-Nu8NgaM_lmkLzxO6b_5xtI2AQJ3tSGGNmfI8QOcDP0ap-TbdA8jSC5GYymhND8YjgoTwcq9xsM0bw=w972-h908-no?authuser=0" alt="Ubuntu系统设置" />
+ <p class="caption">Ubuntu系统设置</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUinaO4jCvOzU6kgmOgmqhZ7EhaN5bYS_ZAp2d46fBIJx-hA7xBoLShYMvCAGzOAZIjx4vXLz1GcAhkCz8284Cwl_9BmTkoEpvUMcuQMuXxwzORDewKvdUVLvjHBLdt2S0VHHnc32RYG9FHlwF3kYcrEg=w860-h836-no?authuser=0" alt="Ubuntu文件管理" />
+ <p class="caption">Ubuntu文件管理</p></div>
+
+<div class="figure"><img src="https://lh3.googleusercontent.com/pw/AM-JKLUtQO2f014jw88_ILHPJ_OvXETlsP3EXmuX1YuUJgbK0YCueD8mJIdkNlGJTAdcbIVi1obm8RGLarHG1mLt9DJO7qzbWovhzocKpVSCl_CuSGyLqLlDdz8h7SfMq8RKsAwNiDZ4xTIQMdIa1d1cFjdZCw=w851-h864-no?authuser=0" alt="Ubuntu扩展" />
+ <p class="caption">Ubuntu扩展</p></div>
+
+<h1 id="休眠功能">休眠功能</h1>
+
+<p>根据<a href="https://askubuntu.com/questions/1240123/how-to-enable-the-hibernate-option-in-ubuntu-20-04">论坛里面的指引</a>： 1. <code>sudo apt install pm-utils hibernate</code>来安装之后，把<code>blkid | grep swap</code>显示的swap分区的UUID以<code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=&lt;YOUR_COPIED_UUID&gt;"</code>的形式替换<code>/etc/default/grub</code>文件中的<code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"</code>那行。 2. 运行<code>sudo update-grub</code>来更新启动项。 3. 使用命令<code>sudo systemctl hibernate</code>来启动休眠，或者安装<a href="https://extensions.gnome.org/extension/3070/simpler-off-menu/">SeSimplr Off Menu</a>系统插件以增加系统休眠项到系统的左上角菜单栏来使用。</p>
+
+<h1 id="ubuntu系统安装">Ubuntu系统安装</h1>
+
+<p>使用<a href="https://www.balena.io/etcher/">balenaEtcher</a>可以非常容易的制作一个USB启动U盘来进行安装，Ubuntu官方有<a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-macos">详尽文档</a>。</p>
+
+<p>我一般都是先划分一个单独的20G空间安装系统，使用一段时间发现需要空间再扩展系统容量，以防使用度不高或者感觉新系统不够稳定想继续使用旧系统的话，就直接删掉新系统。如果需要扩展系统分区容量，建议使用GParted来操作。</p>
+
+<p>Ubuntu系统，除了传统的可以使用apt来安装系统软件外，现在有了另外三种方式：</p>
+
+<ul>
+ <li><a href="https://zh.wikipedia.org/wiki/Snap_(package_manager)">Snap</a>：<a href="https://snapcraft.io">官方网站</a>或使用<code>snap</code>命令搜索安装。</li>
+ <li><a href="https://zh.wikipedia.org/wiki/Flatpak">Flatpak</a>：<a href="https://flatpak.org">官方网站</a>，<a href="https://flatpak.org/setup/Ubuntu">安装Flatpak</a>。</li>
+ <li><a href="https://zh.wikipedia.org/wiki/AppImage">AppImage</a>：<a href="https://appimage.github.io">官方网站</a>下载运行。</li></ul>
+
+<h1 id="系统自定义设置">系统自定义设置</h1>
+
+<ul>
+ <li>整点半点自动报时功能：使用crontab实现，<a href="https://github.com/yanyingwang/hours-chime">https://github.com/yanyingwang/hours-chime</a>。</li>
+ <li>交换ctrl和capslock：需要安装<code>sudo aptitude install gnome-tweak-tool</code>然后在<code>键盘和鼠标</code>的<code>其他布局选项</code>中设置。</li>
+ <li>vim和系统共享粘贴板：<code>sudo aptitude install vim-gtk</code>。</li>
+ <li>挂载exfat分区：打开<code>磁盘</code>程序，编辑相应分区的<code>挂载选项</code>，填写加入选项<code>uid=1000,gid=1000,dmask=022,fmask=133</code>，可以参见<a href="http://manpages.ubuntu.com/manpages/focal/en/man8/mount.exfat.8.html">Ubuntu Web Manuals</a>。</li>
+ <li>我收集的编程字体：<a href="https://github.com/yanyingwang/favfonts">https://github.com/yanyingwang/favfonts</a>。</li></ul>
+
+<h1 id="系统扩展和软件">系统扩展和软件</h1>
+<!-- * Firefox切换使用中国同步服务器：直接安装插件<https://g-fox.cn/chinaedition/addons/cpmanager/cpmanager-latest.xpi>。-->
+
+<ul>
+ <li>Firefox Omega规则：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt 。</li>
+ <li>Firefox的视频播放：需要安装ffmpeg<code>sudo apt install ffmpeg</code>。</li>
+ <li>Shadowsocks-Qt5：使用<a href="https://github.com/probonopd/go-appimage/blob/master/src/appimaged/README.md">appimage</a>在<a href="https://appimage.github.io/Shadowsocks/">AppImageHub</a>下载。</li>
+ <li>Qv2ray: 因为Shadowsocks很容易被屏蔽，所以我转而使用Qv2ray，Qv2ray也可以添加一个订阅地址，然后自动更新订阅里面的所有可用连接，安用命令<code>snap install Qv2ray</code>，然后v2ray内核可以在其<a href="https://github.com/v2fly/v2ray-core/releases/tag/v4.31.0">github的release页面</a>下载比如linux的可为v2ray-linux&ndash;64.zip。</li>
+ <li>词典：<code>sudo aptitude install goldendict</code>使用第三方词库：<a href="https://downloads.freemdict.com/">索引1</a> / <a href="http://louischeung.top:225/">索引2</a>。</li>
+ <li>VLC：加入PPA源<code>sudo add-apt-repository ppa:savoury1/vlc3</code>或者直接使用snap安装<code>sudo snap install vlc</code>。</li>
+ <li>安装最新版terminator终端（旧版无法调整字体行高）：需要加入PPA源<code>sudo add-apt-repository ppa:mattrose/terminator</code>。</li>
+ <li>安装Dropbox：参见<a href="https://www.dropbox.com/install-linux">官方文档</a>。</li>
+ <li>安装qbittorrent：https://github.com/c0re100/qBittorrent-Enhanced-Edition</li>
+ <li>icloud-for-linux：snap安装命令<code>snap install icloud-for-linux</code>。</li>
+ <li>electronic-wechat：使用snap安装命令<code>snap install electronic-wechat</code>。</li>
+ <li>gedit-plugin-bracket-completion / gedit-plugin-draw-spaces &hellip; Gedit文本编辑器的插件（apt命令安装）。</li>
+ <li>gnome-sushi: 实现在文件管理中类似MacOS系统的按空格键预览文件的功能（apt命令安装）。</li>
+ <li><code>sudo apt-get install gnome-clock</code></li>
+ <li><code>aptitude install cutmp3</code></li>
+ <li>其他：<code>snap install pinta telegram</code>，<code>sudo aptitude install proxychains4</code>。</li></ul>
+
+<h1 id="我的gnome-extensions">我的Gnome Extensions</h1>
+
+<p>Ubuntu把系统的可定制化发挥到了极致，其系统的整个桌面有<a href="https://extensions.gnome.org/">官方的插件市场</a>可以选装定制，安装完Gnome的浏览器插件即可直接从官方插件市场中点击安装，安装完的插件在本地系统的位置是<code>~/.local/share/gnome-shell/extensions/</code>。</p>
+
+<ul>
+ <li>GSConnect by dlandau：手机电脑设备共享通知信息。</li>
+ <li>Net speed Simplified by prateeksu：可以在Ubuntu桌面的顶部显示当前网络使用的带宽。</li>
+ <li>Lock Keys by kazimieras.vaina：当按下CapsLock或者NumberLock按键时，显示桌面OSD通知告知开关状态。</li>
+ <li>Nothing to say by wbolster：桌面顶部状态栏增加麦克风开关图标，并可设置快捷按键开关之。</li>
+ <li>Bedtime Mode by ionutbortis：设置一个时间使屏幕色彩变黑白，以提醒用户睡眠时间已到。</li>
+ <li>Lunar Calendar 农历 by Nei：增加中国时辰和日历日期到顶部的时间日期显示中。</li>
+ <li>Notifications Alert by hackedbellini：如果系统有通知，则在闪烁显示系统顶部状态栏的时间以提醒用户。</li>
+ <li>Always Indicator by mzur：如果系统有通知，则在系统顶部状态栏时间的右边一直显示一个原点。</li>
+ <li>Show Desktop Button by JSZVB：增加一个桌面图标到顶部状态栏中，以供点击后隐藏窗口查看桌面和恢复隐藏窗口。</li>
+ <li>Tweaks &amp; Extensions in System Menu by philippetroin：将<code>优化</code>、<code>扩展</code>和<code>设置</code>选项加入到系统顶部状态栏最右边的关机图标下拉菜单栏内。</li>
+ <li>Customize IBus by HollowMan6：自定义Ibus输入法的设置（但是我最后还是使用了ibus的搜狗输入法）。</li>
+ <li>Overview Navigation by nathanielsimard：桌面预览时，按下<code>space</code>按键后赋予窗口字母，以供使用键盘快速切换。</li>
+ <li>Workspace Switcher Manager by GdH：自定义切换工作区时的显示。</li>
+ <li>Jiggle by jeffchannell：像MacOS一样，当快速晃动鼠标时，鼠标会变大，以供用户可以在屏幕上轻松的找到鼠标位置。</li>
+ <li>Eye and Mouse Extended by alexey.lovchikov：在系统顶部状态栏增加一个眼睛图标，眼睛会一直指向着屏幕上的鼠标。</li>
+ <li>Mouse battery by mouse-battery：显示鼠标电量图标在系统顶部状态栏。</li>
+ <li>Color Picker by grroot：点击选取查看桌面任意部分的颜色。</li>
+ <li>Titlebar Screenshot by jmaargh：在窗口的右键菜单里加入截屏当前窗口的选项。</li>
+ <li>Screenshot Locations by TimurKiyivinski：自定义系统截图程序的储存位置。</li>
+ <li>EasyScreenCast by tobias47n9e：屏幕录像。</li>
+ <li>Panel OSD by jens：设置系统通知的位置和大小。</li>
+ <li>Better OSD by StopLemming：自定义系统OSD通知的位置和大小，并且使其透明。</li>
+ <li>GNOME Fuzzy Search by fffilo：使系统搜索的时候可以模糊搜索，比如搜索<code>ffx</code>可以搜索到<code>firefox</code>程序.</li>
+ <li>Places Status Indicator by fmuellner：在系统顶部的状态栏增加<code>位置</code>图标以供快速打开文件。</li>
+ <li>Sound Input &amp; Output Device Chooser by kgshank：在系统顶部状态栏最右边的关机图标菜单栏中加入<code>音频设置</code>选择选项。</li>
+ <li>其他：Clipboard Indicator by Tudmotu，Customize Clock on Lock Screen by pratap@fastmail.fm，Freon by UshakovVasilii，Vitals by corecoding</li></ul>
+
+<h1 id="emacs-style-shortcut">Emacs style shortcut</h1>
+
+<p>在Ubuntu系统的各个输入框和进行文本输入时，如何最大程度的兼容使用Emacs风格的快捷键，比如<code>Ctrl+a</code>到行首，<code>Ctrl+b</code>光标向后移动等。 1. 先安装<code>gnome-tweak-tool</code>然后在<code>键盘和鼠标</code>中找到<code>Emacs输入</code>打开。 2. 删除或者重命名<code>/usr/share/themes/Emacs/gtk-3.0/gtk-keys.css</code>，然后创建<code>~/.config/gtk-3.0/gtk.css</code>文件，内容为：</p>
+
+<div class="brush: css">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="c">/* ~/.config/gtk-3.0/gtk.css */</span>
+
+<span class="c">/*run below code on terminal to reload gtk theme:</span>
+<span class="c">function reload_gtk_theme() {</span>
+<span class="c">  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)</span>
+<span class="c">  gsettings set org.gnome.desktop.interface gtk-theme &#39;&#39;</span>
+<span class="c">  sleep 1</span>
+<span class="c">  gsettings set org.gnome.desktop.interface gtk-theme $theme</span>
+<span class="c">}</span>
+<span class="c">reload_gtk_theme</span>
+<span class="c">*/</span>
+
+
+<span class="c">/*</span>
+<span class="c">https://askubuntu.com/questions/221291/remove-ugly-fat-bazel-from-gnome-terminal-with-multiple-tabs</span>
+<span class="c">https://www.preining.info/blog/2020/03/de-uglify-gtk3-tabs-of-terminals/</span>
+
+<span class="c">https://bbs.archlinux.org/viewtopic.php?id=221876</span>
+<span class="c">https://wiki.archlinux.org/title/Terminator#GTK.2B_customization</span>
+<span class="c">*/</span>
+
+<span class="p">.</span><span class="nc">terminator-terminal-window</span><span class="w"> </span><span class="nt">notebook</span><span class="w"> </span><span class="nt">tab</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">800</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">terminator-terminal-window</span><span class="w"> </span><span class="nt">notebook</span><span class="w"> </span><span class="nt">tab</span><span class="w"> </span><span class="nt">button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">min-height</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">min-width</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/* </span>
+<span class="c">below code is the full defination of th keybinding of emacs style, instead of </span>
+<span class="c">@import url("file:///usr/share/themes/Emacs/gtk-3.0/gtk-keys.css"); </span>
+<span class="c">we should `rm /usr/share/themes/Emacs/gtk-3.0/gtk-keys.css` first. </span>
+<span class="c">*/</span>
+
+
+<span class="c">/* A keybinding set implementing Emacs-like keybindings */</span>
+
+<span class="c">/* Bindings for GtkTextView and GtkEntry */</span>
+<span class="p">@</span><span class="k">binding-set</span><span class="w"> </span><span class="nt">gtk-emacs-text-entry</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;alt&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;&lt;shift&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;alt&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;&lt;shift&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(words,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;a"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;a"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;e"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;e"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;w"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"cut-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;w"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"copy-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;y"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"paste-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;w"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"cut-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;&lt;shift&gt;w"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"cut-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;x"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"cut-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;c"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"copy-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;v"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"paste-clipboard"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;d"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(chars,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;d"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(word-ends,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;k"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;k"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;backslash"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                      </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;&lt;shift&gt;space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                             </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                      </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;KP_Space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                         </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;&lt;shft&gt;KP_Space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                               </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;KP_Space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(whitespace,</span><span class="w"> </span><span class="err">1)</span>
+<span class="w">                         </span><span class="err">"insert-at-cursor"</span><span class="w"> </span><span class="err">("</span><span class="w"> </span><span class="err">")</span><span class="w">  </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c">/*</span>
+<span class="c">   * Some non-Emacs keybindings people are attached to</span>
+<span class="c">   */</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;u"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span>
+<span class="w">                   </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(paragraph-ends,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;h"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(chars,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;h"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(word-ends,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;h"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(word-ends,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="c">/* bind "&lt;ctrl&gt;w" { "delete-from-cursor" (word-ends, -1) }; */</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;BackSpace"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(word-ends,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;backspace"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"delete-from-cursor"</span><span class="w"> </span><span class="err">(word-ends,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Bindings for GtkTextView */</span>
+<span class="p">@</span><span class="k">binding-set</span><span class="w"> </span><span class="nt">gtk-emacs-text-view</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;ctrl&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;alt&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">-1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">0)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;shift&gt;&lt;alt&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(display-lines,</span><span class="w"> </span><span class="err">1,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"set-anchor"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;KP_Space"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"set-anchor"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="c">/*</span>
+<span class="c"> * Bindings for GtkTreeView</span>
+<span class="c"> */</span>
+<span class="p">@</span><span class="k">binding-set</span><span class="w"> </span><span class="nt">gtk-emacs-tree-view</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;s"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"start-interactive-search"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;&lt;alt&gt;&lt;shift&gt;s"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"start-interactive-search"</span><span class="w"> </span><span class="err">()</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-cursor"</span><span class="w"> </span><span class="err">(logical-positions,</span><span class="w"> </span><span class="err">-1)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="c">/*</span>
+<span class="c"> * Bindings for menus</span>
+<span class="c"> */</span>
+<span class="p">@</span><span class="k">binding-set</span><span class="w"> </span><span class="nt">gtk-emacs-menu</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(next)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(prev)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(child)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;ctrl&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(parent)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;n"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(next)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;p"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(prev)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;f"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(child)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="w">  </span><span class="nt">bind</span><span class="w"> </span><span class="s2">"&lt;alt&gt;b"</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">"move-current"</span><span class="w"> </span><span class="err">(parent)</span><span class="w"> </span><span class="p">}</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nt">entry</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">-gtk-key-bindings</span><span class="p">:</span><span class="w"> </span><span class="n">gtk-emacs-text-entry</span><span class="p">,</span><span class="w"> </span><span class="n">gtk-emacs-text-view</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">textview</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">-gtk-key-bindings</span><span class="p">:</span><span class="w"> </span><span class="n">gtk-emacs-text-entry</span><span class="p">,</span><span class="w"> </span><span class="n">gtk-emacs-text-view</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">treeview</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">-gtk-key-bindings</span><span class="p">:</span><span class="w"> </span><span class="n">gtk-emacs-tree-view</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">GtkMenuShell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">-gtk-key-bindings</span><span class="p">:</span><span class="w"> </span><span class="n">gtk-emacs-menu</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2021/12/racket-s-let-and-for.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Racket&rsquo;s let and for</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2022/04/how-to-speed-read-the-book-eopl.html"
+               aria-label="Next">
+              <span aria-hidden="true">how to speed-read the book EOPL &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

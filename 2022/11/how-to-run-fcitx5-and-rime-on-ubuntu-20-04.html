@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>How to run Fcitx5 and Rime on Ubuntu 20.04</title>
+    <meta name="description" content="In the recent few days, I tried to install and run Fcitx5 and Rime on my Ubuntu 20.04, and I'll be summing it up in this post....">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="教程, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html">
+    <link rel="next" href="/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html">
+    <link rel="prev" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">How to run Fcitx5 and Rime on Ubuntu 20.04</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>How to run Fcitx5 and Rime on Ubuntu 20.04</h1>
+    <p class="meta">
+<time datetime="2022-11-08" pubdate="true">2022-11-08</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2022-11-08" pubdate="true">2022-11-08</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>In the recent few days, I tried to install and run Fcitx5 and Rime on my Ubuntu 20.04, and I&rsquo;ll be summing it up in this post.</p>
+<!-- more-->
+
+<h1 id="ibus-versus-fcitx">Ibus versus Fcitx</h1>
+
+<p><a href="https://github.com/ibus/ibus">Ibus</a> and <a href="https://fcitx-im.org">Fcitx</a> are both input methods to be used to input diverse language characters. If you&rsquo;re struggling to decide which one to choose, I would suggest using the latter one for below points:</p>
+
+<ol>
+ <li>Check out the GitHub commits of them, you would notice Fcitx is much more actively developing now.</li>
+ <li>From my using experience, Fcitx certainly ships more features and works more smoothly as well.</li></ol>
+
+<h1 id="what-is-rime-and-why">What is Rime and why</h1>
+
+<p><a href="https://rime.im/">Rime</a> is also an input method, but it especially resides in Fcitx and Ibus with aiming to provide a highly flexible way to input characters:</p>
+
+<ol>
+ <li>By using it you can mix lots of input methods together and define your own typical input method scheme and dictionaries.</li>
+ <li>By using it you can customize and use an Emacs style shortcut(e.g. <code>Ctrl/Alt + N/P/B/F/V</code>) to select and navigate between candidate characters from your typing, and this feature is supported by Rime out of the box.</li></ol>
+
+<p>I initially use Rime later after I started to design my <a href="http://www.yanying.wang/ming/">Ming-Lang</a>. Since in my Ming Language, I need to design new Chinese characters and give them unicode codes to input them into the computer. If you&rsquo;re interested, check out my <a href="https://github.com/yanyingwang/rime_custom">rime_custom</a> repo for more.</p>
+
+<h1 id="what-is-the-hard-part">What is the hard part</h1>
+
+<p>It&rsquo;s not easy to run Fcitx5 and Rime on Ubuntu 20.04 due to library dependency. A much more easily achieved way could be updating Ubuntu to a newer version, but that is not on my wish list because of the incompatibility of some system plugins I&rsquo;m using now.</p>
+
+<p>I also tried to install the fcitx5 packages from the result of <code>aptitude search fictx5</code>, but there are two fatal flaws make me give it up:</p>
+
+<ol>
+ <li>No viable GUI configure tool here, which means inconvenient configuring regardless of successfully installing Fcitx5.</li>
+ <li>No Rime package here, which means impossible of using Rime irrespective of successfully installing Fcitx5.</li></ol>
+
+<h1 id="how-to-install-fcitx5-with-using-flatpak">How to install Fcitx5 with using Flatpak</h1>
+
+<p>You may have ever heard of Docker, while Flatpak is the same kind of thing in terms of using the <a href="https://en.wikipedia.org/wiki/OS-level_virtualization">OS-levle virtualization</a>.</p>
+
+<p>So in simple words, by providing a sandbox environment for an application and its dependencies libraries, Flatpak is capable and thus can be used to install an application with getting rid of library dependencies of current system.</p>
+
+<p>Then there comes a way to install fcitx5 and fcitx5-rime with Flatpak:</p>
+
+<ol>
+ <li>Follow the <a href="https://flatpak.org/setup/">official guide page</a> and install flatpak for Ubuntu.</li>
+ <li>Use command <code>flatpak install org.fcitx.Fcitx5 org.fcitx.Fcitx5.Addon.Rime --system</code> to install fcitx5 and fcitx5-rime.</li></ol>
+
+<h1 id="how-to-debug-rime">How to debug Rime</h1>
+
+<p>Since we installed Rime with Flatpak and the Rime application accordingly exists in a standalone namespace provided by Flatpak, we have to use the <code>flatpak</code> command to access it:</p>
+
+<div class="brush: shell">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>➜<span class="w">  </span>~<span class="w"> </span>flatpak<span class="w"> </span>ps
+Instance<span class="w">   </span>PID<span class="w">  </span>Application<span class="w">      </span>Runtime
+<span class="m">1453884543</span><span class="w"> </span><span class="m">1670</span><span class="w"> </span>org.fcitx.Fcitx5<span class="w"> </span>org.kde.Platform
+➜<span class="w">  </span>~
+➜<span class="w">  </span>~<span class="w"> </span>flatpak<span class="w"> </span>enter<span class="w"> </span><span class="m">1453884543</span><span class="w"> </span>bash
+bash-5.1$
+bash-5.1$
+bash-5.1$<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/tmp/rime.fcitx-rime.*
+<span class="o">==</span>&gt;<span class="w"> </span>/tmp/rime.fcitx-rime.INFO<span class="w"> </span>&lt;<span class="o">==</span>
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253913<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_data.cc:223<span class="o">]</span><span class="w"> </span>traverse:<span class="w"> </span>simplifier/option_name
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253917<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_component.cc:82<span class="o">]</span><span class="w"> </span>read:<span class="w"> </span>simplifier/opencc_config
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253921<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_data.cc:223<span class="o">]</span><span class="w"> </span>traverse:<span class="w"> </span>simplifier/opencc_config
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253926<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_component.cc:104<span class="o">]</span><span class="w"> </span>read:<span class="w"> </span>simplifier/excluded_types
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253929<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_data.cc:223<span class="o">]</span><span class="w"> </span>traverse:<span class="w"> </span>simplifier/excluded_types
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253939<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_component.cc:104<span class="o">]</span><span class="w"> </span>read:<span class="w"> </span>switches
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253943<span class="w">     </span><span class="m">2</span><span class="w"> </span>config_data.cc:223<span class="o">]</span><span class="w"> </span>traverse:<span class="w"> </span>switches
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253952<span class="w">     </span><span class="m">2</span><span class="w"> </span>engine.cc:123<span class="o">]</span><span class="w"> </span>updated<span class="w"> </span>option:<span class="w"> </span>ascii_mode
+I1109<span class="w"> </span><span class="m">15</span>:09:19.253962<span class="w">     </span><span class="m">2</span><span class="w"> </span>engine.cc:123<span class="o">]</span><span class="w"> </span>updated<span class="w"> </span>option:<span class="w"> </span>simplification
+I1109<span class="w"> </span><span class="m">15</span>:23:56.695946<span class="w">     </span><span class="m">2</span><span class="w"> </span>engine.cc:92<span class="o">]</span><span class="w"> </span>engine<span class="w"> </span>disposed.
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<ol>
+ <li>Use <code>flatpak ps</code> to list out all the running applications.</li>
+ <li>From the result of step 1 we have the instance id of <code>org.fcitx.Fcitx5</code>, which is <code>519459212</code>. Then we use <code>flatpak enter 519459212 bash</code> to start up a <code>bash</code> console within the namespace of Fcitx5.</li>
+ <li>At last we use <code>tail -f /tmp/rime.fcitx-rime.*</code> to check out all the logs of Rime.</li></ol>
+
+<h1 id="troubleshooting-fcitx5">Troubleshooting Fcitx5</h1>
+
+<p>After I installed fcitx5 with flatpak, there is a time that I cannot switch input method schemes of Rime within Fcitx5 after booting the Ubuntu system, until I notice that there is a <code>fcitx-diagnose</code> command, the output message of running which shows that some system environment variables are missing in my system. Then I followed it and put the below code to <code>~/.xprofile</code>:</p>
+
+<div class="brush: shell">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>fcitx
+<span class="nb">export</span><span class="w"> </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
+<span class="nb">export</span><span class="w"> </span><span class="nv">GTK_IM_MODULE</span><span class="o">=</span>fcitx
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>Additionally, I guess there are some dependency between fcitx5 and fcitx4, we should use <code>sudo aptitude install fcitx</code> to install fcitx4 as well.</p>
+
+<p>And I also notice that if I chose <code>fcitx</code> as the default input method on <code>区域与语言</code> panel of system GUI settings, I don&rsquo;t have to set up the variables to <code>~/.xprofile</code>, but this does not help since it will start up the aptitude-installed Fcitx4 first and also there is not a flatpak-installed <code>fcitx5</code> to be chosen either.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; The significance of using Chinese instead of English as the interface of LISP for human</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html"
+               aria-label="Next">
+              <span aria-hidden="true">GGFSM project and my next plan about Ming &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

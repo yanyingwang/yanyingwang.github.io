@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>The significance of using Chinese instead of English as the interface of LISP for human</title>
+    <meta name="description" content="更新于：2022-10-13  In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the Ming Programing Language, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese....">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="灵感, 编程, lisp, racket, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html">
+    <link rel="next" href="/2022/09/mzhengma.html">
+    <link rel="prev" href="/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">The significance of using Chinese instead of English as the interface of LISP for human</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>The significance of using Chinese instead of English as the interface of LISP for human</h1>
+    <p class="meta">
+<time datetime="2022-10-02" pubdate="true">2022-10-02</time> / <span class="tags"><a href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a>, <a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/lisp.html">lisp</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2022-10-02" pubdate="true">2022-10-02</time> / <span class="tags"><a href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a>, <a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/lisp.html">lisp</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p><span class="Smaller">&#26356;&#26032;&#20110;&#65306;2022-10-13</span></p>
+
+<p>In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the <a href="http://www.yanying.wang/ming">Ming Programing Language</a>, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese.</p>
+<!--more-->
+
+<p>I&rsquo;d already given out my motives for creating Ming-Lang in Chinese at <a href="http://www.yanying.wang/ming/preface.html">here</a>. In my mind, Chinese as a natural language is so efficient compared to other languages across the world, that it makes it much more suitable than English in terms of being the programming language interface for humans to interact with computers. I imagine a future world that everyone can understand Chinese Characters, and furthermore, they all hold the ability to create new Chinese Characters to abstract the human world&rsquo;s objects.</p>
+
+<h1>1
+ <tt>&nbsp;</tt><a name="(part._.The_drawbacks_of_.L.I.S.P)"></a>The drawbacks of LISP</h1>
+
+<p>I think I don&rsquo;t need to mention the advantages of LISP, the virtue of its simplicity.</p>
+
+<p>But eventually, programming languages need to serve the human&rsquo;s realistic world, the complexity of the human world dictates the complexity of the API of programming languages. This dictation is especially noticeable for LISP because of the difference between the highly uniform appearance of each syntax and its slightly diverse usage.</p>
+
+<h1>2
+ <tt>&nbsp;</tt><a name="(part._.How_comes_the_.Chinese_language)"></a>How comes the Chinese language</h1>
+
+<p>For the real working space of a LISP language, all the functions and syntaxes looked as if they share and exist in a flattened world.</p>
+
+<p>Let&rsquo;s imagine an ideal world, all the names of functions and syntaxes are pictures, and those pictures graphicly depict how the arguments should be like and what the result would be like. Then, the LISP code would be much more readable than now.</p>
+
+<p>But a less ideal and more realistic world I reckon could be, that all the namings obey a series of connectable and highly uniform rules so that the programmer can easily guess out the usage of syntaxes and function arguments and the produced results of them.</p>
+
+<p>nowadays, all the programming languages are designed in English. As a natural language, English merits its simplicity, but as an interface of programming languages, as I can see, Chinese can be much more suitable and usable than it.</p>
+
+<p>Chinese has hidden its simplicity under its complexity, it can outweigh other languages by below points:</p>
+
+<ol>
+ <li>
+  <p>Chinese has accumulated more than 80000 characters, frequently used 3500, through its more than 5000 years of historical use. Thus, it can be used to stand the slightest nuance of meanings.</p></li>
+ <li>
+  <p>Unlike English, words are the smallest unit to stand for meanings. Every single Chinese character stands for a standalone meaning, and characters can be arbitrarily put together to constitute words to stand for a more specific meaning. Thus, we can use a character for a connotation, and let all other related connotations share this character to imply they are related.</p></li>
+ <li>
+  <p>Unlike English and many other languages, there is almost no grammar in Chinese. Because of this, the usage of Chinese characters is very flexible and efficient. For example, the prominent feature of classical Chinese is its short and refined sentences.</p></li>
+ <li>
+  <p>As we all know, Chinese characters are derived initially from pictures, which makes them very graphic and understandable by reading them once you know them.</p></li>
+ <li>
+  <p>All characters have the same length and height, making the code very tight and neat.</p></li></ol>
+
+<p>Besides, Chinese is very special in the way it emphasizes its writing system. It might be the only natural language that separates its writing system and speaking system. In this way, all the nowadays Chinese dialects are just about the speaking system, they share the same writing system, which writing system is so stable that it actually already lasted many thousand years until about seventy years ago, influenced by the simplicity of English, there came out the simplified Chinese.</p>
+
+<h1>3
+ <tt>&nbsp;</tt><a name="(part._.There_are_more_than_.Chinese_.Characters)"></a>There are more than Chinese Characters</h1>
+
+<p>If we take a deep in the way how Chinese characters are created, it is actually a method of how to mapping the objects from the real world to a two-dimension picture with keeping the relationship between objects.</p>
+
+<p>Let me take the core conceptions of Racket&rsquo;s data structures as an example to illustrate it. Because some characters were created by myself without being included by official Unicode, I made my way to show it at this <a href="http://www.yanying.wang/ming/naming-rules.html#%28part._character._creating._rules%29"><span class="url">http://www.yanying.wang/ming/naming-rules.html#%28part._character._creating._rules%29</span></a>.</p>
+
+<p>From the chart table in the link above, we can see that all the main data structures of Racket are stood as Chinese Characters, which characters are all partly made with the character "&#21448;" to imply the relationships between them. Such as:</p>
+
+<p>"pair" has two "&#21448;&rsquo; in the Chinese character we created, which implies a pair of two values.
+    "list" has a "&#36790;" as an addition to "&#21448;", which implies values in the parentheses.
+    "vector" has an additional "&#30690;" to the Chinese character of "list", which implies this is a vector because "&#30690;" means vector in Chinese. Besides, the "&#30690;" is also used as part of "vector-length" to imply the usage of "vector-length".
+    "association list" has two "&#21448;" in contrast to &#8220;list", with apparently means this is a list of pairs.</p>
+
+<p>Even though I haven&rsquo;t implemented this part to the language I&rsquo;m designing, we can imagine how this method could possibly take the namings of the conception of programming languages to a higher understandable level.</p>
+
+<h1>4
+ <tt>&nbsp;</tt><a name="(part._.Ming_.Language)"></a>Ming Language</h1>
+
+<p>Following my initial thought, I have implemented the beta version of the language, named <a href="Ming">https://github.com/yanyingwang/ming</a>. The language is already usable, all I need to do next is constantly translate Racket&rsquo;s procedures and syntaxes and built the naming rules.</p>
+
+<p><a href="https://racket.discourse.group/t/chinese-programming-language-lang-ming/2044"><span class="url">https://racket.discourse.group/t/chinese-programming-language-lang-ming/2044</span></a></p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2022/09/mzhengma.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; MZhengma</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html"
+               aria-label="Next">
+              <span aria-hidden="true">How to run Fcitx5 and Rime on Ubuntu 20.04 &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

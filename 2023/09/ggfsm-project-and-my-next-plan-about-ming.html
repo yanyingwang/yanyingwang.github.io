@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>GGFSM project and my next plan about Ming</title>
+    <meta name="description" content="For the past month, I've been dedicating myself on the developing of GGFSM, which is a website that draw graphs with the given prices and volumes data of stocks from Shanghai and Shengzhen stock exchange. As one of my toys wrote in racket and ming-languag...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="racket, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html">
+    <link rel="next" href="/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html">
+    <link rel="prev" href="/2024/08/archlinux-installation.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">GGFSM project and my next plan about Ming</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>GGFSM project and my next plan about Ming</h1>
+    <p class="meta">
+<time datetime="2023-09-03" pubdate="true">2023-09-03</time> / <span class="tags"><a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2023-09-03" pubdate="true">2023-09-03</time> / <span class="tags"><a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>For the past month, I&rsquo;ve been dedicating myself on the developing of <a href="https://www.yanying.wang/ggfsm/">GGFSM</a>, which is a website that draw graphs with the given prices and volumes data of stocks from Shanghai and Shengzhen stock exchange. As one of my toys wrote in racket and <a href="https://www.yanying.wang/ming/">ming-language</a>, the main purpose of this project is enhancing ming lang, and making clear what the next plan should be about it.</p>
+<!-- more-->
+
+<h1 id="ggfsm-and-i-ching">GGFSM and I Ching</h1>
+
+<p>Speaking of GGFSM, it started from my long time curious about the <a href="https://en.wikipedia.org/wiki/I_Ching">I Ching</a> and <a href="https://en.wikipedia.org/wiki/Hexagram_(I_Ching)">hexagram</a>. I Ching, as an integral part of chinese culture, the spirit of it can be found in vast aspects of chinese, such as the languages, writings, paintings, buildings, cookings and even the ancient science and medicine, despite the fact that chinese people start to embrace the western science because of the practically valued and stunning technologies it brought to us. As a result, I Ching has been abandoned to some degree in morden China.</p>
+
+<p>There are researches say it is I Ching that was impeding chinese to induce modern science. It&rsquo;s true I Ching was originally used for divination by ancient chinese people, but gradually its spirit has been implemented to other fields because people notice that almost everything happening in the earth is changing itself all the time, and by the time of changing they entangled with each other, part of them are connected to this system or that system, systems are entangled each other as well. The reality world is quite complex, yet I Ching seems give out a very basic rule about it, which rule is demonstrated as a diagram called Hexagram.</p>
+
+<p>On the other day, I came up with a thought to abstract daily state of stocks as hexagrams of I Ching, and then draw those hexagrams in a graph, I was expecting the graph could show some trends since hexagrams are originally used for prediction.</p>
+
+<p>Unfortunately, the prediction didn&rsquo;t work very well after I finished the GGFSM project, partly I reckon this is because I calculate stock state to hexagrams in a much simpler algorithm, which part of code apparently requires refactors. I guess this refactor can be addressed in the future as I use the GGFSM and figure out how to implement it.</p>
+
+<p>Another interesting thing I noticed about hexagrams is its order. Since hexagrams are derived from <a href="https://en.wikipedia.org/wiki/Bagua">Bagua</a>(<a href="https://en.wikipedia.org/wiki/Taijitu">Taijitu</a>), the order of trigrams of Bagua determines the order of hexagrams, which determing order in reverse is just 0 to 7 if we converted trigrams from binary values to decimal numbers. And there are more, take look at the trigram figures, such as the "☴", the binary value of which is &ldquo;011&rdquo;, decimal number is &ldquo;3&rdquo;, name called &ldquo;巽&rdquo;, compares to "☵", binary value &ldquo;010&rdquo;, decimal number &ldquo;2&rdquo; , called &ldquo;坎&rdquo;, obviously it is smaller than &ldquo;巽&rdquo;, but actually, in nature &ldquo;巽&rdquo; stands for &ldquo;风&rdquo; which means &ldquo;wind/air&rdquo;, correspondingly &ldquo;坎&rdquo; stands for &ldquo;水&rdquo;, which means &ldquo;water&rdquo;. Think about it, is that true &ldquo;air&rdquo; is larger than &ldquo;water&rdquo;?</p>
+
+<p>This is the spirit of I Ching, from the perspective of mathematics it shows only weird, because trigrams are actually states of objects from nature, the order of them doesn&rsquo;t work exactly like numbers in math. About this point, I guess it indeed can be viewed as one of the reason why people say I Ching is an obstacle for the inducing of modern science, they works totally in two different ways. Yet on the other hand, people cann&rsquo;t deny the influence of I Ching and what it contibute to chinese culture, which veils another mystery of mist to it.</p>
+
+<h1 id="ming-language">Ming Language</h1>
+
+<p>I conceived the Ming Language back to the year of 2021, moremover, this idea was implemented in the summer of last year. From that time to now, it has been through two stages as I summed, and there comes the third stage of it as my next plan.</p>
+
+<p>On the first stage, I was just bringing chinese phrases to racket following the fact that I perceived English is a language too simple to give names for a programming language like lisp, the drawbacks of which are collectively shows on one aspect: the code is too dizzy to undstand, which blames on the ambiguous namings wrapped in the symmetrical parentheses.</p>
+
+<p>Bringing chinese phrases manifested the fact that modern chinese phrases and characters can barely covers the concepts of programing languages. After that, I researched a little bit on the evolution of chinese languages, and realized what I need to do is creating new chinese characters for each minor concepts with obeying chinese character creating rules called "<a href="https://en.wikipedia.org/wiki/Chinese_character_classification">六书</a>". Then there comes the new designed cn chars like "􏿴", "􏿳", "􏿫", "􏻿", "􏿰", "􏾐" and so on.</p>
+
+<p>Designing new cn chars for concepts of lisp is what I called the second stage. By the end of that I also wrote an post for it in English at <a href="https://racket.discourse.group/t/chinese-programming-language-lang-ming/2044">racket.discourse.group</a>. In Chinese, the <a href="http://www.yanying.wang/SOICOL/">SOICOL</a> much more elaborately document it.</p>
+
+<p>Before the forthcoming third stage, as I summed up the second stage, there are some facts I noticed and are listed below:</p>
+
+<ol>
+ <li>Ming Lang is residing in the Lisp world, that&rsquo;s where it values itself.</li>
+ <li>Lisp is rarely used in the worldwide engineering industry, not to mention in China.</li>
+ <li>The majority users of Lisp are from the western world.</li>
+ <li>English is the factually widespread used language.</li>
+ <li>To use a nowaday programing language, you only need to know few English words in fact, more are needed for reading the document.</li>
+ <li>Things come the same for Ming, to use it, you only need to know few chinese characters, the rest is on the document.</li></ol>
+
+<p>So one important point of my next plan for the thrid stage is writing the Ming document in English. Despite writing document in Chinese is much reasonable and straightforward, the drawback of this is also very obvious: people who are able to read it don&rsquo;t treasure the value of it, people who see the value of it are kept out from understanding the document.</p>
+
+<p>More specifically, the following document of implementing features will be writing only in English, and the previous already wrote Chinese document will be moved to the secondary place, instead I will write an English version and put it on the primary place. Most likely, this will be implemented as showing the corresponding Chinese document by clicking on the English document.</p>
+
+<h1 id="chinese-programming-code">Chinese programming code</h1>
+
+<p>When I wrote code for GGFSM project, in order to have a global view of how code would be like if wrote in Chinese characters and phrases, I had forced myself to use Chinese as much as possible. Consequently I concluded that there is no need and it is also not proper to conduct full chinese character codes:</p>
+
+<ol>
+ <li>English abbreviations in uppercase are much recognized and harmonious, thus more suitable to be used as variables in the chinese codes than picking up some other chinese characters for it. Furthermore, I&rsquo;ve followed this rule in the code of implmenting libraries for ming-lang, see <a href="https://github.com/yanyingwang/ming/blob/dev/list.rkt">ming/list</a> to have a quick feeling about what I said.</li>
+ <li>Modern Chinese are unnecessarily designed as favoring of using phrases instead of single characters to express concepts, this makes the code too verbose. Fortunately, this issue is quite easy to resolve: we need to incoporate classical chinese word into making phrases and names for codes. For example, the English word &ldquo;data&rdquo; and &ldquo;response&rdquo; have always been used for defining variables to temporarily saving returned data from requesting APIs, for the counterpart in modern Chinese, normally they are called &ldquo;数据&rdquo; and &ldquo;返回数据&rdquo;, but those are too long words, instead it is better to be named &ldquo;云&rdquo;(raw data) and &ldquo;文&rdquo;(processed data), brevity and more concise.</li>
+ <li>Concepts from the programming language world are quite new to chinese language, it&rsquo;s unnecessary for us to always create phrases for those concepts as the English way, what makes Chinese different from English and others is its ability to create characters, which shouldn&rsquo;t be abandoned. Take the &ldquo;Hash&rdquo; concepts as example, it is call &ldquo;哈希表&rdquo; and &ldquo;散列表&rdquo;, which is unacceptable that occupied more space than English word with using such an expressable language, and it is merely called "􏿰" in ming lang.</li>
+ <li>Programming language code is rarely used for poeple to speak, for the most time it is used for writing and reading, so by the time of creating new characters for concepts, it should leave out the components of those characters that stand for pronouncing(去除声旁). But in the reality of daily engineering project, we still need to keep in heart that, it has to overlaped with morden chinese because that&rsquo;s the daily part of chinese people.</li></ol>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; How to run Fcitx5 and Rime on Ubuntu 20.04</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2024/08/archlinux-installation.html"
+               aria-label="Next">
+              <span aria-hidden="true">Archlinux installation &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>
