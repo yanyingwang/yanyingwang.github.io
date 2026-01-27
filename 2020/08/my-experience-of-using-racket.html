@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>My experience of using Racket</title>
+    <meta name="description" content="updated_at: 2022-02-27  我越是使用Racket语言，越是明白自己在干些什么，越是感到自己需要探索的东西是有价值的。...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="自省, racket">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html">
+    <link rel="next" href="/2020/08/racket-s-match.html">
+    <link rel="prev" href="/2020/09/announcing-the-release-of-http-client.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">My experience of using Racket</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>My experience of using Racket</h1>
+    <p class="meta">
+<time datetime="2020-08-08" pubdate="true">2020-08-08</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a>, <a href="/tags/racket.html">racket</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-08-08" pubdate="true">2020-08-08</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a>, <a href="/tags/racket.html">racket</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p><span class="Smaller">updated_at: 2022-02-27</span></p>
+
+<p>&#25105;&#36234;&#26159;&#20351;&#29992;Racket&#35821;&#35328;&#65292;&#36234;&#26159;&#26126;&#30333;&#33258;&#24049;&#22312;&#24178;&#20123;&#20160;&#20040;&#65292;&#36234;&#26159;&#24863;&#21040;&#33258;&#24049;&#38656;&#35201;&#25506;&#32034;&#30340;&#19996;&#35199;&#26159;&#26377;&#20215;&#20540;&#30340;&#12290;</p>
+<!--more-->
+
+<h1>1
+ <tt>&nbsp;</tt><a name="(part._~e4~b8~80~e5~b9~b4~e6~97~b6)"></a>&#19968;&#24180;&#26102;</h1>
+
+<p>&#31895;&#30053;&#31639;&#36215;&#26469;&#65292;&#25105;&#20351;&#29992;Racket&#35821;&#35328;&#26469;&#20889;&#19968;&#20123;&#33258;&#24049;&#30340;&#23567;&#39033;&#30446;&#65292;&#20174;&#21018;&#24320;&#22987;&#30340;<a href="https://github.com/yanyingwang/timable">timable</a>&#21040;&#29616;&#22312;&#26368;&#36817;&#22312;&#20889;&#30340;<a href="https://github.com/yanyingwang/http-client">http-client</a>&#65292;&#20063;1&#24180;&#26377;&#20313;&#20102;&#12290;</p>
+
+<p>Racket&#35821;&#35328;&#30340;&#25991;&#26723;&#21644;&#23398;&#20064;&#36164;&#26009;&#22522;&#26412;&#19978;&#37117;&#34987;<a href="https://docs.racket-lang.org/">&#23448;&#26041;&#25991;&#26723;</a>&#25152;&#28085;&#30422;&#20102;&#65292;Racket&#30340;&#23448;&#26041;&#25991;&#26723;&#22312;&#25105;&#30475;&#26469;&#26159;&#39047;&#20855;&#23398;&#26415;&#29305;&#33394;&#30340;&#65292;&#34892;&#25991;&#39118;&#26684;&#24456;&#22810;&#26102;&#20505;&#20063;&#37117;&#20250;&#26377;&#24847;&#26080;&#24847;&#30340;&#20559;&#21521;&#20110;&#26576;&#31181;&#27010;&#36848;&#12290;&#21478;&#22240;&#20026;&#20854;&#34893;&#29983;&#20986;&#26469;&#30340;scribble&#35821;&#35328;&#21644;&#24050;&#32463;&#23450;&#20041;&#22909;&#20102;&#30340;&#23448;&#26041;&#30340;&#24456;&#22810;scribble&#30456;&#20851;&#30340;&#20989;&#25968;&#65292;&#22240;&#27492;&#22312;&#29992;scribble&#20889;&#24211;&#30340;&#25991;&#26723;&#23545;&#24211;&#20989;&#25968;&#20570;&#35828;&#26126;&#26102;&#20250;&#26377;&#26174;&#32780;&#26131;&#35265;&#30340;&#19968;&#33268;&#24615;&#12290;&#20294;&#25105;&#35273;&#24471;&#24688;&#24688;&#22240;&#20026;&#36825;&#31181;&#39118;&#26684;&#30340;&#20559;&#21521;&#65292;&#28789;&#27963;&#24615;&#20063;&#21464;&#24046;&#20102;&#65292;&#23548;&#33268;&#20102;&#20854;&#24320;&#21457;&#32773;&#22312;&#20889;&#33258;&#24049;&#24211;&#25991;&#26723;&#30340;&#26102;&#20505;&#65292;&#37117;&#20250;&#20248;&#20808;&#20391;&#37325;&#20110;&#30456;&#20851;&#20989;&#25968;&#30340;&#35828;&#26126;&#32780;&#24573;&#30053;&#31034;&#20363;&#30340;&#37325;&#35201;&#24615;&#65292;&#36825;&#22312;&#25105;&#30475;&#26469;&#26159;&#19981;&#21033;&#20110;&#24555;&#36895;&#29702;&#35299;&#24211;&#30340;&#23454;&#38469;&#29992;&#27861;&#30340;&#12290;&#21644;&#20043;&#24418;&#25104;&#40092;&#26126;&#23545;&#27604;&#30340;&#26159;&#25105;&#19968;&#30452;&#22312;&#24037;&#20316;&#20013;&#29992;&#30340;Ruby&#35821;&#35328;&#65292;&#21253;&#21547;&#30528;&#26085;&#26412;&#20154;&#26576;&#31181;&#26497;&#33268;&#36861;&#27714;&#20154;&#24615;&#21270;&#30340;&#20869;&#28085;&#65292;&#20854;&#24037;&#31243;&#21270;&#30340;&#25991;&#26723;&#24456;&#22810;&#26102;&#20505;&#37117;&#20250;&#20197;&#31034;&#20363;&#20999;&#20837;&#65292;&#36825;&#22312;&#23454;&#38469;&#24037;&#31243;&#24037;&#20316;&#20013;&#26159;&#38750;&#24120;&#21033;&#20110;&#24555;&#36895;&#29702;&#35299;&#24211;&#29992;&#27861;&#30340;&#12290;</p>
+
+<p>&#38543;&#30528;&#25105;&#23545;Racket&#35821;&#35328;&#29087;&#32451;&#24230;&#30340;&#25552;&#21319;&#65292;&#24930;&#24930;&#30340;&#24320;&#22987;&#21487;&#20197;&#29702;&#35299;Racket&#35821;&#35328;&#30340;&#31934;&#39635;&#25152;&#22312;&#20102;&#12290;&#36890;&#20439;&#26469;&#35828;&#65292;&#38543;&#30528;&#19968;&#20010;&#20154;&#23545;&#32534;&#31243;&#35821;&#35328;&#30340;&#28145;&#20837;&#29702;&#35299;&#65292;&#24930;&#24930;&#20250;&#21457;&#29616;&#19981;&#21516;&#30340;&#32534;&#31243;&#35821;&#35328;&#20043;&#38388;&#26159;&#26377;&#30456;&#20284;&#24615;&#30340;&#65292;&#27604;&#22914;Ruby/Python&#65292;&#25152;&#20197;&#22522;&#26412;&#19978;&#26469;&#35828;&#65292;&#19968;&#21608;&#26102;&#38388;&#29087;&#24713;&#19968;&#19979;&#20854;&#23427;&#35821;&#35328;&#30340;&#35821;&#27861;&#23601;&#21487;&#20197;debug&#21644;&#20889;&#21478;&#22806;&#19968;&#20010;&#35821;&#35328;&#30340;&#39033;&#30446;&#20195;&#30721;&#20102;&#12290;&#20294;&#36825;&#26102;&#22914;&#26524;&#36319;&#38750;&#24120;&#29087;&#24713;&#21478;&#22806;&#19968;&#20010;&#35821;&#35328;&#30340;&#20154;&#27807;&#36890;&#65292;&#23601;&#20250;&#21457;&#29616;&#20320;&#20889;&#20986;&#26469;&#30340;&#20195;&#30721;&#21487;&#33021;&#20250;&#38750;&#24120;&#19981;&#31526;&#21512;&#36825;&#20010;&#35821;&#35328;&#30340;&#32422;&#23450;&#20064;&#24815;&#12290;</p>
+
+<p>&#25152;&#20197;&#38500;&#38750;&#19968;&#20010;&#35821;&#35328;&#19968;&#24320;&#22987;&#30340;&#26102;&#20505;&#23601;&#26159;&#33609;&#33609;&#20102;&#20107;&#65292;&#24182;&#27809;&#26377;&#24324;&#28165;&#26970;&#20854;&#33258;&#36523;&#30340;&#23450;&#20301;&#21644;&#30446;&#26631;&#65292;&#21542;&#21017;&#19968;&#20010;&#35821;&#35328;&#20043;&#25152;&#20197;&#23384;&#22312;&#30340;&#20215;&#20540;&#21644;&#31934;&#39635;&#65292;&#27491;&#26159;&#23427;&#22312;&#39118;&#26684;&#19978;&#30340;&#24046;&#24322;&#25152;&#34893;&#29983;&#20986;&#26469;&#30340;&#22266;&#23450;&#20351;&#29992;&#20064;&#24815;&#12290;Racket&#35821;&#35328;&#30340;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#65292;&#26576;&#31181;&#31243;&#24230;&#19978;&#22312;&#25105;&#30475;&#26469;&#23601;&#26159;lisp&#36275;&#22815;&#29305;&#21035;&#30340;&#21516;&#20687;&#24615;&#25152;&#34893;&#29983;&#20986;&#26469;&#30340;&#24378;&#22823;&#34920;&#36798;&#21147;&#30340;&#20855;&#20307;&#20307;&#29616;&#12290;</p>
+
+<p>&#26377;&#26102;&#20505;&#22312;&#20351;&#29992;Racket&#30340;&#36807;&#31243;&#20013;&#65292;&#24120;&#24120;&#19981;&#24471;&#19981;&#24778;&#35766;&#20110;lisp&#29992;&#19968;&#23618;&#19968;&#23618;&#30340;&#25324;&#21495;&#25152;&#26500;&#36896;&#20986;&#26469;S-expression&#30340;<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E5%83%8F%E6%80%A7">&#21516;&#20687;&#24615;</a>&#65292;&#36825;&#31181;&#21516;&#20687;&#24615;&#29306;&#29298;&#20102;&#25481;&#20854;&#20182;&#35821;&#35328;&#25152;&#35859;&#30340;&#21487;&#35835;&#24615;&#65292;&#21364;&#25442;&#26469;&#20102;&#24322;&#24120;&#24378;&#22823;&#30340;&#35821;&#27861;&#34920;&#36798;&#21147;&#12290;</p>
+
+<h1>2
+ <tt>&nbsp;</tt><a name="(part._~e4~b8~89~e5~b9~b4~e6~97~b6)"></a>&#19977;&#24180;&#26102;</h1>
+
+<p>&#26368;&#36817;&#21448;&#26377;&#20102;&#23454;&#29616;&#27604;&#22914;<a href="https://github.com/yanyingwang/qweather">qweather</a>&#21644;<a href="https://github.com/yanyingwang/daily-report">daily-report</a>&#65292;&#31639;&#26159;&#26377;&#20102;&#26032;&#30340;&#24863;&#24735;&#12290;</p>
+
+<p>&#19981;&#21516;&#20110;&#24456;&#22810;&#20854;&#20182;&#35821;&#35328;&#65292;Racket&#35821;&#35328;&#22240;&#20026;&#25152;&#37319;&#29992;&#30340;S-expression&#30340;&#37027;&#31181;&#26497;&#20854;&#24322;&#24120;&#30340;&#21516;&#20687;&#24615;&#25152;&#34893;&#29983;&#20986;&#26469;&#30340;&#20854;&#38468;&#23646;&#30340;&#19968;&#20999;&#21608;&#36793;&#37117;&#19981;&#21516;&#23547;&#24120;&#30340;&#25317;&#26377;&#19968;&#31181;&#21407;&#22987;&#24615;&#65292;&#21448;&#22240;&#20026;&#36825;&#31181;&#21407;&#22987;&#24615;&#21478;&#36215;&#20223;&#20315;&#21478;&#26377;&#19968;&#31181;&#21035;&#26679;&#30340;&#29983;&#21629;&#21147;&#12290;&#27604;&#22914;&#20854;&#23448;&#26041;&#25991;&#26723;&#25152;&#20351;&#29992;&#30340;&#30340;Scribble&#65292;&#22312;Scribble&#20013;&#20351;&#29992;&#30340;interaction&#26469;&#36816;&#34892;&#19968;&#27573;&#20195;&#30721;&#24182;&#33258;&#21160;&#22312;&#25991;&#26723;&#20013;&#29983;&#25104;&#32467;&#26524;&#30340;&#36825;&#31181;&#26041;&#24335;&#12290;</p>
+
+<p>&#21478;&#22806;&#20540;&#24471;&#25552;&#30340;&#26159;&#65292;Racket&#35821;&#35328;&#30340;&#23448;&#26041;&#25991;&#26723;&#30340;&#20889;&#20316;&#39118;&#26684;&#20063;&#24456;&#20855;&#32467;&#26500;&#24615;&#12290;&#38750;&#24120;&#24341;&#20154;&#27880;&#30446;&#30340;&#26159;&#27604;&#22914;&#20854;&#25991;&#26723;&#20013;&#25152;&#26377;&#20851;&#38190;&#23383;&#30340;&#35828;&#26126;&#37117;&#26159;&#22522;&#20110;&#26576;&#31181;&#26684;&#24335;&#20174;&#20195;&#30721;&#20013;&#30452;&#25509;&#29983;&#25104;&#30340;&#65292;&#36215;&#21021;&#22914;&#26524;&#19981;&#22815;&#29087;&#24713;&#36825;&#31181;&#32467;&#26500;&#24615;&#30340;&#35828;&#26126;&#65292;&#30475;&#25991;&#26723;&#20250;&#24456;&#36153;&#21147;&#65292;&#20294;&#19968;&#26086;&#36275;&#22815;&#29087;&#24713;&#65292;&#22240;&#20026;&#36825;&#31181;&#22266;&#23450;&#30340;&#35828;&#26126;&#39118;&#26684;&#20223;&#20315;&#23601;&#26159;&#19968;&#31181;&#22266;&#23450;&#30340;&#25968;&#23398;&#20844;&#24335;&#65292;&#25968;&#23398;&#20844;&#24335;&#23398;&#36215;&#26469;&#24456;&#26543;&#29157;&#65292;&#20294;&#26159;&#25484;&#25569;&#20043;&#21518;&#65292;&#35835;&#36215;&#26469;&#21644;&#29992;&#36215;&#26469;&#37117;&#20250;&#26356;&#21152;&#26041;&#20415;&#12290;</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/08/racket-s-match.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Racket&rsquo;s match</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/09/announcing-the-release-of-http-client.html"
+               aria-label="Next">
+              <span aria-hidden="true">Announcing the release of http-client &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

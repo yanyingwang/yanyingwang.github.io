@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Racket's match</title>
+    <meta name="description" content="updated_at: 2022-02-27  说到Racket语言的match，其实它主是用于条件判断的，而谈到条件判断，在当代的编程语言中，最为大家熟知的莫过于if这个关键字了。当然Racket语言中也有if，但是其是最最基础的一个条件判断。其他诸如case、cond，亦或本文在后面即将铺展开来讲的match，尤其是match，在Racket语言的条件判断中，因为LISP语言高度同像性的S-expression语法，赋予其了非常多高阶使用方法。...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="教程, racket">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/08/racket-s-match.html">
+    <link rel="next" href="/2020/04/frog.html">
+    <link rel="prev" href="/2020/08/my-experience-of-using-racket.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Racket's match</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Racket&rsquo;s match</h1>
+    <p class="meta">
+<time datetime="2020-08-08" pubdate="true">2020-08-08</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-08-08" pubdate="true">2020-08-08</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p><span class="Smaller">updated_at: 2022-02-27</span></p>
+
+<p>&#35828;&#21040;Racket&#35821;&#35328;&#30340;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#65292;&#20854;&#23454;&#23427;&#20027;&#26159;&#29992;&#20110;&#26465;&#20214;&#21028;&#26029;&#30340;&#65292;&#32780;&#35848;&#21040;&#26465;&#20214;&#21028;&#26029;&#65292;&#22312;&#24403;&#20195;&#30340;&#32534;&#31243;&#35821;&#35328;&#20013;&#65292;&#26368;&#20026;&#22823;&#23478;&#29087;&#30693;&#30340;&#33707;&#36807;&#20110;<span class="RktInBG"><span class="hspace"></span><span class="RktIn">if</span><span class="hspace"></span></span>&#36825;&#20010;&#20851;&#38190;&#23383;&#20102;&#12290;&#24403;&#28982;Racket&#35821;&#35328;&#20013;&#20063;&#26377;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span>&#65292;&#20294;&#26159;&#20854;&#26159;&#26368;&#26368;&#22522;&#30784;&#30340;&#19968;&#20010;&#26465;&#20214;&#21028;&#26029;&#12290;&#20854;&#20182;&#35832;&#22914;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29">case</a></span>&#12289;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29">cond</a></span>&#65292;&#20134;&#25110;&#26412;&#25991;&#22312;&#21518;&#38754;&#21363;&#23558;&#38138;&#23637;&#24320;&#26469;&#35762;&#30340;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#65292;&#23588;&#20854;&#26159;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#65292;&#22312;Racket&#35821;&#35328;&#30340;&#26465;&#20214;&#21028;&#26029;&#20013;&#65292;&#22240;&#20026;LISP&#35821;&#35328;&#39640;&#24230;<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E5%83%8F%E6%80%A7">&#21516;&#20687;&#24615;</a>&#30340;S-expression&#35821;&#27861;&#65292;&#36171;&#20104;&#20854;&#20102;&#38750;&#24120;&#22810;&#39640;&#38454;&#20351;&#29992;&#26041;&#27861;&#12290;</p>
+<!--more-->
+
+<table cellpadding="0" cellspacing="0">
+ <tbody>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._~e4~bb~8eif~e8~b0~88~e8~b5~b7%29">1<span class="hspace">&nbsp;</span>&#20174;if&#35848;&#36215;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part.___when_not_regexp~e5~9c~a8string~e5~af~b9~e6~af~94~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8%29">1.1<span class="hspace">&nbsp;</span>#:when/not/regexp&#22312;string&#23545;&#27604;&#20013;&#30340;&#20351;&#29992;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._app~e5~9c~a8~e5~88~a4~e6~96~adlist~e9~95~bf~e5~ba~a6~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8%29">1.2<span class="hspace">&nbsp;</span>app&#22312;&#21028;&#26029;list&#38271;&#24230;&#20013;&#30340;&#20351;&#29992;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._hash-table~e5~9c~a8hash~e9~94~ae~e5~80~bc~e5~af~b9~e6~af~94~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8%29">1.3<span class="hspace">&nbsp;</span>hash-table&#22312;hash&#38190;&#20540;&#23545;&#27604;&#20013;&#30340;&#20351;&#29992;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace"></span></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._~e7~a4~ba~e4~be~8b_~e5~8c~b9~e9~85~8d~e4~b8~80~e6~ae~b5~e5~ad~97~e7~ac~a6~e4~b8~b2_~e7~9b~b8~e5~af~b9~e5~ba~94~e7~9a~84~e5~8e~bb~e8~be~93~e5~87~ba.Xexpr~e8~bf~9b~e8~80~8c~e8~bd~ac~e6~88~90.H.T.M.L%29">2<span class="hspace">&nbsp;</span>&#31034;&#20363;&#65306;&#21305;&#37197;&#19968;&#27573;&#23383;&#31526;&#20018;&#65292;&#30456;&#23545;&#24212;&#30340;&#21435;&#36755;&#20986;Xexpr&#36827;&#32780;&#36716;&#25104;HTML</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._~e4~bd~bf~e7~94~a8cond~e7~9a~84~e5~86~99~e6~b3~95%29">2.1<span class="hspace">&nbsp;</span>&#20351;&#29992;cond&#30340;&#20889;&#27861;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._~e4~bd~bf~e7~94~a8match~e7~9a~84__when~e7~9a~84~e5~86~99~e6~b3~95%29">2.2<span class="hspace">&nbsp;</span>&#20351;&#29992;match&#30340;#:when&#30340;&#20889;&#27861;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._~e4~bd~bf~e7~94~a8match~e7~9a~84regexp~e7~9a~84~e5~86~99~e6~b3~95%29">2.3<span class="hspace">&nbsp;</span>&#20351;&#29992;match&#30340;regexp&#30340;&#20889;&#27861;</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._~e4~bd~bf~e7~94~a8match~e7~9a~84app~e7~9a~84~e5~86~99~e6~b3~95%29">2.4<span class="hspace">&nbsp;</span>&#20351;&#29992;match&#30340;app&#30340;&#20889;&#27861;</a></p></td></tr></tbody></table>
+
+<h1>1
+ <tt>&nbsp;</tt><a name="(part._~e4~bb~8eif~e8~b0~88~e8~b5~b7)"></a>&#20174;if&#35848;&#36215;</h1>
+
+<blockquote class="refpara">
+ <blockquote class="refcolumn">
+  <blockquote class="refcontent">
+   <p><span style="font-weight: bold">2023&#24180;&#26356;&#27491;&#65306;</span> 
+    <br />
+&#27809;&#26377;if-not&#30340;&#21407;&#22240;&#65292;&#26356;&#21487;&#33021;&#26159;&#22240;&#20026;<span class="RktPn">(</span><span class="RktSym">if-not</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">b</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">c</span><span class="RktPn">)</span><span class="RktMeta"></span>&#24635;&#26159;&#21487;&#20197;&#34987;&#20889;&#25104;<span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">c</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">b</span><span class="RktPn">)</span><span class="RktMeta"></span>&#30340;&#65292;&#32780;&#20854;&#20182;&#30340;lisp&#26041;&#35328;&#26377;<span class="RktSym">if-not</span>&#65292;&#21487;&#33021;&#26159;&#22240;&#20026;&#20182;&#20204;&#30340;&#35821;&#35328;&#20013;&#65292;<span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">b</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">c</span><span class="RktPn">)</span><span class="RktMeta"></span>&#25903;&#25345;&#32570;&#22833;<span class="RktSym">c&#23376;&#21477;</span>&#20889;&#25104;<span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">b</span><span class="RktPn">)</span><span class="RktMeta"></span>&#65292;&#32780;&#32570;&#22833;&#23376;&#21477;&#22312;Racket&#20013;&#26159;&#34987;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/when_unless.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._when%29%29">when</a></span>&#35206;&#30422;&#20102;&#30340;&#65306;<span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/when_unless.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._when%29%29">when</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">b</span><span class="RktPn">)</span><span class="RktMeta"></span>&#65292;&#32780;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/when_unless.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._when%29%29">when</a></span>&#26159;&#26377;<span class="RktSym">when-not</span>&#30340;&#65292;&#31216;&#20026;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/when_unless.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._unless%29%29">unless</a></span>&#65306;<span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/when_unless.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._unless%29%29">unless</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">a</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">c</span><span class="RktPn">)</span><span class="RktMeta"></span>&#12290;</p></blockquote></blockquote></blockquote>
+
+<p>&#24456;&#26089;&#26102;&#20505;&#65292;&#25105;&#23601;&#22312;&#23448;&#26041;&#25991;&#26723;&#35835;&#21040;&#36807;<a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/style/Choosing_the_Right_Construct.html">Choosing the Right Construct</a>&#36825;&#20010;&#31456;&#33410;&#65292;&#20294;&#21482;&#26159;&#19968;&#30053;&#32780;&#36807;&#65292;&#35748;&#20026;&#27809;&#26377;&#20160;&#20040;&#29305;&#21035;&#22823;&#30340;&#20215;&#20540;&#12290;&#21518;&#26469;&#24930;&#24930;&#20889;&#30340;Racket&#20195;&#30721;&#22810;&#20102;&#65292;&#26377;&#20960;&#20010;&#20851;&#20110;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span>&#12289;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span>&#31561;&#20960;&#20010;&#32034;&#28982;&#26080;&#21619;&#30340;&#30097;&#24785;&#19968;&#30452;&#20572;&#30041;&#22312;&#33041;&#28023;&#37324;&#65292;&#28982;&#21518;&#20598;&#28982;&#37325;&#35835;&#20102;&#19978;&#38754;&#31456;&#33410;&#30340;&#25991;&#31456;&#25165;&#24653;&#28982;&#22823;&#24735;&#12290;</p>
+
+<p>&#25105;&#22312;&#24456;&#38271;&#19968;&#27573;&#26102;&#38388;&#37324;&#38754;&#37117;&#22312;&#30097;&#24785;&#65292;Racket&#20316;&#20026;&#19968;&#20010;Scheme&#35821;&#35328;&#30340;&#27969;&#34892;&#26041;&#35328;&#65292;&#20456;&#28982;&#24050;&#32463;&#26159;&#19968;&#20010;&#24211;&#38750;&#24120;&#20016;&#23500;&#19988;&#25104;&#29087;&#30340;&#35821;&#35328;&#20102;&#65292;&#20026;&#20160;&#20040;&#27809;&#26377;&#26465;&#20214;&#21028;&#26029;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span>&#20851;&#38190;&#23383;&#30340;&#21542;&#23450;&#21028;&#26029;&#20851;&#38190;&#23383;&#21602;&#65311;&#22240;&#27492;&#22312;&#21542;&#23450;&#26102;&#37117;&#38656;&#35201;&#20889;&#25104;&#65306;</p>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._not%29%29">not</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3d%29%29">=</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._%2B%29%29">+</a></span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">2</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28lib._racket%2Fprivate%2Fmisc..rkt%29._displayln%29%29">displayln</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"result is not 5"</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28lib._racket%2Fprivate%2Fmisc..rkt%29._displayln%29%29">displayln</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"result is 5"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktOut">result is 5</span></p></td></tr></tbody></table></div>
+
+<p></p>
+
+<div class="SIntrapara">&#36825;&#23682;&#19981;&#26159;&#24456;&#40635;&#28902;&#21527;&#65311;&#29305;&#21035;&#26159;&#22312;&#19968;&#20123;&#22797;&#26434;&#30340;&#26465;&#20214;&#21028;&#26029;&#22330;&#26223;&#19979;&#65288;Clojure&#22909;&#20687;&#36825;&#20123;&#35821;&#27861;&#31958;&#37117;&#26159;&#26377;&#30340;&#65289;&#65292;&#32780;&#19988;&#22914;&#26524;&#32454;&#24819;&#25105;&#25152;&#35828;&#30340;&#40635;&#28902;&#65292;&#22823;&#20307;&#19978;&#25105;&#26159;&#35828;&#22240;&#20026;&#36825;&#37324;&#30340;<span class="RktInBG"><span class="hspace"></span><span class="RktIn">not</span><span class="hspace"></span></span>&#30340;&#20351;&#29992;&#21364;&#19981;&#33021;&#34987;&#20889;&#25104;<span class="RktPn">(</span><span class="RktSym">if-not</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29._......%29%29">...</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29._......%29%29">...</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29._......%29%29">...</a></span><span class="RktPn">)</span><span class="RktMeta"></span>&#32780;&#22810;&#30340;&#19968;&#23618;&#25324;&#21495;&#26174;&#24471;&#20195;&#30721;&#24456;&#19981;&#21033;&#33853;&#12290;&#28982;&#32780;&#20854;&#23454;&#22312;&#23448;&#26041;&#25991;&#26723; <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/style/index.html">How to Program Racket: a Style Guide</a>&#30340;<a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/style/Choosing_the_Right_Construct.html#%28part._.Conditionals%29">Conditionals</a>&#31456;&#33410;&#30340;&#36215;&#22987;&#22788;&#65292;&#20854;&#26366;&#26377;&#25552;&#21040;&#35828;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <blockquote>
+  <p><span class="Smaller">Like definitional constructs, conditionals come in many flavors, too. Because cond and its relatives (case, match, etc) now allow local uses of define, you should prefer them over if.</span></p></blockquote></div>
+
+<div class="SIntrapara">&#25152;&#20197;&#22823;&#20307;&#19978;&#25991;&#26723;&#26159;&#35828;&#65292;&#22914;&#26524;&#33021;&#19981;&#29992;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span>&#65292;&#25105;&#20204;&#24212;&#35813;&#23613;&#37327;&#36991;&#20813;&#23427;&#12290;&#25152;&#20197;&#36825;&#24212;&#35813;&#23601;&#26159;Racket&#35821;&#35328;&#20013;&#40664;&#35748;&#27809;&#26377;<span class="RktInBG"><span class="hspace"></span><span class="RktIn">if-not</span><span class="hspace"></span></span>&#30340;&#21407;&#22240;&#20043;&#19968;&#65292;&#22240;&#20026;&#24815;&#20363;&#19978;&#25105;&#20204;&#24212;&#35813;&#20351;&#29992;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29">case</a></span>&#12289;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29">cond</a></span>&#20134;&#25110;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29">case</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._%2B%29%29">+</a></span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">2</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktVal">5</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"result is 5"</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._else%29%29">else</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"result is not 5"</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">"result is 5"</span></p></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29">cond</a></span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3d%29%29">=</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._%2B%29%29">+</a></span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">2</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"result is 5"</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._else%29%29">else</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"result is not 5"</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">"result is 5"</span></p></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._%2B%29%29">+</a></span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">2</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._~3d~3d%29%29">==</a></span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="hspace">&nbsp;</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3d%29%29">=</a></span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"result is 5"</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"result is not 5"</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktErr">eval:3:0: _: wildcard not allowed as an expression</span></p></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktErr"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktErr">in: (_ "result is not 5")</span></p></td></tr></tbody></table></div></div>
+
+<p><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span>&#22312;&#20570;&#26465;&#20214;&#21028;&#26029;&#26102;&#65292;&#20854;&#25152;&#33021;&#22788;&#29702;&#30340;&#32500;&#24230;&#36828;&#36828;&#32988;&#36807;&#20110;<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span>&#12290;&#36825;&#22312;&#19978;&#38754;&#25552;&#21040;&#30340;&#23448;&#26041;&#25991;&#26723;&#30340;<a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/style/Choosing_the_Right_Construct.html#%28part._.Conditionals%29">Conditionals</a>&#31456;&#33410;&#26377;&#26356;&#21152;&#26126;&#30830;&#30340;&#38416;&#36848;&#21644;&#20351;&#29992;&#24314;&#35758;&#12290;</p>
+
+<h2>1.1
+ <tt>&nbsp;</tt><a name="(part.___when_not_regexp~e5~9c~a8string~e5~af~b9~e6~af~94~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8)"></a>#:when/not/regexp&#22312;string&#23545;&#27604;&#20013;&#30340;&#20351;&#29992;</h2>
+
+<p></p>
+
+<div class="SIntrapara">&#27604;&#22914;&#65292;&#19979;&#38754;&#19968;&#20010;&#27491;&#24120;&#30340;if&#26465;&#20214;&#21028;&#26029;&#35821;&#21477;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/string</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"Yanying Wang"</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._not%29%29">not</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-suffix~3f%29%29">string-suffix?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"Wang"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is not Wang"</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is Wang"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">Your family name is Wang</span></p></td></tr></tbody></table></div></div>
+
+<p></p>
+
+<div class="SIntrapara">&#29992;match&#21487;&#20197;&#20889;&#25104;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktSym">racket/string</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"Yanying Wang"</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">n</span><span class="hspace">&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._not%29%29">not</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-suffix~3f%29%29">string-suffix?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">n</span><span class="hspace">&nbsp;</span><span class="RktVal">"Wang"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is not Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">Your family name is Wang</span></p></td></tr></tbody></table></div></div>
+
+<p></p>
+
+<div class="SIntrapara">&#29992;match&#21644;&#27491;&#21017;&#34920;&#36798;&#21017;&#21487;&#20197;&#20889;&#25104;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktSym">racket/string</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"Yanying Wang"</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td><span class="RktCmt">;</span><span class="RktCmt">&nbsp;</span><span class="RktCmt">&#20889;&#27861;1&#65306;</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/booleans.html#%28def._%28%28quote._~23~25kernel%29._not%29%29">not</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx"Wang$"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is not Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">Your family name is Wang</span></p></td></tr>
+    <tr>
+     <td><span class="RktCmt">;</span><span class="RktCmt">&nbsp;</span><span class="RktCmt">&#20889;&#27861;2&#65306;</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">name</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx"(?&lt;!Wang)$"</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is not Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Your family name is Wang"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">Your family name is Wang</span></p></td></tr></tbody></table></div></div>
+
+<h2>1.2
+ <tt>&nbsp;</tt><a name="(part._app~e5~9c~a8~e5~88~a4~e6~96~adlist~e9~95~bf~e5~ba~a6~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8)"></a>app&#22312;&#21028;&#26029;list&#38271;&#24230;&#20013;&#30340;&#20351;&#29992;</h2>
+
+<p></p>
+
+<div class="SIntrapara">&#21448;&#22914;&#65292;&#25105;&#20204;&#38656;&#35201;&#21028;&#26029;&#19968;&#20010;<span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span>&#30340;&#38271;&#24230;&#26159;&#21542;&#26159;5&#65292;if&#35821;&#21477;&#20889;&#25104;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">list1</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">1</span><span class="hspace">&nbsp;</span><span class="RktVal">4</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">9</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3d%29%29">=</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._length%29%29">length</a></span><span class="hspace">&nbsp;</span><span class="RktSym">list1</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"length of 5 list"</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"not a length of 5 list"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">length of 5 list</span></p></td></tr></tbody></table></div></div>
+
+<p></p>
+
+<div class="SIntrapara">&#29992;match&#21017;&#20889;&#25104;&#65306;
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">list1</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">1</span><span class="hspace">&nbsp;</span><span class="RktVal">4</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">9</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">list1</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">app</span><span class="hspace">&nbsp;</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._length%29%29">length</a></span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"length of 5 list"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"not a length of 5 list"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktOut">length of 5 list</span></p></td></tr></tbody></table></div></div>
+
+<p>&#22914;&#19978;&#31034;&#20363;&#21482;&#26159;&#19968;&#20123;&#31616;&#21333;&#30340;&#26465;&#20214;&#21028;&#26029;&#65292;&#22312;&#25105;&#20204;&#35201;&#20570;&#26356;&#22797;&#26434;&#30340;&#26465;&#20214;&#21028;&#26029;&#30340;&#26102;&#20505;&#65292;match&#30340;&#20248;&#21183;&#25165;&#20250;&#20805;&#20998;&#26174;&#31034;&#20986;&#26469;&#12290;</p>
+
+<h2>1.3
+ <tt>&nbsp;</tt><a name="(part._hash-table~e5~9c~a8hash~e9~94~ae~e5~80~bc~e5~af~b9~e6~af~94~e4~b8~ad~e7~9a~84~e4~bd~bf~e7~94~a8)"></a>hash-table&#22312;hash&#38190;&#20540;&#23545;&#27604;&#20013;&#30340;&#20351;&#29992;</h2>
+
+<p>&#27604;&#22914;&#25105;&#20204;&#26377;&#19968;&#20010;HTTP&#30340;headers&#65292;&#20854;&#20013;&#26377;&#38190;&#20540;&#23545;<span class="RktInBG"><span class="hspace"></span><span class="RktIn">Accept: application/json</span><span class="hspace"></span></span>&#21644;<span class="RktInBG"><span class="hspace"></span><span class="RktIn">Token: I am a racketeer</span><span class="hspace"></span></span>&#65292;&#22312;Racket&#20013;&#20197;<span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/hashtables.html#%28def._%28%28quote._~23~25kernel%29._hasheq%29%29">hasheq</a></span>&#30340;&#25968;&#25454;&#32467;&#26500;&#23384;&#22312;&#65292;&#25105;&#20204;&#38656;&#35201;&#26681;&#25454;&#20854;&#20540;&#26469;&#20570;&#26465;&#20214;&#21028;&#26029;&#65306;</p>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">headers</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/hashtables.html#%28def._%28%28quote._~23~25kernel%29._hasheq%29%29">hasheq</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"application/json"</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">Token</span><span class="hspace">&nbsp;</span><span class="RktVal">"I am a racketeer"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">headers</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"application/json"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Token</span><span class="hspace">&nbsp;</span><span class="RktVal">"I am a racketeer"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"correct Accept and Token detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"text/html"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: text/html] detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: ~a] detected"</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"unknown values"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktOut">correct Accept and Token detected</span></p></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/hashtables.html#%28def._%28%28quote._~23~25kernel%29._hasheq%29%29">hasheq</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"text/html"</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"application/json"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Token</span><span class="hspace">&nbsp;</span><span class="RktVal">"I am a racketeer"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"correct Accept and Token detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"text/html"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: text/html] detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: ~a] detected"</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"unknown values"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktOut">[Accept: text/html] detected</span></p></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/hashtables.html#%28def._%28%28quote._~23~25kernel%29._hasheq%29%29">hasheq</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"app/html"</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"application/json"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Token</span><span class="hspace">&nbsp;</span><span class="RktVal">"I am a racketeer"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"correct Accept and Token detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"text/html"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: text/html] detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: ~a] detected"</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"unknown values"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktOut">[Accept: app/html] detected</span></p></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/hashtables.html#%28def._%28%28quote._~23~25kernel%29._hasheq%29%29">hasheq</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">abc</span><span class="hspace">&nbsp;</span><span class="RktVal">"abc"</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"application/json"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Token</span><span class="hspace">&nbsp;</span><span class="RktVal">"I am a racketeer"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"correct Accept and Token detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktVal">"text/html"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: text/html] detected"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">hash-table</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktVal">'</span><span class="RktVal">Accept</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"[Accept: ~a] detected"</span><span class="hspace">&nbsp;</span><span class="RktSym">accept-value</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/Writing.html#%28def._%28%28quote._~23~25kernel%29._printf%29%29">printf</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"unknown values"</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktOut">unknown values</span></p></td></tr></tbody></table></div>
+
+<h1>2
+ <tt>&nbsp;</tt><a name="(part._~e7~a4~ba~e4~be~8b_~e5~8c~b9~e9~85~8d~e4~b8~80~e6~ae~b5~e5~ad~97~e7~ac~a6~e4~b8~b2_~e7~9b~b8~e5~af~b9~e5~ba~94~e7~9a~84~e5~8e~bb~e8~be~93~e5~87~ba.Xexpr~e8~bf~9b~e8~80~8c~e8~bd~ac~e6~88~90.H.T.M.L)"></a>&#31034;&#20363;&#65306;&#21305;&#37197;&#19968;&#27573;&#23383;&#31526;&#20018;&#65292;&#30456;&#23545;&#24212;&#30340;&#21435;&#36755;&#20986;Xexpr&#36827;&#32780;&#36716;&#25104;HTML</h1>
+
+<p>&#25105;&#20204;&#38656;&#35201;&#20174;"&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]"&#23383;&#31526;&#20018;&#20013;&#25552;&#21462;&#39068;&#33394;&#65292;&#24182;&#19988;&#30456;&#23545;&#24212;&#30340;&#36755;&#20986;&#25104;HTML&#25991;&#26723;&#65292;&#27604;&#22914;&#26159;&#65306;<span class="RktSym">&lt;p</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">class=</span><span class="RktVal">"sssubtext"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">style=</span><span class="RktVal">"color:Red"</span><span class="RktSym">&gt;&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;</span><span class="RktPn">[</span><span class="RktSym">IV&#32423;/&#19968;&#33324;</span><span class="RktPn">]</span><span class="RktSym">&lt;/p&gt;</span><span class="RktMeta"></span>&#12290;</p>
+
+<h2>2.1
+ <tt>&nbsp;</tt><a name="(part._~e4~bd~bf~e7~94~a8cond~e7~9a~84~e5~86~99~e6~b3~95)"></a>&#20351;&#29992;cond&#30340;&#20889;&#27861;</h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="hspace">&nbsp;</span><span class="RktSym">racket/string</span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">color</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29">cond</a></span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#34013;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Blue"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#40644;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Yellow"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#27225;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Oringe"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#32418;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Red"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._else%29%29">else</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Black"</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"sssubtext"</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">style</span><span class="hspace">&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">color</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">str</span><span class="RktVal">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]"</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p class=\"sssubtext\" style=\"color:Red\"&gt;&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]&lt;/p&gt;"</span></p></td></tr></tbody></table></div>
+
+<h2>2.2
+ <tt>&nbsp;</tt><a name="(part._~e4~bd~bf~e7~94~a8match~e7~9a~84__when~e7~9a~84~e5~86~99~e6~b3~95)"></a>&#20351;&#29992;match&#30340;#:when&#30340;&#20889;&#27861;</h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="hspace">&nbsp;</span><span class="RktSym">racket/string</span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">color</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#34013;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Blue"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#40644;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Yellow"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#27225;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Oringe"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#32418;&#33394;"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Red"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Black"</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"sssubtext"</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">style</span><span class="hspace">&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">color</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">str</span><span class="RktVal">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]"</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p class=\"sssubtext\" style=\"color:Red\"&gt;&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]&lt;/p&gt;"</span></p></td></tr></tbody></table></div>
+
+<h2>2.3
+ <tt>&nbsp;</tt><a name="(part._~e4~bd~bf~e7~94~a8match~e7~9a~84regexp~e7~9a~84~e5~86~99~e6~b3~95)"></a>&#20351;&#29992;match&#30340;regexp&#30340;&#20889;&#27861;</h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="hspace">&nbsp;</span><span class="RktSym">racket/string</span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktSym">str</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">color</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx".*&#34013;&#33394;.*"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Blue"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx".*&#40644;&#33394;.*"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Yellow"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx".*&#27225;&#33394;.*"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Oringe"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/regexp.html#%28def._%28%28quote._~23~25kernel%29._regexp%29%29">regexp</a></span><span class="hspace">&nbsp;</span><span class="RktVal">#rx".*&#32418;&#33394;.*"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Red"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Black"</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"sssubtext"</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">style</span><span class="hspace">&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">color</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">str</span><span class="RktVal">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]"</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p class=\"sssubtext\" style=\"color:Red\"&gt;&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]&lt;/p&gt;"</span></p></td></tr></tbody></table></div>
+
+<h2>2.4
+ <tt>&nbsp;</tt><a name="(part._~e4~bd~bf~e7~94~a8match~e7~9a~84app~e7~9a~84~e5~86~99~e6~b3~95)"></a>&#20351;&#29992;match&#30340;app&#30340;&#20889;&#27861;</h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/match</span><span class="hspace">&nbsp;</span><span class="RktSym">racket/string</span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktSym">str</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">color</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29">match</a></span><span class="hspace">&nbsp;</span><span class="RktSym">str</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">app</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/lambda.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._lambda%29%29">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">v</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">v</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#34013;&#33394;"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">#t</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Blue"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">app</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/lambda.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._lambda%29%29">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">v</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">v</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#40644;&#33394;"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">#t</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Yellow"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">app</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/lambda.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._lambda%29%29">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">v</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">v</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#27225;&#33394;"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">#t</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Oringe"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktPn">(</span><span class="RktSym">app</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/lambda.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._lambda%29%29">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">v</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28lib._racket%2Fstring..rkt%29._string-contains~3f%29%29">string-contains?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">v</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#32418;&#33394;"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">#t</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Red"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29.__%29%29">_</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"color:Black"</span><span class="RktPn">]</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"sssubtext"</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">style</span><span class="hspace">&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">color</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktRdr">,</span><span class="RktSym">str</span><span class="RktVal">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">gen-html</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]"</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p class=\"sssubtext\" style=\"color:Red\"&gt;&#22823;&#36830;&#24066;&#27668;&#35937;&#23616;&#21457;&#24067;&#22823;&#39118;&#32418;&#33394;&#39044;&#35686;[IV&#32423;/&#19968;&#33324;]&lt;/p&gt;"</span></p></td></tr></tbody></table></div>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/08/racket-s-match.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/08/racket-s-match.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/04/frog.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Frog</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/08/my-experience-of-using-racket.html"
+               aria-label="Next">
+              <span aria-hidden="true">My experience of using Racket &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

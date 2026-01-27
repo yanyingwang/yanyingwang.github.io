@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Fathoming out Racket Package's version</title>
+    <meta name="description" content="Recently I received an email of a github comment on a Racket Package of mine named http-client, which was announced to release by my post of Announcing the release of http-client. Until then, I realized there really exist someone using my packages except ...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="编程, 教程, racket, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html">
+    <link rel="next" href="/2021/02/announcing-the-release-of-qweather.html">
+    <link rel="prev" href="/2021/03/announcing-the-release-of-wx-biz-data-crypt.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Fathoming out Racket Package's version</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Fathoming out Racket Package&rsquo;s version</h1>
+    <p class="meta">
+<time datetime="2021-03-29" pubdate="true">2021-03-29</time> / <span class="tags"><a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2021-03-29" pubdate="true">2021-03-29</time> / <span class="tags"><a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>Recently I received an email of <a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895">a github comment</a> on a Racket Package of mine named <a href="https://github.com/yanyingwang/http-client/">http-client</a>, which was announced to release by my post of <a href="2020/09/announcing-the-release-of-http-client.html">Announcing the release of http-client</a>. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.</p>
+<!--more-->
+
+<blockquote class="refpara">
+ <blockquote class="refcolumn">
+  <blockquote class="refcontent">
+   <p>My understanding about the Racket Package version may be limited on my own experiences. Therefore, I will try to change this post along with my learning of Racket.</p></blockquote></blockquote></blockquote>
+
+<table cellpadding="0" cellspacing="0">
+ <tbody>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._.The_ambiguous_part%29">1<span class="hspace">&nbsp;</span>The ambiguous part</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace"></span></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._.It_does_have_version%29">2<span class="hspace">&nbsp;</span>It does have version</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._.Through_using_git_tags%29">2.1<span class="hspace">&nbsp;</span>Through using git tags</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._.Declare_version_in_info_rkt%29">2.2<span class="hspace">&nbsp;</span>Declare version in info.rkt</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._.Racksnaps%29">2.3<span class="hspace">&nbsp;</span>Racksnaps</a></p></td></tr></tbody></table>
+
+<h1>1
+ <tt>&nbsp;</tt><a name="(part._.The_ambiguous_part)"></a>The ambiguous part</h1>
+
+<p>Talking about Racket&rsquo;s package version, actually all the explanation and description of its design is documented at <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/index.html">Package Management in Racket</a>. The only thing is, which coincides with my feeling about other docs of Racket, that is the doc is too seriously focusing on its implementation theory and leaving out the examples, this is making it unfriendly to be understood straightly. And about that, I think perhaps it is because the Racket world is too small to be allowed for a person to spend too much time on writing elaborately understandable documents. Anyway, after reading the doc I mentioned above and asking a few questions on its Slack channel, I make a progress and have the feeling I should write something down for someone who has the same questions as me.</p>
+
+<p></p>
+
+<div class="SIntrapara">After generally reading the doc I mentioned above, my first impression is Racket&rsquo;s packages doesn&rsquo;t have a version, probably this impression is from version explanation on chapter of:
+</div>
+
+<div class="SIntrapara">
+ <blockquote class="quoting">
+  <p><a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/getting-started.html#%28part._.Naming_and_.Designing_.Packages%29">Naming and Designing Packages</a> 
+   <br />
+A version declaration for a package is used only by other package implementors to effectively declare dependencies on provided features. Such declarations allow raco pkg install and raco pkg update to help check dependencies. <span style="font-weight: bold">Declaring and changing a version is optional, and the package catalog ignores version declarations;</span> in particular, a package is a candidate for updating when its checksum changes, independent of whether the package&#8217;s version changes or even in which direction the version changes. We suggest using a version smaller than "1.0" to indicate that a package&#8217;s interface is unstable and changing it to "1.0" when you are ready to commit to backwards compatibility going forward.</p></blockquote></div>
+
+<p></p>
+
+<div class="SIntrapara">and from version explanation on chapter of:
+</div>
+
+<div class="SIntrapara">
+ <blockquote class="quoting">
+  <p><a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/Package_Concepts.html">Package Concepts</a> 
+   <br />
+A version is intended to reflect available features of a package, and should not be confused with different releases of a package as indicated by the checksum.</p></blockquote></div>
+
+<p></p>
+
+<div class="SIntrapara">En...then, it seems it is true that Racket does not advocate to use a version for its packages and thus it naturally does not support a package version, at least on the common sense way of most engineers are familiar with. And this is truth, check the answer of questions on its <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/FAQ.html">FAQ</a>:
+</div>
+
+<div class="SIntrapara">
+ <blockquote class="quoting">
+  <p><a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/FAQ.html#%28part._.How_can_.I_specify_which_version_of_a_package_.I_depend_on_if_its_interface_has_changed_and_.I_need_an_old_version_%29">How can I specify which version of a package I depend on
+if its interface has changed and I need an <span class="emph">old</span> version?</a> 
+   <br />
+Therefore, package authors should not make backwards incompatible changes to packages. Instead, they should release a new package with a new name. For example, package libgtk might become libgtk2.</p></blockquote></div>
+
+<p>But isn&rsquo;t this too ideal? I know this answer is surely yes for me.</p>
+
+<h1>2
+ <tt>&nbsp;</tt><a name="(part._.It_does_have_version)"></a>It does have version</h1>
+
+<h2>2.1
+ <tt>&nbsp;</tt><a name="(part._.Through_using_git_tags)"></a>Through using git tags</h2>
+
+<p>But if you dig it deeper, you will notice that there is still a way to make it. If we check the <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/Package_Concepts.html#%28part._concept~3asource%29">Package Sources</a> chapter, we will notice we can install a package instead of directly using the name(for this case it will access the catalog of pkg.racket-lang.org) such as run <span class="stt">raco pkg install http-client</span>, we can achieve the same goal by run <span class="stt">raco pkg install "https://github.com/yanyingwang/http-client.git"</span>.</p>
+
+<p></p>
+
+<div class="SIntrapara">And further, if we add a tag to this github repo, we can specify a version to install with running <span class="stt">raco pkg install "https://github.com/yanyingwang/http-client.git#v0.0.1"</span>. And by the time of this, if we run <span class="stt">raco pkg show http-client</span>, it will show:
+</div>
+
+<div class="SIntrapara">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktSym">Installation-wide:</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">[</span><span class="RktSym">none</span><span class="RktPn">]</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">User-specific</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">for</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">installation</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"8.0"</span><span class="RktSym">:</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Package</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Checksum</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Source</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">http-client</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">d61d66b410c7e53cb7...</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">url...ient.git#v0.0.1</span><span class="RktMeta"></span></td></tr></tbody></table></div>
+
+<p></p>
+
+<div class="SIntrapara">Noticing the value of <span class="RktInBG"><span class="hspace"></span><span class="RktIn">Source</span><span class="hspace"></span></span> column is showing <span class="RktInBG"><span class="hspace"></span><span class="RktIn">url...ient.git#v0.0.1</span><span class="hspace"></span></span> instead of <span class="RktInBG"><span class="hspace">&nbsp;</span><span class="RktIn">catalog http-client</span><span class="hspace"></span></span>, which is the result value of installing from using <span class="stt">raco pkg install http-client</span> as shown below:
+</div>
+
+<div class="SIntrapara">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktSym">Installation-wide:</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">[</span><span class="RktSym">none</span><span class="RktPn">]</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">User-specific</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">for</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">installation</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"8.0"</span><span class="RktSym">:</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Package</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Checksum</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">Source</span><span class="RktMeta"></span></td></tr>
+   <tr>
+    <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">http-client</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">09d1f7f086c5c8b64710b6996e293fd220080a77</span><span class="RktMeta"></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktMeta"></span><span class="RktSym">catalog</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">http-client</span><span class="RktMeta"></span></td></tr></tbody></table></div>
+
+<p>You can use <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/raco/dirs.html#%28def._%28%28lib._setup%2Fdirs..rkt%29._find-pkgs-dir%29%29">find-pkgs-dir</a></span> and <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/raco/dirs.html#%28def._%28%28lib._setup%2Fdirs..rkt%29._find-user-pkgs-dir%29%29">find-user-pkgs-dir</a></span> to find out where code was installed, and view the source to check if package is correctly installed on the specific version as expected.</p>
+
+<h2>2.2
+ <tt>&nbsp;</tt><a name="(part._.Declare_version_in_info_rkt)"></a>Declare version in info.rkt</h2>
+
+<p></p>
+
+<div class="SIntrapara">Let&rsquo;s say I declare a version 0.1 in info.rkt as below:
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><a class="RktModLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/Module_Syntax.html#%28part._hash-lang%29"><span class="RktMod">#lang</span></a><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><a class="RktModLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/raco/info_rkt.html"><span class="RktSym">info</span></a><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">collection</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"http-client"</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">deps</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">'</span><span class="RktPn">(</span><span class="RktVal">"base"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"html-parsing"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"at-exp-lib"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">version</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"0.1"</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr></tbody></table></div></div>
+
+<div class="SIntrapara">And what is this <a class="techoutside Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/Package_Concepts.html#%28tech._version%29"><span class="techinside">version</span></a> used for? Well, this <a class="techoutside Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/Package_Concepts.html#%28tech._version%29"><span class="techinside">version</span></a> is used for the <span class="RktSym">deps</span> of the <span class="stt">"info.rkt"</span> file. This is explained in the chapter of:
+</div>
+
+<div class="SIntrapara">
+ <blockquote class="quoting">
+  <p><a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/pkg/metadata.html">Package Metadata</a> 
+   <br />
+A version-string specifies a lower bound on an acceptable version of the needed package.</p></blockquote></div>
+
+<p></p>
+
+<div class="SIntrapara">So let&rsquo;s say I have another package named <span class="RktSym">qweather</span>, which declare a dependency of <span class="RktSym">http-client</span> to version <span class="RktInBG"><span class="hspace"></span><span class="RktIn">0.1</span><span class="hspace"></span></span> like below:
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><a class="RktModLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/Module_Syntax.html#%28part._hash-lang%29"><span class="RktMod">#lang</span></a><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><a class="RktModLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/raco/info_rkt.html"><span class="RktSym">info</span></a><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">collection</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"qweather"</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">deps</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">'</span><span class="RktPn">(</span><span class="RktVal">"base"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"at-exp-lib"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"http-client"</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">'</span><span class="RktPn">#:version</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"0.1"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr>
+    <tr>
+     <td><span class="RktMeta"></span><span class="RktPn">(</span><span class="RktSym">define</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktSym">version</span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">"0.1"</span><span class="RktPn">)</span><span class="RktMeta"></span></td></tr></tbody></table></div></div>
+
+<p>Actually I haven&rsquo;t got the chance to try this, but from the official doc this seems should be working. And I also think we doesn&rsquo;t have an easy way to fix it if we forgot to update this version after already pushed the git commit of new feature code.</p>
+
+<h2>2.3
+ <tt>&nbsp;</tt><a name="(part._.Racksnaps)"></a>Racksnaps</h2>
+
+<p>From the engineering perspective, the package version system of Racket seems too simple and error-prone. In my opinion, it should simply just use the git tags as versions unless there is a risk people may force-push or somewhat change the checksum of git commits.</p>
+
+<p>For this case, the only resolution is caching each day&rsquo;s catalogs of packages and their git sources, this is also the way other languages&rsquo;s package systems are doing. For example in a Gemfile of Ruby, if you write in <span class="RktInBG"><span class="hspace"></span><span class="RktIn">gem 'ransack', '1.8.10'</span><span class="hspace"></span></span>, it will consult official server for a packed version, and if you write in <span class="RktInBG"><span class="hspace"></span><span class="RktIn">gem 'jquery-rails', github: 'prepsmith/jquery-rails', ref: '59fb16511a40248cd481dc0330ec536733f64758'</span><span class="hspace"></span></span>, it will go to the github to find a specified version.</p>
+
+<p>So here comes the <a href="http://racksnaps.defn.io/">Racksnaps</a>, you can find the basic usage in its home page. And especially, if your network is not stable to access <span class="RktInBG"><span class="hspace"></span><span class="RktIn">pkg.racket-lang.org</span><span class="hspace"></span></span> and <span class="RktInBG"><span class="hspace"></span><span class="RktIn">github.com</span><span class="hspace"></span></span> just like mine in China, you can use <span class="stt">raco pkg config --set catalogs https://racksnaps.defn.io/built-snapshots/2021/02/20/catalog/</span>, this will speed up the builds very much.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2021/02/announcing-the-release-of-qweather.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Announcing the release of Qweather</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2021/03/announcing-the-release-of-wx-biz-data-crypt.html"
+               aria-label="Next">
+              <span aria-hidden="true">Announcing the release of wx_biz_data_crypt &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>写在一九年新春后</title>
+    <meta name="description" content="修订整理于：2020-04-19  农历新春的过完，在所有人的眼中，我想都应该是过去一年的真正终结了。现在都市中的人们，总觉得旅游是一件多么放松的事情，我是农村长大的孩子，没有太多的这种都市人需要旅游的情节。生活在大上海后，我也经历过一些游耍，但我最最真实的感受是，每次老家和上海的这种折返，才是真真正正可以触动我的事情。常常想来，短暂的活在老家爸妈照看中的日子里，才算是我最最惬意的旅行，我常常会在老家冬日漆黑的夜晚，或者夏秋平静的夜里，放掉所有工作亦或生活中的一切，我所在上海的生活工作人际中所有的焦虑也好...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="自省, lisp">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html">
+    <link rel="next" href="/2019/01/-%E8%80%83.html">
+    <link rel="prev" href="/2019/12/a-markdown-post.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">写在一九年新春后</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>写在一九年新春后</h1>
+    <p class="meta">
+<time datetime="2019-02-11" pubdate="true">2019-02-11</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a>, <a href="/tags/lisp.html">lisp</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2019-02-11" pubdate="true">2019-02-11</time> / <span class="tags"><a href="/tags/%E8%87%AA%E7%9C%81.html">自省</a>, <a href="/tags/lisp.html">lisp</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>
+ <sub>修订整理于：2020&ndash;04&ndash;19</sub></p>
+
+<p>农历新春的过完，在所有人的眼中，我想都应该是过去一年的真正终结了。现在都市中的人们，总觉得旅游是一件多么放松的事情，我是农村长大的孩子，没有太多的这种都市人需要旅游的情节。生活在大上海后，我也经历过一些游耍，但我最最真实的感受是，每次老家和上海的这种折返，才是真真正正可以触动我的事情。常常想来，短暂的活在老家爸妈照看中的日子里，才算是我最最惬意的旅行，我常常会在老家冬日漆黑的夜晚，或者夏秋平静的夜里，放掉所有工作亦或生活中的一切，我所在上海的生活工作人际中所有的焦虑也好，人生中无处选择无处安放自己的不安也罢，静静的想着这所有的一切，像是自己同时在做着两场不同的梦，梦互相交织缠绕着，自己在天平中不断的倾斜着。</p>
+<!-- more-->
+
+<p>除夕当晚到的老家，初四晚上回到的上海。在老家就计划着要写这篇文章，回到上海自己房间的时候，这种要写些什么记录一下的心情是如此的强烈，很多事情接连处理着，我竟在之后的第二天，今天这个时候才写了。这个时候写，快感已经不够强烈了，不如两天前时候的心情，甚至于究竟要写些什么才能满足和释放中和掉新春这个快乐忧伤的情绪也不知道。</p>
+
+<p>回顾2018，我进入了一个还不错的环境，可惜这个环境正处在变动的边际，并在我进去的半年后迅速瓦解。或许这就是人生真实的写照，并不需要过多的注解。然而我知道的是，人所谓的成熟，就是要忘记或者放弃掉自己的情绪，看清楚自己的条件所能在社会中得到的利益，自己的情绪在利益面前是卑微的和不值一提的。人类所谓的成熟，不过也就是对现实的妥协而已，麻木而已，从悠悠少年的莽撞，发现自己重复的犯着同样的错误，而自然的不去主动感受情绪而规避掉错误。</p>
+
+<h1 id="从github到gitlab">从github到gitlab</h1>
+
+<p>说着的在老家，回到了上海，我迁移了很多github的repo到了gitlab。其实事情缘起于两个事，其中之一是github上线了private的repo，于是乎我就想隐藏掉我的github page也就是现在我blog的这个网站的代码，但是发现github现在并不支持，除非付费，所以我迁移了我的github page到gitlab page。其中之二的原因是，我们公司的项目代码和管理是通过github的，所以莫名奇妙的自己的很多github的内容会暴露在公司的同事之中，倘若只是大家聊的来的同事，慢慢的开始互相关注那当然是好事情，但是我不得不有种感觉，似乎有些并非在此之列的同事开始通过我的github获取些什么，也或者是他们处理事情的方式和时机拿捏的不太恰当，让我有种奇怪的感觉。总体来说，索性我还是分流自己到gitlab上面吧，也见于现在一部分很多的开发者都从github到往了gitlab。</p>
+
+<h1 id="lisp">lisp</h1>
+
+<p>在回顾，我从2016年初开始看common lisp语言，一直到2017年春夏时节，听一个好像是澳洲游学过的同事提起lisp的另一方言scheme，到冬天开始转向chez scheme的实现上，再到2018年工作中的曲折，今日，我可以说，我在scheme上面的领悟已经真正的开始步入流畅阶段了。我眼下正在通过一些小型脚本的工程实践，编写一个scheme语言的库<a href="https://gitlab.com/yanyingwang/chive">chez</a>的方法来探索语言的<a href="http://www.r6rs.org/final/html/r6rs/r6rs.html">r6rs</a>和srfi的实现内容和scheme语言的设计思想哲学理念。我从一开始的无处下手，觉得chez scheme语言做工程实践缺少太多基本库，到发现<a href="https://srfi.schemers.org/">srfi</a>的代码实践库已经基本上完成了大部分的工程内容的事实，我对scheme的理解已经开始步入正轨了。对于这样的事情的今日的结果，我很高兴，因为这是我从2015年就开始有萌芽计划的两件大的事情的其中之一。</p>
+
+<p>回顾，我对lisp语言开始真正的有所领悟并且可以运用得当，当下这种行云流水的感觉，很像是我2014年开始学ruby时候的感觉，那个时候我正从2013年python的学习中转到ruby上，发现我学ruby的速度好像比python快非常多，也更流畅，很像今日我发现自己最终下来看scheme比看common lisp快和流畅很多。我觉得我看scheme比common lisp快的原因和当年python之后的ruby如出一辙：一方面我看scheme之时已经有了common lisp之前的铺垫，另外是scheme语言极简主义的设计让我更加容易理解，还有就是我选择了用scheme去实现一些小型的运维脚本激发了这种感觉完全如同当年我开始用ruby在写一些运维脚本和个人工具，我之前在看common lisp的时候太过于执念于使用既成的框架去写一个网站了。</p>
+
+<h1 id="技术文章">技术文章</h1>
+
+<p>我现在已经很少写技术文章了，文章常常都是散文杂想，提名大都类似《写在某某某某时节》。所谓的一些自己编程上面的领悟，也都会混在这些文章当中。我早些年好像有故意为之的去勉强的专门些一些编程上面的记录，我后来感觉好像很无用，编程上的东西大多都化成在代码里面，不然就在当下的wiki里面，我反而会感觉生活中的这样的文章写来更有意思，这样子的文章是真实的，不带任何的取悦他人，或者炫耀虚荣的，就是自己的兴趣和心情，生活和感悟。</p>
+
+<p>换个想法的，我觉得还是因为我工作和生活太过忙碌了，其实我的lisp这个章节的内容，或许我完全可以拓展开来的去讲自己在这个事情上的经历&hellip;..不过我想，我还是想放更多的文章在我的生活的感悟上面，毕竟我已经花了那么多的时间去写和揣摩代码了，还是应该这样子平衡一下。</p>
+
+<h1 id="吉他">吉他</h1>
+
+<p>我所说的我从2015年就计划的两件事情之一是lisp，而另一件就是吉他。我现在上海房间里面的这把吉他，也是2015年的时候就花钱买下来的。眼下scheme的探索我感觉已经步入了正轨，吉他的事情其实算是被我拉下了的，虽然我断断续续的偶尔练习吉他，但是很明显的，不管是对乐理知识的理解和掌握，还是吉他的熟悉程度，相比于当时计划的lisp到今日特别是去年的发展，吉他远远的落在了后面，还有很长的路要走，我觉得或许今年我会在吉他上有所发展。</p>
+
+<h1 id="考试">考试</h1>
+
+<p>而眼下，马上过一两个月就要我春季的考试了，想起我的考试，是从2017年纳入的新计划，过程时至今日，也略有不畅。不过眼下4月份的3场考试，应该是眼下马上就要步入准备复习阶段的事情，或许会在考试之后开始激进的步入吉他的事情。</p>
+
+<h1 id="上海的生活">上海的生活</h1>
+
+<p>有时候对比我短暂停留老家时候的安心，和在上海的繁忙，我总是觉得我在上海的生活节奏或者某些内容是需要调整的，我隐约觉得我在上海的生活内容可能充斥了太多的无用东西，我应该摒弃掉一些生活中多余的东西，可能是某些我常常无意识在做的事情，我应该省下来更多的时间，放给我的吉他，嗯，是的，生活中就是我的吉他的事情了。我要找到更加有力的生活方式，调整，以让自己更多的时间，分给更加有用的事情。</p>
+
+<h1 id="关于情绪处理">关于情绪处理</h1>
+
+<p>有时候，我回想过去5年，乃至10年中的年轻时候的自己，会惊讶于自己那时候情绪处理能力的薄弱，但我现在又觉得奇怪，我那个时候是凭什么觉得自己是一个情绪感知能力很强的人的呢？我对情绪的感知能力本来就很强，但或许越是情绪感知能力强，处理能力才会不强。我后来，慢慢的才发现和觉得，所谓的情绪处理能力，其实是情商，我一直好像都误以为，情商是情绪的感知能力。我愿意把情商定义成情绪的处理能力，情绪的处理能力在我看来，是当下社会太多人确失的东西了，我甚至于看到一些已经结了婚的人依旧没有看清楚这个问题。如果说智商是一个很厉害的东西的话，情商必须归纳成情绪处理能力，我觉得才是可以和智商相提并论的。自己在年龄增长的同时，情绪处理能力的落后，在我看来是不能接受的事情，这很像是自己对自己生活有独到的见解，而自己的生活和社会的生活是紧密和链接的，我自己必须有这种情绪处理能力，才能让自己和自己周围的他人更好的生活。而空泛的说，我们都应该努力的提升自己，在各个方面，寻找到更加适合自己的圈子，这样子，自己的情绪处理能力和控制能力才会和周围的环境和人，相互作用着提升。</p>
+
+<h1 id="展望">展望</h1>
+
+<p>期待一下2019吧！希望把自己未经的事情都好好的经过，少一些浪费时间，多一些努力，多一些生活的真诚。</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2019/01/-%E8%80%83.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; *考</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2019/12/a-markdown-post.html"
+               aria-label="Next">
+              <span aria-hidden="true">A Markdown Post &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

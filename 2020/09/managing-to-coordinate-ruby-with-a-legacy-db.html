@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Managing to coordinate Ruby with a legacy DB</title>
+    <meta name="description" content="Recently I've been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft's SQL Server 2005....">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="编程, 教程, ruby, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html">
+    <link rel="next" href="/2020/09/announcing-the-release-of-http-client.html">
+    <link rel="prev" href="/2020/10/announcing-the-release-of-rainbow-delimiters.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Managing to coordinate Ruby with a legacy DB</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Managing to coordinate Ruby with a legacy DB</h1>
+    <p class="meta">
+<time datetime="2020-09-18" pubdate="true">2020-09-18</time> / <span class="tags"><a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/ruby.html">ruby</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2020-09-18" pubdate="true">2020-09-18</time> / <span class="tags"><a href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a>, <a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/ruby.html">ruby</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>Recently I&rsquo;ve been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft&rsquo;s SQL Server 2005.</p>
+<!-- more-->
+
+<p>Of course I&rsquo;ll choose to use Ruby to refactor this project and do new feature developments. But this also means I&rsquo;m facing a situation to develop a project that will hold three different DB connections at the same time.</p>
+
+<h1 id="rails">Rails</h1>
+
+<p>First of all, Rails itself naturally support <a href="https://guides.rubyonrails.org/active_record_multiple_databases.html">connecting to multiple DB in one project</a>.</p>
+
+<p>Let&rsquo;s say I have two DB, the primary one is using PostgreSQL, the other one is using MySQL. Easily we just need to modify the <code>config/database.yml</code> file:</p>
+
+<div class="brush: yaml">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="nt">development</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">primary</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql</span>
+<span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apple_development</span>
+<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yanying</span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">banana</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">adapter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql2</span>
+<span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">    </span><span class="nt">database</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">banana_development</span>
+<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">migrations_paths</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db/banana_migrate</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>And then we specify the target DB with <code>connects_to</code> in the model file such as <code>app/models/users.rb</code>:</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+<span class="w">  </span><span class="n">connects_to</span><span class="w"> </span><span class="ss">database</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">writing</span><span class="p">:</span><span class="w"> </span><span class="ss">:banana</span><span class="p">,</span><span class="w"> </span><span class="ss">reading</span><span class="p">:</span><span class="w"> </span><span class="ss">:banana</span><span class="w"> </span><span class="p">}</span>
+<span class="k">end</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h1 id="rails-with-legacy-db">Rails with legacy DB</h1>
+
+<p><a href="https://developer.oracle.com/dsl/haefel-oracle-ruby.html">https://developer.oracle.com/dsl/haefel-oracle-ruby.html</a></p>
+
+<p>Exactly like the content of link above from almost 10 years ago people says, Rails is a framework assumes lots of things, including the style of DB table names and column names. It&rsquo;s very sure Rails is not friendly to a legacy DB, although we can modify lots of things such as using <code>alias_attribute</code>, <code>ignored_columns</code> and so on. But that is definitely not enough.</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">ApplicationRecord</span>
+<span class="w">  </span><span class="n">connects_to</span><span class="w"> </span><span class="ss">database</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">writing</span><span class="p">:</span><span class="w"> </span><span class="ss">:banana</span><span class="p">,</span><span class="w"> </span><span class="ss">reading</span><span class="p">:</span><span class="w"> </span><span class="ss">:banana</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nb">self</span><span class="o">.</span><span class="n">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"H_A_user"</span>
+<span class="w">  </span><span class="nb">self</span><span class="o">.</span><span class="n">ignored_columns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="ss">:unused_column_name</span><span class="w"> </span><span class="o">]</span>
+
+<span class="w">  </span><span class="n">belongs_to</span><span class="w"> </span><span class="ss">:orders</span><span class="p">,</span><span class="w"> </span><span class="ss">optional</span><span class="p">:</span><span class="w"> </span><span class="kp">true</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_code"</span>
+<span class="w">  </span><span class="n">has_many</span><span class="w"> </span><span class="ss">:payments</span><span class="p">,</span><span class="w"> </span><span class="ss">class_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment"</span><span class="p">,</span><span class="w"> </span><span class="ss">foreign_key</span><span class="p">:</span><span class="w"> </span><span class="s2">"payment_code"</span>
+
+<span class="w">  </span><span class="n">alias_attribute</span><span class="w"> </span><span class="ss">:nick_name</span><span class="p">,</span><span class="w"> </span><span class="ss">:nickName</span>
+
+<span class="k">end</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>I&rsquo;d even tried to refactor the source code of activerecord to let it support other missing customized features:</p>
+
+<p><a href="https://stackoverflow.com/questions/9535989/manually-set-column-name-in-rails-model">https://stackoverflow.com/questions/9535989/manually-set-column-name-in-rails-model</a></p>
+
+<p><a href="https://github.com/yanyingwang/active_columns_mapping">https://github.com/yanyingwang/active_columns_mapping</a></p>
+
+<p>But my trying turns out Rails is such a strong framework with so many codes, both activerecord and activemodel as one part of it are following the basic rule of Rails, and as a whole they are not designed to be used for a foreign legacy DB.</p>
+
+<h1 id="sequel">Sequel</h1>
+
+<p>Luckily there is another ORM framework called <a href="https://sequel.jeremyevans.net/">Sequel</a> in the Ruby world.</p>
+
+<p>Sequel is a very agile framework, providing sufficiently abstract granularity, and those advantages make it very suitable for connecting to a legacy DB.</p>
+
+<p>For example, Sequel is defaultly able to <a href="https://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/identifier_mangling_rb.html">cast the DB table names and column names to Ruby snake case style words</a>.</p>
+
+<p>Beside, Sequel has a much better compatibility with the versions of DB. For instance, I&rsquo;m trying to addin a MSSQL connection with version 2005. If I&rsquo;m using activerecord I have to use Rails version 4.0, because the newtest <a href="https://github.com/rails-sqlserver/activerecord-sqlserver-adapter">adapter</a> have given it up and only support SQL Server 2012 or higher. But the newest Sequel works very well with SQL Server 2005.</p>
+
+<p>To initialize a DB connection with Sequel, We can just put code to <code>config/initializers/sequel_conn.rb</code>:</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TDSVER&#39;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;7.0&#39;</span>
+<span class="no">OrangeDB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Sequel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;tinytds://user:password@localhost:1433/dbname&#39;</span><span class="p">)</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>And then we can put all the Sequel model files to the lib dir, as we may have a file <code>app/lib/orange/user.rb</code> like:</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Orange</span><span class="o">::</span><span class="no">User</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="p">(</span><span class="no">OrangeDB</span><span class="o">[</span><span class="ss">:H_m_user</span><span class="o">]</span><span class="p">)</span>
+<span class="w">  </span><span class="n">many_to_one</span><span class="w"> </span><span class="ss">:role</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="ss">:role_code</span>
+
+<span class="k">end</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>another file <code>app/lib/orange/role.rb</code> like:</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Orange</span><span class="o">::</span><span class="no">Role</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="p">(</span><span class="no">OrangeDB</span><span class="o">[</span><span class="ss">:H_m__a_role</span><span class="o">]</span><span class="p">)</span>
+<span class="w">  </span><span class="n">one_to_many</span><span class="w"> </span><span class="ss">:users</span><span class="p">,</span><span class="w"> </span><span class="ss">key</span><span class="p">:</span><span class="w"> </span><span class="ss">:role_code</span>
+
+<span class="k">end</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>Remember to add <code>config.autoload_paths &lt;&lt; Rails.root.join('lib')</code> to <code>config/application.rb</code> file to enforce the code loading of lib dir.</p>
+
+<p>And now open the rails console try it:</p>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="no">Sequel</span><span class="o">::</span><span class="no">DATABASE</span>
+
+<span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Orange</span><span class="o">::</span><span class="no">User</span><span class="o">.</span><span class="n">last</span>
+<span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="o">.</span><span class="n">role</span>
+<span class="n">r</span><span class="o">.</span><span class="n">users</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<p>Check more Sequel Docs at <a href="http://sequel.jeremyevans.net/rdoc/">http://sequel.jeremyevans.net/rdoc/</a> and Plugins at <a href="https://sequel.jeremyevans.net/plugins.html">https://sequel.jeremyevans.net/plugins.html</a>.</p>
+
+<h1 id="practical-sequel-usage">Practical Sequel Usage</h1>
+
+<h2 id="plugins-and-configurations">plugins and configurations</h2>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="o">.</span><span class="n">plugin</span><span class="w"> </span><span class="ss">:association_pks</span>
+<span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="o">.</span><span class="n">plugin</span><span class="w"> </span><span class="ss">:pretty_print</span><span class="w"> </span><span class="c1"># https://github.com/umbrellio/sequel_pretty_print</span>
+<span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="o">.</span><span class="n">plugin</span><span class="w"> </span><span class="ss">:many_through_many</span><span class="w"> </span><span class="c1"># https://sequel.jeremyevans.net/rdoc-plugins/classes/Sequel/Plugins/ManyThroughMany.html</span>
+
+<span class="no">YourDB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Sequel</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"mysql://username:password@ip:port/dbname"</span><span class="p">)</span>
+<span class="no">YourDB</span><span class="o">.</span><span class="n">extension</span><span class="p">(</span><span class="ss">:pagination</span><span class="p">)</span>
+
+<span class="no">YourDB</span><span class="o">.</span><span class="n">loggers</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="no">Logger</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="vg">$stdout</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">development?</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="no">Rails</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">staging?</span><span class="w">  </span><span class="c1"># show sql query on the console for dev and staging env.</span>
+<span class="no">Sequel</span><span class="o">::</span><span class="no">Model</span><span class="o">.</span><span class="n">class_eval</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="c1"># make the https://github.com/rails-api/active_model_serializers available for sequel model.</span>
+<span class="w">  </span><span class="kp">include</span><span class="w"> </span><span class="no">ActiveModel</span><span class="o">::</span><span class="no">SerializerSupport</span>
+<span class="k">end</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h2 id="other-plugins">other plugins</h2>
+
+<ol>
+ <li><a href="https://sequel.jeremyevans.net/rdoc-plugins/classes/Sequel/Plugins/LazyAttributes.html">LazyAtributes</a>: Access instance&rsquo;s attribute only if you&rsquo;re really using it, for my instance, this is useful to avoid loading errors of some columns of model.</li>
+ <li><a href="https://sequel.jeremyevans.net/rdoc-plugins/classes/Sequel/Plugins/StaticCache.html">StaticCache</a>: I have a model which&rsquo;s data is almost unchangable.</li>
+ <li><a href="https://sequel.jeremyevans.net/rdoc-plugins/classes/Sequel/Plugins/Caching.html">Caching</a>: I have a model which&rsquo;s data only would be changed in a very rare time.</li></ol>
+
+<h2 id="querying">querying</h2>
+
+<div class="brush: ruby">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span><span class="c1"># sql like:</span>
+<span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="no">Sequel</span><span class="o">.</span><span class="n">like</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Yanying%&#39;</span><span class="p">))</span>
+<span class="c1"># https://sequel.jeremyevans.net/rdoc/files/doc/core_extensions_rdoc.html#label-like</span>
+
+<span class="c1"># sql join querying:</span>
+<span class="no">User</span><span class="o">.</span><span class="n">association_join</span><span class="p">(</span><span class="ss">:orders</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="no">Sequel</span><span class="o">[</span><span class="ss">:orders</span><span class="o">][</span><span class="ss">:no</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">"OR-2021-11-12-abcdeff"</span><span class="p">)</span>
+<span class="c1"># sql join querying with distinct:</span>
+<span class="no">User</span><span class="o">.</span><span class="n">eager_graph_with_options</span><span class="p">(</span><span class="ss">:orders</span><span class="p">,</span><span class="w"> </span><span class="ss">limit_strategy</span><span class="p">:</span><span class="w"> </span><span class="ss">:distinct_on</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="no">Sequel</span><span class="o">[</span><span class="ss">:orders</span><span class="o">][</span><span class="ss">:no</span><span class="o">]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">"OR-2021-11-12-abcdeff"</span><span class="p">)</span>
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2020/09/announcing-the-release-of-http-client.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; Announcing the release of http-client</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2020/10/announcing-the-release-of-rainbow-delimiters.html"
+               aria-label="Next">
+              <span aria-hidden="true">Announcing the release of Rainbow Delimiters &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

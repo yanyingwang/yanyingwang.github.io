@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Archlinux installation</title>
+    <meta name="description" content="I've heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workabl...">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="Tutorial">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2024/08/archlinux-installation.html">
+    <link rel="next" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Archlinux installation</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Archlinux installation</h1>
+    <p class="meta">
+<time datetime="2024-08-16" pubdate="true">2024-08-16</time> / <span class="tags"><a href="/tags/Tutorial.html">Tutorial</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2024-08-16" pubdate="true">2024-08-16</time> / <span class="tags"><a href="/tags/Tutorial.html">Tutorial</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p>I&rsquo;ve heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workable at present. What dictates me to use Archlinux is the prolonged audio issue spread through multiple versions of Ubuntu on my Chromebook.</p>
+
+<p>(A few months later, I install ArchLinux again on my desktop, and then I extened this article and change the title from ArchLinux on Chromebook to Archlinux installation.)</p>
+
+<p>updated at: 2026&ndash;1&ndash;13</p>
+<!-- more-->
+
+<h1 id="toshiba-chromebook">Toshiba Chromebook</h1>
+
+<p>I have a Toshiba Chromebook bought in 2015, the dust on which has not been swept out for years until the other days I was on demand to use a laptop for a few months.</p>
+
+<p>The first step I did was follow <a href="https://docs.mrchromebox.tech/docs/getting-started.html">https://docs.mrchromebox.tech/docs/getting-started.html</a> website and install the UEFI Full ROM. Then you would be able to boot your <a href="https://archlinux.org/download/">installation image</a> in UEFI mode from your USB device.</p>
+
+<p>After booting from it, you&rsquo;ll see the command line console already logged as root in your front, all the installations will be manually operated with command in this console. The installation steps are documented at <a href="https://wiki.archlinux.org/title/Installation_guide">official installation guide</a>.</p>
+
+<h1 id="archinsall-cmd">Archinsall CMD</h1>
+
+<p>Besides, to get rid of the annoying cmd process, we can simplify this with <code>archinstall</code>. In this case, the installing of Archlinux can be like procedures below:</p>
+
+<ol>
+ <li>burn the usb live CD.</li>
+ <li>boot up PC from this live CD.</li>
+ <li>When the cmd line pop up, connect to WIFI network with cmd <code>iwctl</code>.</li>
+ <li>Once connected to Internet, <code>pacman -Syy</code> to get a fresh of packages list for the Live CD.</li>
+ <li>Install <code>archinstall</code> with <code>pacman -S archinstall</code>.</li>
+ <li>Type in <code>archinstall</code> and then, following the instructions to install the Archlinux system to you disk.</li>
+ <li>As of <code>archinstall</code>, select <code>multilib</code> in case edit file to do it after the reboot; select the lang to be <code>zh_CN</code> or others in case do it afte reboot; select a cn font package in case do it after reboot.</li></ol>
+
+<h1 id="tips">Tips</h1>
+
+<p>A few notice the guide does not mention put here:</p>
+
+<ol>
+ <li>Format the disk as GPT type and add a fat32 format partition with a size of 50M as the first partition. Remember to mount this partition to <code>/boot/EFI</code> before using the <code>genfstab</code> command. Well to know that if you mount this partition to <code>/boot</code>, the size of this partition needs to be at least 200M, since the <code>initramfs-linux</code>, <code>vmlinuz-linux</code>, and <code>grub</code> files are put to this partition as well.</li>
+ <li>Before using <code>pacstrap</code>, better update your mirror list in case of the slow downloading packages in your country: <code>pacman -Syy</code>, <code>pacman -S reflector</code>, <code>reflector -c "cn" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist</code>.</li>
+ <li>Create an extra user but not root as your daily usage: <code>pacman -S sudo</code>, <code>useradd -m yanying</code>, <code>passwd yanying</code>, <code>usermod -ag wheel,audio,video,storage yanying</code>.</li>
+ <li>
+  <p>Follow <a href="https://wiki.archlinux.org/title/lxqt">lxqt guide</a> and install the lightest lxqt desktop environment: <code>pacman -S xorg lxqt</code>.</p></li>
+ <li>
+  <p>If you have issues with showing some special characters properly, try to install fonts: <code>pacman -S noto-fonts noto-fonts-emoji</code>.</p></li>
+ <li>Uncomment <code>Color</code> and <code>ILoveCandy</code> in <code>/etc/pacman.conf</code> for a better output of <code>pacman</code>.</li>
+ <li>Place icons to <code>/usr/share/sddm/faces/yanying.face.icon</code> to show it as the user icon in the login screen.</li>
+ <li>Check <a href="https://wiki.archlinux.org/title/IOS">IOS wiki</a> to connect and transfer files with iPhone.</li>
+ <li>Follow <a href="https://wiki.archlinux.org/title/Waydroid">Waydroid wiki</a> to run android on Archlinux.</li>
+ <li>swap ctrl and search key: modify <code>/usr/share/X11/xkb/symbols/pc</code> with: <code>key &lt;LWIN&gt; {    [ Control_L ]   };</code> and <code>key &lt;LCTL&gt; {    [ Super_L     ]   };</code>. More: https://askubuntu.com/questions/33774/how-do-i-remap-the-caps-lock-and-ctrl-keys</li>
+ <li>function keys of volumes and backlight: https://github.com/yanyingwang/CBFixesAndTweaks</li>
+ <li>insall adb tools: <code>pacman -S android-sdk-cmdline-tools</code> and <code>yay -S android-sdk-cmdline-tools-latest</code></li>
+ <li><code>pacman -S bluetooth</code> and <code>sudo systemctl disable bluetooth.serrice</code> and <code>sudo systemctl status bluetooth</code>.</li>
+ <li>Turn on 150% scales for display: <code>gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"</code></li>
+ <li>Install yay: <code>git clone https://aur.archlinux.org/yay.git &amp;&amp; cd yay &amp;&amp; makepkg -si</code> ( In China, try this before installing to fix the network issues: <code>go env -w GO111MODULE=on; go env -w GOPROXY=https://goproxy.cn,direct; export GO111MODULE=on; export GOPROXY=https://goproxy.cn</code>)</li>
+ <li>Make <code>alt + tab</code> to swich windows instead of swith apps: open <code>dconf-edit</code> and change the shotcut keys in: <code>org/gnome/desktop/wm/keybindings</code></li></ol>
+
+<h1 id="issues-fixing">Issues fixing</h1>
+
+<ul>
+ <li>cannot use fcitx5 on goldendict: <a href="https://bbs.archlinuxcn.org/viewtopic.php?id=14947">https://bbs.archlinuxcn.org/viewtopic.php?id=14947</a>, we use <code>pacman -Ql goldendict |grep desktop</code> to see where the desktop file located, and the we edit goldendict-ng desktop file and modify line of <code>Exec=goldendict %u</code> to <code>Exec=env GOLDENDICT_FORCE_WAYLAND=1 goldendict %u</code>.</li>
+ <li>cannot use fcitx5 on emacs: <a href="https://wiki.archlinux.org/title/Fcitx#Emacs">https://wiki.archlinux.org/title/Fcitx#Emacs</a>, use the same method as goldendict, modify desktop file to use <code>/usr/bin/env LC_CTYPE=zh_CN.UTF-8 XMODIFIERS=@im=fcitx emacs %F</code> for <code>Exec</code>.</li>
+ <li>cannot see thumbnail in files: <code>sudo pacman -S gst-libav gst-plugins-good gst-plugins-bad gst-plugins-ugly</code>.</li>
+ <li>LDAC for EarFun Air Pro 4: <code>sudo pacman -S libldac pipewire-audio pipewire-pulse wireplumber</code> and the <code>systemctl --user restart pipewire wireplumber</code>. At last, edit <code>~/.config/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf</code> to be:</li></ul>
+
+<div class="brush: code">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>monitor.bluez.properties = {
+    bluez5.enable-sbc-xq = true
+    bluez5.enable-msbc = true
+    bluez5.enable-hw-volume = true
+    bluez5.roles = [ a2dp_sink a2dp_source bap_sink bap_source hfp_hf hfp_ag ]
+    bluez5.codecs = [ ldac aptx_hd aptx aac sbc ]
+}
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h1 id="package-managers">Package managers</h1>
+
+<p><a href="https://wiki.archlinux.org/title/Pacman/Rosetta">https://wiki.archlinux.org/title/Pacman/Rosetta</a> is a table to show the PM correspondence of different Linux.</p>
+
+<h1 id="archlinux">ArchLinux</h1>
+
+<p>Below content is what I concluded from my experience of installing archlinux on my desktop with gnome.</p>
+
+<ul>
+ <li>For other PC not chromebook that use sof audio card, you may need to following <a href="https://bbs.archlinux.org/viewtopic.php?id=262469">this link</a> and install: <code>sof-firmware</code> and <code>alsa-ucm-conf</code></li>
+ <li>In order to use a usb Bluetooth device, we need to install <code>bluez blue-utils blueman</code>, and then <code>sudo systemctl start bluetooth sudo systemctl enable bluetooth</code>. Note that <code>lsmod |grep btusb</code> has result, if not we need to <code>sudo modprobe btusb</code>.</li>
+ <li>To show the minimize windows button, use <code>gonme-tweaks</code> and turn on it in <code>Titlebar Buttons</code></li>
+ <li>For firefox alt menu, following <a href="https://support.mozilla.org/en-US/questions/1278533">this link</a> and change <code>ui.key.menuAccessKeyFocuses</code> to <code>false</code> in <code>about:config</code> to disable it.</li>
+ <li>addin archlinuxcn as repo to pacman: following <a href="https://wiki.archlinux.org/title/Unofficial_user_repositories">this link</a> and do it. If you have issues to the keyrings, you can add <code>SigLevel = Optional TrustAll</code> for a workaround.</li>
+ <li>Once have archlinuxcn, you can install paru by <code>sudo pacman -S paru</code>.</li>
+ <li>Use website https://pkgs.org for searching of some pkgs.</li>
+ <li>Install <code>paru -S extension-manager</code>, <code>sudo pacman -S cronie dconf-editor</code></li>
+ <li><code>Alt + tab</code> to swith-windows: open <code>dconf-editor</code> and change items in <code>org/gnome/desktop/wm/keybindings</code>.</li>
+ <li>install wqy fonts: <code>sudo pacman -S wqy-microhei wqy-zenhei</code></li>
+ <li>https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution to setting the resolution of grub.</li>
+ <li>network question mark: <code>sudo vi /var/lib/NetworkManager/NetworkManager-intern.conf</code> and add <code>[connectivity] \n .set.enabled=false</code> to disable it.</li>
+ <li>follow <a href="https://wiki.archlinux.org/title/Cron">https://wiki.archlinux.org/title/Cron</a> and to install it and start the service with <code>systemctl</code>.</li>
+ <li>grub background: <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks">https://wiki.archlinux.org/title/GRUB/Tips_and_tricks</a>, change <code>/etc/default/grub</code> to add the background and then, <code>grub-mkconfig -o /grub/grub.cfg</code></li>
+ <li>firefox ZeroOmega AutoProxy rules: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</li>
+ <li><code>sudo pacman -Ss proxychains-ng</code></li>
+ <li><a href="https://wiki.archlinux.org/title/Locale">https://wiki.archlinux.org/title/Locale</a>, if run into <code>warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory</code> issue, or it is just can not show chinese in the terminal on the conditional of setting global lang to <code>zh_cn.UTF8</code> but setting <code>export LC_ALL="en_US.UTF-8"</code> for terminal, we need to uncomment the lang in <code>/etc/locale.gen</code> and run <code>sudo locale-gen</code>.</li></ul>
+
+<h1 id="softwares">Softwares</h1>
+
+<ul>
+ <li>
+  <p><code>paru -S clash-verge-rev-bin</code>. Clash-verge has more features than Mihomo-party. Try to add font <code>PingFangSC-SemiBold</code> on the settings of themes.</p><!-- * <https://wiki.archlinux.org/title/WPS_Office> and `paru -Ss wps-office ttf-wps-fonts`--></li>
+ <li>Following <a href="https://wiki.archlinux.org/title/Dropbox">https://wiki.archlinux.org/title/Dropbox</a> to install dropbox. Addtionally, we need to install <code>AppIndicator and KStatusNotifierItem Support</code> gnome extension for correctly showing the tray icon, refered from <a href="https://help.dropbox.com/zh-cn/installs/dropbox-desktop-app-for-linux#Supported-desktop-environments">https://help.dropbox.com/zh-cn/installs/dropbox-desktop-app-for-linux#Supported-desktop-environments</a>.</li>
+ <li>Video player: <code>sudo pacman -S mpv celluloid</code> instead of vlc.</li></ul>
+
+<h1 id="gnome-extensions">gnome extensions</h1>
+
+<p>To use gnome extensions, <code>yay -S chrome-gnome-shell</code>, <code>yay -S extension-manager</code></p>
+
+<ul>
+ <li>dash to dock</li>
+ <li>Dim Background Windows</li>
+ <li>battery time</li>
+ <li>dim background windows</li>
+ <li>bedtime mode</li>
+ <li>eye on cursor</li>
+ <li>lock keys</li>
+ <li>lilypad</li>
+ <li>Appindicator and KStatusNotifierItem Support</li>
+ <li>Input Method Panel</li>
+ <li>Lunar Calendar (need to clone the source code to inistall depending lib)</li>
+ <li>Weather O&rsquo;Clock</li>
+ <li>Wiggle</li>
+ <li>Hibernate Status Button</li>
+ <li>OSD Volume Number</li>
+ <li>Blue Battery Meter</li>
+ <li>Bluetooth Quick Connect</li>
+ <li>just perfection</li></ul>
+
+<h1 id="fcitx5">fcitx5</h1>
+
+<ul>
+ <li>If you have issues with starting your <a href="https://wiki.archlinux.org/title/fcitx5">fcitx5</a>, try to add <code>gtk_im_module=fcitx \n qt_im_module=fcitx \n sdl_im_module=fcitx \n xmodifiers=@im=fcitx</code> to your <code>~/.xprofile</code> file.</li>
+ <li>To input Chinese, you need to following <a href="https://wiki.archlinuxcn.org/wiki/Fcitx5">link</a> and install <code>fcitx5 fcitx5-chinese-addons fcitx5-pinyin-sogou</code></li>
+ <li>Fcitx: following <a href="https://wiki.archlinux.org/title/Fcitx5">this link</a> to use <code>sudo pacman -S fcitx5-im</code>.</li>
+ <li>As the issue of missing tray for fcitx5, install gnome-extension: <code>Input Method Panel</code> (if you find issue to set font and skin for fcitx5, please uninstall this and try <code>paru -S gnome-shell-extension-kimpanel-git</code>)</li>
+ <li>not work with wps: need to add <code>QT_IM_MODULE=xim wps</code> to <code>~/.xprofile</code>.</li></ul>
+
+<h1 id="plymouth-themes">plymouth themes</h1>
+
+<p>To show archlinux logo instead of the command screen while you are starting your system, check the <a href="https://wiki.archlinux.org/title/Plymouth">Plymouth</a> project.</p>
+
+<ul>
+ <li><code>pacman -s plymouth</code></li>
+ <li><code>paru -S plymouth-theme-arch-breeze</code> <a href="https://github.com/jtyr/plymouth-theme-arch-breeze/">https://github.com/jtyr/plymouth-theme-arch-breeze/</a></li>
+ <li>Check to add <code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"</code> to <code>/etc/default/grub</code> and then <code>grub-mkconfig -o /grub/grub.cfg</code>.</li>
+ <li><code>mkinitcpio -P</code> to manual generated the initramfsp.</li>
+ <li><code>plymouth-set-default-theme -l</code></li>
+ <li><code>plymouth-set-default-theme -R plymouth-theme-dark-arch</code></li></ul>
+
+<h1 id="grub-theme">grub theme</h1>
+
+<ul>
+ <li><code>paru -S arch-silence-grub-theme-git</code> and then following the result order to operate.</li>
+ <li>add <code>GRUB_GFXMODE=1920x1080x32</code> to <code>/etc/default/grub</code>, resolution is from result of run <code>videoinfo</code> in grub mode. <a href="https://wiki.archlinux.org/title/GRUB/Tips_and_tricks">https://wiki.archlinux.org/title/GRUB/Tips_and_tricks</a></li></ul>
+<!-- # Ubuntu Yaru theme-->
+<!-- `paru -Ss yaru-gnome-shell-theme yaru-gtk-theme yaru-icon-theme yaru-sound-theme libreoffice-style-yaru-fullcolor yaru-colors-gtk-theme`-->
+
+<h1 id="thinkpad-and-pixel">ThinkPad and Pixel</h1>
+
+<p>Check out the official arch wiki page for the thinkpad x1 gen 11 device: <a href="https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)">https://wiki.archlinux.org/title/Lenovo_ThinkPad_X1_Carbon_(Gen_11)</a></p>
+
+<ul>
+ <li><code>paru -S r-quick-share-bin localsend-bin scrcpy</code> to sharing files and monitoring.</li>
+ <li><code>paru -S fwupd</code> to install the firmware update tool. Use <code>fwupd update</code> to implement the update.</li>
+ <li><code>paru -S thermald</code> and <code>sudo sysemctl enable --now therald</code>. to prevent being overheating.</li>
+ <li><code>paru -S ventoy</code> to make an usb device to be ventoy.</li>
+ <li><code>paru -S throttled</code> and then <code>sudo systemctl enable --now throttled.service</code> to fix CPU to be more than 800Mhz.</li>
+ <li>Connect Pixel to you TP, insall adb and use <code>adb shell cmd appops set wechat READ_CLIPBOARD ignore</code> to ignore wechat from reading clipboard.</li></ul>
+
+<h2 id="howday">howday</h2>
+
+<ul>
+ <li><code>paru -S howdy-git</code> to install it.</li>
+ <li>Ensure <code>/etc/howdy/config.ini</code> has <code>dismiss_lockscreen = true</code> in <code>[core]</code> and <code>device_path = /dev/video2</code> in <code>[video]</code>.</li>
+ <li>Add <code>auth  [success=1 default=ignore]  pam_howdy.so  timeout=3</code> to <code>/etc/pam.d/system-auth</code>.</li>
+ <li>Add <code>auth sufficient pam_howdy.so</code> to <code>/etc/pam.d/gdm-password</code> and <code>/etc/pam.d/sudo</code>. (to repalce of add to system-auth file, which is a global solution.)</li>
+ <li>Use <code>sudo howdy add</code> to add faceprint.</li>
+ <li>To fix the red led light of camera when using: <code>paru -Ss linux-enable-ir-emitter</code> for installing and <code>sudo linux-enable-ir-emitter configure</code> to configure and <code>sudo systemctl enable --now linux-enable-ir-emitter.service</code> to enable it.</li></ul>
+
+<h2 id="fingerprint">Fingerprint</h2>
+
+<ul>
+ <li><code>paru -S libfprint-tod-git fprintd</code></li>
+ <li><code>fprintd-list</code> to list current state. <code>fprintd-enroll</code> to add new.</li>
+ <li><code>/etc/pam.d/system-auth</code> should be like:</li></ul>
+
+<div class="brush: shell">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>auth<span class="w">       </span>sufficient<span class="w">  			</span>pam_fprintd.so<span class="w">	    </span><span class="nv">max_tries</span><span class="o">=</span><span class="m">3</span>
+auth<span class="w">  	   </span><span class="o">[</span><span class="nv">success</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span>ignore<span class="o">]</span><span class="w">  	</span>pam_howdy.so<span class="w">  	    </span><span class="nv">timeout</span><span class="o">=</span><span class="m">3</span>
+auth<span class="w">       </span>include<span class="w">     			</span>system-login
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h2 id="fingerprint-and-howday">Fingerprint and howday</h2>
+
+<p>In order to make Fingerprint and howday work together, we need to change <code>system-auth</code> to be like:</p>
+
+<div class="brush: shell">
+ <div class="source">
+  <table class="sourcetable">
+   <tbody>
+    <tr>
+     <td class="linenos">
+      <div class="linenodiv">
+       <pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td>
+     <td class="code">
+      <div>
+       <pre><span></span>auth<span class="w">       </span>sufficient<span class="w">		       	 </span>pam_fprintd.so
+auth<span class="w">       </span><span class="o">[</span><span class="nv">success</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span>ignore<span class="o">]</span><span class="w">  	 </span>pam_howdy.so
+auth<span class="w">	   </span>include<span class="w">   	       		</span>system-login
+</pre></div></td></tr></tbody></table></div>
+
+</div>
+
+<h2 id="hibernate">Hibernate</h2>
+
+<p>Following <a href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate">https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate</a> for setup hibernate. Basically, we need:</p>
+
+<ol>
+ <li>edit <code>etc/default/grub</code> to add <code>resume=UUID=&lt;swap_uuid&gt;</code> after <code>GRUB_CMDLINE_LINUX_DEFAULT</code> line. Then <code>sudo grub-mkconfig -o /boot/grub/grub.cfg</code> to update GRUB.</li>
+ <li>edit <code>/etc/mkinitcpio.conf</code> to add <code>resume</code> to <code>HOOKS</code> after <code>systemfile</code>, then <code>sudo mkinitcpio -p linux</code> to rebuild.</li>
+ <li>use <code>systemctl hibernate</code> to test it and install <code>Hibernate Status Button</code> gnome extension.</li>
+ <li>
+  <p>In order to enable auto hibernate, <code>/etc/systemd/logind.conf</code> need to be like: <code>HandleLidSwitch=suspend-then-hibernate \n HandleLidSwitchExternalPower=suspend-then-hibernate</code>, and <code>/etc/systemd/sleep.conf</code> need to be like: <code>HibernateDelaySec=1800</code>.</p><!-- 5. In order to enalbe power button for selecting, `/etc/systemd/logind.conf` need to be like: `HandlePowerKey=ignore`, and use `gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'` to implement it.--></li>
+ <li>Edit <code>/etc/UPower/UPower.conf</code> and make sure <code>CriticalPowerAction=Hibernate</code>.</li></ol>
+
+<h2 id="hibernate-issues">Hibernate Issues</h2>
+
+<ul>
+ <li>If you run into issue about recovery your hibernate image from swap in you Thinkpad, you may need to disable <code>Intel hyper threading technology</code> in your BIOS.</li>
+ <li>If you cannt find <code>flip to boot</code> on your BIOS settings, probably it is the default settings, which means <code>flip to boot</code> works as default if you sleep and hibernate your laptop and will not be working if you shutdown it, and in this case you should enable <code>AC to boot</code> in BIOS.</li></ul>
+
+<h2 id="other-issues">Other issues</h2>
+
+<p>*</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>ArchLinux let us be able to control Linux Desktop in a higher level. People who are sophisticated at Ubuntu should also give ArchLinux a try. You must be in love with it.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2024/08/archlinux-installation.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2024/08/archlinux-installation.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2023/09/ggfsm-project-and-my-next-plan-about-ming.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; GGFSM project and my next plan about Ming</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged 'english'</title>
+  <description>清空谈角之操: Posts tagged 'english'</description>
+  <link>https://yanyingwang.github.io/tags/english.html</link>
+  <lastBuildDate>Sun, 03 Sep 2023 20:17:59 UT</lastBuildDate>
+  <pubDate>Sun, 03 Sep 2023 20:17:59 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>GGFSM project and my next plan about Ming</title>
+   <link>https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2023-09-ggfsm-project-and-my-next-plan-about-ming-html</guid>
+   <pubDate>Sun, 03 Sep 2023 20:17:59 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;For the past month, I&amp;rsquo;ve been dedicating myself on the developing of &lt;a href="https://www.yanying.wang/ggfsm/"&gt;GGFSM&lt;/a&gt;, which is a website that draw graphs with the given prices and volumes data of stocks from Shanghai and Shengzhen stock exchange. As one of my toys wrote in racket and &lt;a href="https://www.yanying.wang/ming/"&gt;ming-language&lt;/a&gt;, the main purpose of this project is enhancing ming lang, and making clear what the next plan should be about it.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>How to run Fcitx5 and Rime on Ubuntu 20.04</title>
+   <link>https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-11-how-to-run-fcitx5-and-rime-on-ubuntu-20-04-html</guid>
+   <pubDate>Tue, 08 Nov 2022 18:16:51 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;In the recent few days, I tried to install and run Fcitx5 and Rime on my Ubuntu 20.04, and I&amp;rsquo;ll be summing it up in this post.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>The significance of using Chinese instead of English as the interface of LISP for human</title>
+   <link>https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-10-the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human-html</guid>
+   <pubDate>Sun, 02 Oct 2022 00:01:27 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;&amp;#26356;&amp;#26032;&amp;#20110;&amp;#65306;2022-10-13&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the &lt;a href="http://www.yanying.wang/ming"&gt;Ming Programing Language&lt;/a&gt;, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>MZhengma</title>
+   <link>https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-09-mzhengma-html</guid>
+   <pubDate>Thu, 15 Sep 2022 00:42:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I had hacked the &lt;a href="https://en.wikipedia.org/wiki/Zhengma_method"&gt;Zhengma method&lt;/a&gt; to make it more practical for people to input Chinese characters: &lt;a href="https://github.com/yanyingwang/mzhengma"&gt;https://github.com/yanyingwang/mzhengma&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>how to speed-read the book EOPL</title>
+   <link>https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-04-how-to-speed-read-the-book-eopl-html</guid>
+   <pubDate>Sat, 23 Apr 2022 22:47:47 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up the reading and tried to learn programming through directly writing code to resovle tiny problems I&amp;rsquo;d confronted.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Racket's let and for</title>
+   <link>https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-12-racket-s-let-and-for-html</guid>
+   <pubDate>Tue, 14 Dec 2021 14:08:24 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;updated at: 2022-02-25&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Take a bite of racket&amp;rsquo;s &lt;a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html"&gt;Local Binding&lt;/a&gt;, at the first sight we might already acquire the gist about the usage of &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29"&gt;define&lt;/a&gt;&lt;/span&gt;. And then it will come to us with &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29"&gt;let&lt;/a&gt;&lt;/span&gt; and &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29"&gt;for&lt;/a&gt;&lt;/span&gt;, both of them can be used for loops.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>My thought and announcing of racket package Yijing</title>
+   <link>https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-12-my-thought-and-announcing-of-racket-package-yijing-html</guid>
+   <pubDate>Tue, 07 Dec 2021 17:21:18 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Most recently, I&amp;rsquo;m very passionate about chinese classical culture. If we take a deep look at the core of chinese culture, we are going to notice all of them include Traditional Chinese Medicine and 24 solar terms and even the way how ancient chinese recording time as their calendar, which is a mix of solar calendar and lunar calendar, are derived from Yijing. In a way, we can say that almost all the chinese things are built on the top of ideas of Yijing, although to this day the importance of it has been diminished by the developing of modern western science.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing scribble-rainbow-delimiters</title>
+   <link>https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-05-announcing-scribble-rainbow-delimiters-html</guid>
+   <pubDate>Mon, 31 May 2021 22:00:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I extract my code from a former project &lt;a href="https://github.com/yanyingwang/rainbow-delimiters"&gt;rainbow-delimiters&lt;/a&gt; to &lt;a href="https://github.com/yanyingwang/scribble-rainbow-delimiters"&gt;scribble-rainbow-delimiters&lt;/a&gt;, which is useful for reading code on HTML page generated by &lt;a href="https://docs.racket-lang.org/scribble/index.html"&gt;Racket&amp;rsquo;s Scribble&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of wx_biz_data_crypt</title>
+   <link>https://yanyingwang.github.io/2021/03/announcing-the-release-of-wx-biz-data-crypt.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-03-announcing-the-release-of-wx-biz-data-crypt-html</guid>
+   <pubDate>Tue, 30 Mar 2021 17:54:37 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I have been in the project to develop Wechat Mini programs, and when it comes to the part of decrypting data, I find out there does not exist a Ruby Gem for this although the Wechat official provides &lt;a href="https://res.wx.qq.com/wxdoc/dist/assets/media/aes-sample.eae1f364.zip"&gt;code sample&lt;/a&gt; but it is only for Python/PHP/C++. So I decided to resemble the Python source code and write a Ruby Gem based on it.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/announcing-the-release-of-wx-biz-data-crypt.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Fathoming out Racket Package's version</title>
+   <link>https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-03-fathoming-out-racket-package-s-version-html</guid>
+   <pubDate>Mon, 29 Mar 2021 01:30:34 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I received an email of &lt;a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895"&gt;a github comment&lt;/a&gt; on a Racket Package of mine named &lt;a href="https://github.com/yanyingwang/http-client/"&gt;http-client&lt;/a&gt;, which was announced to release by my post of &lt;a href="2020/09/announcing-the-release-of-http-client.html"&gt;Announcing the release of http-client&lt;/a&gt;. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&amp;rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of Qweather</title>
+   <link>https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2021-02-announcing-the-release-of-qweather-html</guid>
+   <pubDate>Sun, 28 Feb 2021 22:54:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket package called &lt;span style="font-weight: bold"&gt;Qweather&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/qweather"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/qweather&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of Rainbow Delimiters</title>
+   <link>https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-10-announcing-the-release-of-rainbow-delimiters-html</guid>
+   <pubDate>Sun, 25 Oct 2020 19:04:44 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new web browser plugin/extention/add-ons called &lt;strong&gt;Rainbow Delimiters&lt;/strong&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/rainbow-delimiters"&gt;https://www.github.com/yanyingwang/rainbow-delimiters&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Managing to coordinate Ruby with a legacy DB</title>
+   <link>https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-09-managing-to-coordinate-ruby-with-a-legacy-db-html</guid>
+   <pubDate>Fri, 18 Sep 2020 16:26:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I&amp;rsquo;ve been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft&amp;rsquo;s SQL Server 2005.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of http-client</title>
+   <link>https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=english&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-09-announcing-the-release-of-http-client-html</guid>
+   <pubDate>Fri, 04 Sep 2020 16:50:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket Package called &lt;span style="font-weight: bold"&gt;http-client&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/http-client"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/http-client&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=english&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

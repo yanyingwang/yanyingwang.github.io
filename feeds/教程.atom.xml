@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">清空谈角之操: Posts tagged '教程'</title>
+ <link rel="self" href="https://yanyingwang.github.io/feeds/%E6%95%99%E7%A8%8B.atom.xml" />
+ <link href="https://yanyingwang.github.io/tags/%E6%95%99%E7%A8%8B.html" />
+ <id>urn:https-yanyingwang-github-io:-tags-E6-95-99-E7-A8-8B-html</id>
+ <updated>2022-11-08T18:16:51Z</updated>
+ <entry>
+  <title type="text">How to run Fcitx5 and Rime on Ubuntu 20.04</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-11-how-to-run-fcitx5-and-rime-on-ubuntu-20-04-html</id>
+  <published>2022-11-08T18:16:51Z</published>
+  <updated>2022-11-08T18:16:51Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;In the recent few days, I tried to install and run Fcitx5 and Rime on my Ubuntu 20.04, and I&amp;rsquo;ll be summing it up in this post.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/11/how-to-run-fcitx5-and-rime-on-ubuntu-20-04.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">how to speed-read the book EOPL</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-04-how-to-speed-read-the-book-eopl-html</id>
+  <published>2022-04-23T22:47:47Z</published>
+  <updated>2022-04-23T22:47:47Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up the reading and tried to learn programming through directly writing code to resovle tiny problems I&amp;rsquo;d confronted.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">使用Ubuntu</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-03-E4-BD-BF-E7-94-A8ubuntu-html</id>
+  <published>2022-03-20T22:04:20Z</published>
+  <updated>2022-03-20T22:04:20Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;谈起Ubuntu系统，早在很早的时候2011年开始，我就渐渐的将其作为自己的桌面使用了。大概三年前，因为字体渲染和公司使用MacMini的原因，&lt;a href="/2020/04/使用黑苹果.html"&gt;我全方位的切换成了用MacOS&lt;/a&gt;。最近，因为某些契机，我重新安装使用了Ubuntu。三年多不见，Ubuntu在我看来，变得是更加好用了。从某种角度来说，Macos与Windows都难媲美他了。或者说，Ubuntu独有的开放风格，将他的使用性提升到了MacOS和Windows因为自身原因不能轻易企及的程度，就如移动时代的Android，只是他们际遇不同，结果不同罢了。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Racket's let and for</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-12-racket-s-let-and-for-html</id>
+  <published>2021-12-14T14:08:24Z</published>
+  <updated>2021-12-14T14:08:24Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;updated at: 2022-02-25&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Take a bite of racket&amp;rsquo;s &lt;a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html"&gt;Local Binding&lt;/a&gt;, at the first sight we might already acquire the gist about the usage of &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29"&gt;define&lt;/a&gt;&lt;/span&gt;. And then it will come to us with &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29"&gt;let&lt;/a&gt;&lt;/span&gt; and &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29"&gt;for&lt;/a&gt;&lt;/span&gt;, both of them can be used for loops.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Fathoming out Racket Package's version</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-03-fathoming-out-racket-package-s-version-html</id>
+  <published>2021-03-29T01:30:34Z</published>
+  <updated>2021-03-29T01:30:34Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Recently I received an email of &lt;a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895"&gt;a github comment&lt;/a&gt; on a Racket Package of mine named &lt;a href="https://github.com/yanyingwang/http-client/"&gt;http-client&lt;/a&gt;, which was announced to release by my post of &lt;a href="2020/09/announcing-the-release-of-http-client.html"&gt;Announcing the release of http-client&lt;/a&gt;. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&amp;rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Managing to coordinate Ruby with a legacy DB</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-09-managing-to-coordinate-ruby-with-a-legacy-db-html</id>
+  <published>2020-09-18T16:26:00Z</published>
+  <updated>2020-09-18T16:26:00Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Recently I&amp;rsquo;ve been pushed to a request to take over another project, which project is written by PHP using MySQL, and the main DB data of this project is from API of another project, that project is using Microsoft&amp;rsquo;s SQL Server 2005.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/managing-to-coordinate-ruby-with-a-legacy-db.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Racket's match</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-08-racket-s-match-html</id>
+  <published>2020-08-08T15:37:13Z</published>
+  <updated>2020-08-08T15:37:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;updated_at: 2022-02-27&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#35828;&amp;#21040;Racket&amp;#35821;&amp;#35328;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20854;&amp;#23454;&amp;#23427;&amp;#20027;&amp;#26159;&amp;#29992;&amp;#20110;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#30340;&amp;#65292;&amp;#32780;&amp;#35848;&amp;#21040;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#65292;&amp;#22312;&amp;#24403;&amp;#20195;&amp;#30340;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#20013;&amp;#65292;&amp;#26368;&amp;#20026;&amp;#22823;&amp;#23478;&amp;#29087;&amp;#30693;&amp;#30340;&amp;#33707;&amp;#36807;&amp;#20110;&lt;span class="RktInBG"&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;span class="RktIn"&gt;if&lt;/span&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/span&gt;&amp;#36825;&amp;#20010;&amp;#20851;&amp;#38190;&amp;#23383;&amp;#20102;&amp;#12290;&amp;#24403;&amp;#28982;Racket&amp;#35821;&amp;#35328;&amp;#20013;&amp;#20063;&amp;#26377;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29"&gt;if&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20294;&amp;#26159;&amp;#20854;&amp;#26159;&amp;#26368;&amp;#26368;&amp;#22522;&amp;#30784;&amp;#30340;&amp;#19968;&amp;#20010;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#12290;&amp;#20854;&amp;#20182;&amp;#35832;&amp;#22914;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29"&gt;case&lt;/a&gt;&lt;/span&gt;&amp;#12289;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29"&gt;cond&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20134;&amp;#25110;&amp;#26412;&amp;#25991;&amp;#22312;&amp;#21518;&amp;#38754;&amp;#21363;&amp;#23558;&amp;#38138;&amp;#23637;&amp;#24320;&amp;#26469;&amp;#35762;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#23588;&amp;#20854;&amp;#26159;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#22312;Racket&amp;#35821;&amp;#35328;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#20013;&amp;#65292;&amp;#22240;&amp;#20026;LISP&amp;#35821;&amp;#35328;&amp;#39640;&amp;#24230;&lt;a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E5%83%8F%E6%80%A7"&gt;&amp;#21516;&amp;#20687;&amp;#24615;&lt;/a&gt;&amp;#30340;S-expression&amp;#35821;&amp;#27861;&amp;#65292;&amp;#36171;&amp;#20104;&amp;#20854;&amp;#20102;&amp;#38750;&amp;#24120;&amp;#22810;&amp;#39640;&amp;#38454;&amp;#20351;&amp;#29992;&amp;#26041;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Frog</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-04-frog-html</id>
+  <published>2020-04-06T02:00:55Z</published>
+  <updated>2020-04-06T02:00:55Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;12&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;在我之前写&lt;a href="/2019/12/一次博客的洗礼.html"&gt;《一次博客的洗礼》&lt;/a&gt;的时候，我已经将我原本使用jekyll搭建的博客迁移到了使用&lt;a href="https://docs.racket-lang.org/frog/index.html"&gt;Frog&lt;/a&gt;搭建的新博客之上。期间曾为了自己博客的某种特定文章格式，写过一个插件&lt;a href="https://docs.racket-lang.org/scribble-frog-helper/index.html"&gt;scribble-frog-helper&lt;/a&gt;。现如今，因为某种原因，打算以private仓库的方式来提供我博客的对外访问服务，所以使用了heroku来完成的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">使用黑苹果</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-04-E4-BD-BF-E7-94-A8-E9-BB-91-E8-8B-B9-E6-9E-9C-html</id>
+  <published>2020-04-05T01:08:19Z</published>
+  <updated>2020-04-05T01:08:19Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;从2010年第一次使用Ubuntu之后，我一直都是Linux系统的坚实用户。2014年的时候，业余上的尝鲜心理以及工作上所任职的公司程序员被配置的默认工作平台均为macOS的事实，导致我打算迁移工作平台到macOS上，但发现macOS远不如自己想想那样的好用，比如诸多原本习惯的快捷键冲突的适应性问题，以及&lt;a href="https://en.wikipedia.org/wiki/Alt-Tab"&gt;alt+tab&lt;/a&gt;在macOS下面特殊的表现等问题。这更加坚定了我Linux才是最最适合自己的工作平台系统的认知。这样的认为着就从没有再次想迁移工作平台到macOS下，直到2017年的某一天，偶然在网上看到一款字体的截图效果进而想要将这字体应用到自己的Emacs上的时候，发现Ubuntu似乎无论如何都无法调整到macOS下那样的字体渲染效果。所以再次萌生了想要切换平台到macOS系统之下的想法。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/%E4%BD%BF%E7%94%A8%E9%BB%91%E8%8B%B9%E6%9E%9C.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">一次博客的洗礼</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=%E6%95%99%E7%A8%8B&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2019-12-E4-B8-80-E6-AC-A1-E5-8D-9A-E5-AE-A2-E7-9A-84-E6-B4-97-E7-A4-BC-html</id>
+  <published>2019-12-08T18:31:40Z</published>
+  <updated>2019-12-08T18:31:40Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;我早先的博客是使用&lt;a href="https://jekyllrb.com/"&gt;jekyll&lt;/a&gt;框架搭建的，那应该最起码已经是五年前的事情了。那时候的我正在全力的学习和提高自己对ruby语言的认知，是爱好，也更是为了增强自己的工作能力。时间转眼即逝，眼下ruby语言早已经是我养家糊口的技能了，我也自认为自己早已可以行云流水般的使用它到了炉火纯青的地步，对他的优点缺点也早已是心中有数，在工作中算是无所挂碍了的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=%E6%95%99%E7%A8%8B&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>

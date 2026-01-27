@@ -1,0 +1,285 @@
+/* $fonts-sans-serif: Roboto, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Noto Sans CJK", sans-serif; */
+    /* font-family: Roboto, "PingFangSC-Medium", "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", Roboto, Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Noto Sans CJK", sans-serif; */
+/* $fonts-serif: Georgia, "Times New Roman", PMingLiu, STSong, SimSun, "WenQuanYi Bitmap Song", "Noto Serif CJK", serif; */
+/* $fonts-monospace: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace; */
+/* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
+
+/* IOS mono default: Courier */
+/* android mono default: "Robot Mono" */
+
+
+@font-face {
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    font-family: "PingFangSC-Regular"; src: url("/fonts/PingFangSC-Regular.ttf") format("truetype");
+    font-family: "AgaveX-Regular"; src: url("/fonts/AgaveX-Regular.ttf") format("truetype");
+    font-family: "cangjie"; src: url("/fonts/cangjie-regular.ttf") format("truetype");
+}
+
+
+::-moz-selection { /* Code for Firefox */
+    color: #FFFFFF;
+    background: #4187A2;
+}
+::selection {
+    color: #FFFFFF;
+    background: #4187A2;
+}
+
+#content {
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+
+html {
+    font-size: 89%;
+
+    /* zoom: 90%; */
+    /* scale(0.9); */
+    /* -moz-transform: scale(0.9); */
+    /* -webkit-transform: scale(0.9); */
+    /* transform: scale(0.9); */
+    /* -moz-transform: scale(0.9); */
+    /* -moz-transform-origin: 0 0; */
+}
+
+body {
+    /* font-family: 'Fira Sans'; */
+    font-family:  "PingFangSC-Regular", "PingFang SC", "WenQuanYi Micro Hei", "Microsoft YaHei", "Noto Sans CJK", Helvetica, Arial, sans-serif, cangjie;
+    color: #212529;
+}
+
+.container {
+    max-width: 1000px;
+    font-weight: normal; /* 300 */
+}
+.header-container {
+    font-weight: 600;
+    font-family:  Helvetica, Arial, sans-serif;
+}
+
+a.toptoclink { font-weight: bold; }
+a { color: #07A; }
+a:hover { color: #07A; ext-decoration: underline; }
+a.dropdown-item { color: #07A; font-weight: normal; font-size: 80%; }
+a.dropdown-item:hover { color: #07A; }
+a.dropdown-item:active { background-color: #F8F9FA; }
+.page-item.active .page-link { background-color: #07A; border-color: #07A; }
+.page-link { color: #07A; }
+.page-link:hover { color: #07A; }
+nav.bg-color { background-color: #07A!important; }
+*|*:link:hover { color: #07A; }
+
+h1, h2, h3, h4, h5, h6, h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    line-height: 1.25;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+    padding-top: 0.4em;
+    padding-bottom: 0.1em;
+    font-weight: 600;
+    font-family:  Helvetica, Arial, sans-serif;
+}
+
+.index-header { margin: 30px 0 15px 0; }
+.index-header h2 {
+    font-size: 1.7rem;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+.index-container {}
+.index-footer { font-weight: bold; }
+
+.post-header { margin-top: 2em; margin-bottom: 1em; }
+.post-header h1 { font-size: 2rem; }
+
+.post-container { margin-top: 1em; margin-bottom: 1em; }
+.post-container a:hover { color: #07A; text-decoration-style: dotted; }
+.post-container h1 { font-size: 1.4rem; margin-top: 0.8rem; margin-bottom: 0.1rem; }
+.post-container h2 { font-size: 1.2rem; margin-top: 0.2rem; margin-bottom: 0.1rem;}
+.post-container h3 { font-size: 1.0rem; margin-top: 0.2rem; margin-bottom: 0.1rem; }
+.post-footer { font-weight: bold; }
+.page-container {
+    padding: 40px 15px 60px 15px;
+    color: #333;
+}
+
+.meta {
+    margin-top: 0.1em;
+    font-size: 80%;
+    color: #818181;
+}
+.date-and-tags {
+}
+.author {
+    color: #996600;
+}
+article {
+    margin: 15px 0 15px 0;
+    padding: 15px 0 15px 0;
+}
+footer {
+    font-size: 80%;
+    letter-spacing: -.3px;
+    color: #828282;
+}
+
+ul { padding-top: 0em; padding-bottom: 0.2em; }
+li { padding-top: 0em; padding-bottom: 0.05em; }
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    padding-top: 0.1em;
+    padding-bottom: 0.4em;
+    margin-top: 0.1em;
+    margin-bottom: 0.4em;
+}
+
+
+
+/* When highlighted code blocks are too wide, they wrap. Resulting in the */
+/* line numbers column's rows not lining up with the code rows. Prevent */
+/* wrapping. */
+pre {
+    font-size: 99.8%;
+    font-family: "AgaveX-Regular", "PingFangSC-Regular", monospace, "PingFang SC", "WenQuanYi Micro Hei", "Microsoft YaHei", "WenQuanYi Micro Hei", Roboto;
+    border: 0;
+    background-color: transparent;
+    /* border-right: 1px dotted gray; */
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0em;
+    /* margin-right: 2em; */
+    line-height: 1.5;
+    /* font-size: 0.95em; */
+    overflow-x: hidden;
+}
+pre code {
+    font-size: 99.8%;
+    font-family: "AgaveX-Regular", "PingFangSC-Regular", monospace, Courier, "Robot Mono", "PingFang SC", "WenQuanYi Micro Hei", "Microsoft YaHei", "WenQuanYi Micro Hei", Roboto;
+
+    background-color: transparent;
+    color: #333;
+    font-size: 87.5%;
+}
+p code,ul code { /* inline code */
+    font-size: 99.8%;
+    font-family: "AgaveX-Regular","PingFangSC-Regular", monospace, "PingFang SC", "WenQuanYi Micro Hei", "Microsoft YaHei", "WenQuanYi Micro Hei", Roboto;
+    color: #cc6633;
+    background-color: #eee;
+    border: 1px solid #eaecf0;
+    border-radius: 2px;
+    padding: 1px 4px;
+}
+/* markdown css */
+div[class^="brush: "] {
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+.linenodiv pre {
+    color: #aaaeb2;
+    border-right: 1px dotted #aaaeb2;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.source pre {
+    /* font-family: 'Fira Mono', monospace; */
+}
+
+.figure {
+    font-size: 0.65em;
+    max-width: 450px;
+    max-height: 93%;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    border: 10px solid #fff;
+    border-bottom: 5px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px 3px #777;
+    -moz-box-shadow: 3px 3px 3px 3px #777;
+    box-shadow: 3px 3px 3px 3px #777;
+}
+article img {
+    /* Make sure that images within blog articles never take more width
+     than the article width; `height: auto` ensures the height is also
+     resized proportionally.
+     This is useful given that Markdown itself gives you little
+     control over image resizing, and in particular no way to achieve
+     this "best fit" behavior. */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* article img:hover { */
+/*     -ms-transform: scale(1.5); /\* IE 9 *\/ */
+/*     -webkit-transform: scale(1.5); /\* Safari 3-8 *\/ */
+/*     transform: scale(1.5); */
+/* } */
+
+
+
+/* blockquote { */
+/* 	background: #f7f7f7; */
+/* 	font-family: Georgia; */
+/* 	padding: 14px 14px 12px 12px !important; */
+/* 	border: 1px solid #e7e7e7; */
+/* 	margin: 1em 3em; */
+/* 	text-align: right; */
+/* 	/\* font-size: 10pt; *\/ */
+
+/* 	-webkit-border-radius: 5px; */
+/* 	-moz-border-radius: 5px; */
+/* 	border-radius: 5px; */
+
+/* 	-webkit-box-shadow: 4px 4px 30px rgba(0,0,0,.08); */
+/* 	-moz-box-shadow: 4px 4px 30px rgba(0,0,0,.08); */
+/* 	box-shadow: 4px 4px 30px rgba(0,0,0,.08); */
+/* } */
+
+blockquote.quoting p {
+	/* font-style: italic; */
+	/* text-align: left; */
+	/* font-size: 12pt; */
+    font-size: 0.9em;
+}
+blockquote.quoting p:before {
+	font-size: 34pt;
+	font-weight: bold;
+	line-height: 11pt;
+	margin-left: -4px;
+	margin-right: 8px;
+	vertical-align: text-bottom;
+	content: '\201C';
+	color: #e1e1e1;
+	text-shadow: -1px -1px #999;
+}
+
+/* blockquote.quoting { */
+/*     background: #f9f9f9; */
+/*     border-left: 10px solid #ccc; */
+/*     margin: 1.5em 10px; */
+/*     padding: .5em 10px; */
+/*     quotes: "\201C""\201D""\2018""\2019"; */
+/*     font-size: 0.85em; */
+/* } */
+/* blockquote:before.quoting { */
+/*     color: #ccc; */
+/*     content: open-quote; */
+/*     font-size: 4em; */
+/*     line-height: .1em; */
+/*     margin-right: .25em; */
+/*     vertical-align: -.4em; */
+/* } */
+/* blockquote.quoting p { */
+/*      display: inline; */
+/* } */
+

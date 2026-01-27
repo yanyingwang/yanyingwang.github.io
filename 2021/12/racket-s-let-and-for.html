@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Racket's let and for</title>
+    <meta name="description" content="updated at: 2022-02-25  Take a bite of racket's Local Binding, at the first sight we might already acquire the gist about the usage of define. And then it will come to us with let and for, both of them can be used for loops....">
+    <meta name="author"      content="Yanying Wang">
+    <meta name="keywords"    content="教程, racket, english">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <link rel="icon"      href="/favicon.ico">
+    <link rel="canonical" href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html">
+    <link rel="next" href="/2021/12/my-thought-and-announcing-of-racket-package-yijing.html">
+    <link rel="prev" href="/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/pygments.css">
+    <link rel="stylesheet" type="text/css" href="/css/scribble.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/fira.css">
+    <!-- Feeds -->
+    <link rel="alternate" type="application/atom+xml"
+          href="/feeds/all.atom.xml" title="Atom Feed">
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/all.rss.xml" title="RSS Feed">
+    <!-- JS -->
+    <!-- <script type="text/javascript">
+           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+           ga('create', 'UA-153803148-1', 'auto');
+           ga('send', 'pageview');
+         </script> -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9M44Y0D7MY"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-9M44Y0D7MY');
+    </script>
+
+  </head>
+  <body>
+
+    <!-- A standard Twitter Bootstrap nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-color">
+      <div class="header-container container">
+
+        <a href="/index.html" class="navbar-brand">Racket's let and for</a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbar_collapse" aria-controls="navbar_collapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar_collapse">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                Tags <b class="caret"></b>
+              </a>
+
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/tags/english.html">english</a><a class="dropdown-item" href="/tags/javascript.html">javascript</a><a class="dropdown-item" href="/tags/lisp.html">lisp</a><a class="dropdown-item" href="/tags/package.html">package</a><a class="dropdown-item" href="/tags/post-sample.html">post-sample</a><a class="dropdown-item" href="/tags/racket.html">racket</a><a class="dropdown-item" href="/tags/ruby.html">ruby</a><a class="dropdown-item" href="/tags/Tutorial.html">Tutorial</a><a class="dropdown-item" href="/tags/%E5%93%B2%E5%AD%A6.html">哲学</a><a class="dropdown-item" href="/tags/%E5%BF%97%E6%80%AA.html">志怪</a><a class="dropdown-item" href="/tags/%E6%80%9D%E8%BE%A8.html">思辨</a><a class="dropdown-item" href="/tags/%E6%95%99%E7%A8%8B.html">教程</a><a class="dropdown-item" href="/tags/%E6%A2%A6%E5%A2%83.html">梦境</a><a class="dropdown-item" href="/tags/%E7%81%B5%E6%84%9F.html">灵感</a><a class="dropdown-item" href="/tags/%E7%BC%96%E7%A8%8B.html">编程</a><a class="dropdown-item" href="/tags/%E8%87%AA%E7%9C%81.html">自省</a><a class="dropdown-item" href="/tags/%E8%AE%BD%E7%8E%B0.html">讽现</a><a class="dropdown-item" href="/tags/%E8%AF%97%E6%AD%8C.html">诗歌</a><a class="dropdown-item" href="/tags/%E8%AF%97%E8%AF%8D.html">诗词</a><a class="dropdown-item" href="/tags/%E9%9B%86.html">集</a>
+              </div>
+            </li>
+
+            <li>
+              <a class="nav-link" href="/About.html">About</a>
+            </li> 
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.atom.xml">Atom</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/feeds/all.rss.xml">RSS</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main column -->
+        <div id="content" class="col-md-12">
+
+
+
+
+
+            <article class="post">
+  <header class="post-header">
+    <h1>Racket&rsquo;s let and for</h1>
+    <p class="meta">
+<time datetime="2021-12-14" pubdate="true">2021-12-14</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span></p>
+    <!-- <p class='date-and-tags'>
+<time datetime="2021-12-14" pubdate="true">2021-12-14</time> / <span class="tags"><a href="/tags/%E6%95%99%E7%A8%8B.html">教程</a>, <a href="/tags/racket.html">racket</a>, <a href="/tags/english.html">english</a></span> / <span class="authors">Yanying Wang</span></p> -->
+    <!-- <p class='authors'>By: <span class="authors">Yanying Wang</span></p> -->
+  </header>
+
+  <div class="post-container">
+
+<p><span class="Smaller">updated at: 2022-02-25</span></p>
+
+<p>Take a bite of racket&rsquo;s <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html">Local Binding</a>, at the first sight we might already acquire the gist about the usage of <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span>. And then it will come to us with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span> and <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29">for</a></span>, both of them can be used for loops.</p>
+<!--more-->
+
+<table cellpadding="0" cellspacing="0">
+ <tbody>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._let%29">1<span class="hspace">&nbsp;</span>let</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._use_let__for_processing_with_redefining_variables%29">1.1<span class="hspace">&nbsp;</span>use <span class="RktSym"><span class="RktStxLink">let*</span></span> for processing with redefining variables</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._use_let_for_loops%29">1.2<span class="hspace">&nbsp;</span>use <span class="RktSym"><span class="RktStxLink">let</span></span> for loops</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._implement_.Ruby_s_each_slice_method_with_let%29">1.3<span class="hspace">&nbsp;</span>implement Ruby&rsquo;s each_slice method with <span class="RktSym"><span class="RktStxLink">let</span></span></a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace"></span></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toptoclink" data-pltdoc="x" href="#%28part._for%29">2<span class="hspace">&nbsp;</span>for</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._.X-expression%29">2.1<span class="hspace">&nbsp;</span>X-expression</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._basic_usage_of_.X-expression%29">2.2<span class="hspace">&nbsp;</span>basic usage of X-expression</a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._generating_.X-expression_with_for_list%29">2.3<span class="hspace">&nbsp;</span>generating X-expression with <span class="RktSym"><span class="RktStxLink">for/list</span></span></a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._rewrite_the_preceding_example_with_for_fold%29">2.4<span class="hspace">&nbsp;</span>rewrite the preceding example with <span class="RktSym"><span class="RktStxLink">for/fold</span></span></a></p></td></tr>
+  <tr>
+   <td>
+    <p><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="toclink" data-pltdoc="x" href="#%28part._comparing_for_list_with_map__foldl_with_for_fold__for_last_with_findf%29">2.5<span class="hspace">&nbsp;</span>comparing <span class="RktSym"><span class="RktStxLink">for/list</span></span> with <span class="RktSym"><span class="RktValLink">map</span></span>, <span class="RktSym"><span class="RktValLink">foldl</span></span> with <span class="RktSym"><span class="RktStxLink">for/fold</span></span>, <span class="RktSym"><span class="RktStxLink">for/last</span></span> with <span class="RktSym"><span class="RktValLink">findf</span></span></a></p></td></tr></tbody></table>
+
+<h1>1
+ <tt>&nbsp;</tt><a name="(part._let)"></a>let</h1>
+
+<p>In my view, when we are using <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span>, mostly we are thinking over things from the middle part of process. To be specific, the fundamental <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span> gives you the flexibility to use it whenever you need it, and no matter wherever you are at this moment. But with the thinking of using <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span>/<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%2A%29%29">let*</a></span>/<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._letrec%29%29">letrec</a></span>, it&rsquo;s like you are thinking out of boxes and thinking before your next writting of block code. this is more like you&rsquo;re imaging there exists a black box called <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span>,and you&rsquo;re going to use it to implement your next bunch of code.</p>
+
+<p>The reason why I said this is because of my awareness of the flexiable and various usages of Racket&rsquo;s <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span>, and most of that has been shown as examples at <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html">Local Binding</a>, and which usages you might notice it&rsquo;s quite hard to be found out in other nowadays popular languages, at least not a more consice way.</p>
+
+<p>The basic difference between <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span>/<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%2A%29%29">let*</a></span>/<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._letrec%29%29">letrec</a></span> is they do the binding parallelly, sequentially and recursively.</p>
+
+<h2>1.1
+ <tt>&nbsp;</tt><a name="(part._use_let__for_processing_with_redefining_variables)"></a>use <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%2A%29%29">let*</a></span> for processing with redefining variables</h2>
+
+<p>Let&rsquo;s say we have a text <span class="RktInBG"><span class="hspace"></span><span class="RktIn">love</span><span class="hspace"></span></span>, and I need to write code to output it to <span class="RktInBG"><span class="hspace"></span><span class="RktIn">%I ++love-- you | I ++love-- you%</span><span class="hspace"></span></span>.</p>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%2A%29%29">let*</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktVal">"love"</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string-append%29%29">string-append</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"I ++"</span><span class="hspace">&nbsp;</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktVal">"-- you"</span><span class="RktPn">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string-append%29%29">string-append</a></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktVal">"|"</span><span class="hspace">&nbsp;</span><span class="RktSym">text</span><span class="RktPn">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string-append%29%29">string-append</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"%"</span><span class="hspace">&nbsp;</span><span class="RktSym">text</span><span class="hspace">&nbsp;</span><span class="RktVal">"%"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"%I ++love-- you|I ++love-- you%"</span></p></td></tr></tbody></table></div>
+
+<p>There is also <a href="https://github.com/yanyingwang/yijing/blob/91eaf1b75f6d09bedc05b0a5a366a51dd58031df/main.rkt#L38">another example</a> I wrote for Yijing.</p>
+
+<p>With Racket&rsquo;s <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%2A%29%29">let*</a></span>, we can redefining a variable with processes of changing its values again and again.</p>
+
+<h2>1.2
+ <tt>&nbsp;</tt><a name="(part._use_let_for_loops)"></a>use <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span> for loops</h2>
+
+<p>Notably we know <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span> can be used for local binding, but at the same time we are binding, we can involve a loop to it. This can be useful for a one-off process. Imagine you need to handle with a list of <span class="RktInBG"><span class="hspace"></span><span class="RktIn">1 8 3 0 4 8 3 0</span><span class="hspace"></span></span>, if you encounter a <span class="RktInBG"><span class="hspace"></span><span class="RktIn">8</span><span class="hspace"></span></span>, then add a <span class="RktInBG"><span class="hspace"></span><span class="RktIn">x</span><span class="hspace"></span></span> following it.</p>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/list</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span><span class="hspace">&nbsp;</span><span class="RktSym">loop</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">lst</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">1</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">0</span><span class="hspace">&nbsp;</span><span class="RktVal">4</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">0</span><span class="RktVal">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Flist..rkt%29._empty~3f%29%29">empty?</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktSym">result</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/begin.html#%28form._%28%28quote._~23~25kernel%29._begin%29%29">begin</a></span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">loop</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._cdr%29%29">cdr</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3d%29%29">=</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._append%29%29">append</a></span><span class="hspace">&nbsp;</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">x</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._append%29%29">append</a></span><span class="hspace">&nbsp;</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">'(1 8 x 3 0 4 8 x 3 0)</span></p></td></tr></tbody></table></div>
+
+<p>There is also <a href="https://github.com/yanyingwang/qweather/blob/master/extend.rkt#L24">another example</a> I wrote for Qweather.</p>
+
+<p>I guess using the OOP language, we have to define a method for this if we want it be compact. While Racket&rsquo;s <span class="RktVal">"let"</span> has the ability to directly bind everything inside it originally.</p>
+
+<h2>1.3
+ <tt>&nbsp;</tt><a name="(part._implement_.Ruby_s_each_slice_method_with_let)"></a>implement Ruby&rsquo;s each_slice method with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span></h2>
+
+<p>We know in Ruby programming language, we can write code like <span class="RktPn">[</span><span class="RktVal">1</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">2</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">3</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">4</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">5</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">6</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">7</span><span class="RktPn">]</span><span class="RktSym">.each_slice</span><span class="RktPn">(</span><span class="RktVal">3</span><span class="RktPn">)</span><span class="RktSym">.to_a</span><span class="RktMeta"></span> to split the original array to a new two dimensions array, and each element of the new array almost has a similar size: <span class="RktPn">[</span><span class="RktPn">[</span><span class="RktVal">1</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">2</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">3</span><span class="RktPn">]</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">[</span><span class="RktVal">4</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">5</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktVal">6</span><span class="RktPn">]</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">,</a></span><span class="RktMeta"></span><span class="hspace">&nbsp;</span><span class="RktMeta"></span><span class="RktPn">[</span><span class="RktVal">7</span><span class="RktPn">]</span><span class="RktPn">]</span><span class="RktMeta"></span>.</p>
+
+<p></p>
+
+<div class="SIntrapara">If we try to write this method in a Racket function, it can also be implemented by let:
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">racket/list</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29">let</a></span><span class="hspace">&nbsp;</span><span class="RktSym">loop</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">lst</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">1</span><span class="hspace">&nbsp;</span><span class="RktVal">2</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="hspace">&nbsp;</span><span class="RktVal">4</span><span class="hspace">&nbsp;</span><span class="RktVal">5</span><span class="hspace">&nbsp;</span><span class="RktVal">6</span><span class="hspace">&nbsp;</span><span class="RktVal">7</span><span class="hspace">&nbsp;</span><span class="RktVal">8</span><span class="hspace">&nbsp;</span><span class="RktVal">9</span><span class="hspace">&nbsp;</span><span class="RktVal">10</span><span class="hspace">&nbsp;</span><span class="RktVal">1</span><span class="hspace">&nbsp;</span><span class="RktVal">12</span><span class="hspace">&nbsp;</span><span class="RktVal">13</span><span class="hspace">&nbsp;</span><span class="RktVal">14</span><span class="RktVal">)</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">[</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">)</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29">if</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/generic-numbers.html#%28def._%28%28quote._~23~25kernel%29._~3c%29%29">&lt;</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._length%29%29">length</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._append%29%29">append</a></span><span class="hspace">&nbsp;</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym">loop</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Flist..rkt%29._drop%29%29">drop</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._append%29%29">append</a></span><span class="hspace">&nbsp;&nbsp;</span><span class="RktSym">result</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Flist..rkt%29._take%29%29">take</a></span><span class="hspace">&nbsp;</span><span class="RktSym">lst</span><span class="hspace">&nbsp;</span><span class="RktVal">3</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">'((1 2 3) (4 5 6) (7 8 9) (10 1 12) (13 14))</span></p></td></tr></tbody></table></div></div>
+
+<p>And beside, there is somebody already implemented this function and named it as <span class="RktSym"><span class="badlink"><span class="RktValLink">slice-at</span></span></span>. Check my answer of it in stackoverflow <a href="https://stackoverflow.com/a/71223798/2771742">here</a>.</p>
+
+<h1>2
+ <tt>&nbsp;</tt><a name="(part._for)"></a>for</h1>
+
+<p>Since lots of languages use <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29">for</a></span><span class="RktMeta"></span> as a keyword for loops, it could be very easy for us to master the usage of Racket&rsquo;s <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29">for</a></span>, but how about <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._foldl%29%29">foldl</a></span>\<span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._foldr%29%29">foldr</a></span> or even <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flist%29%29">for/list</a></span> <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Ffold%29%29">for/fold</a></span>? Let&rsquo;s take some prctical examples.</p>
+
+<p>Before we dive into the example part, let me introduce the related background a little bit.</p>
+
+<h2>2.1
+ <tt>&nbsp;</tt><a name="(part._.X-expression)"></a>X-expression</h2>
+
+<p>In the Ruby On Rails world, at the very begnning few years of this framework, it&rsquo;s very prevalent to write the frontend code with <a href="https://haml.info/">Haml</a>\<a href="http://slim-lang.com/">Slim</a> instead of HTML, which HTML in its world is call <a href="https://en.wikipedia.org/wiki/ERuby">ERB</a>. Well the core spirit of this is embedding Ruby code to the HTML document and make the whole mixed code much more readable and writable, although nowadays people are trying to make the JS taking more spaces comparing to that time.</p>
+
+<p>But as I think, no matter for now or before, they have the same common traits of manipulating the HTML document by a progromming language, the difference is the executable capability of JS in the browser, makes the JS working on this at another feasible level seemingly.</p>
+
+<p>But what I want to mention here is, if you have the experience of using HAML, you will notice the obvious annoyance of how hard it is to modify the HTML code, which mostly comes from the part of generated HTML of embedded Ruby code in ERB/Haml/Slim.</p>
+
+<p>And as for now, I would say, this kind of annoying things can be much more smooth in the Racket world because of the vast use of <a href="https://en.wikipedia.org/wiki/S-expression">sexpr</a> in its language design.</p>
+
+<p>In the terms of the standing of HTML docuemnt in LISP world, it is called <span class="RktInBG"><span class="hspace"></span><span class="RktIn">X-expression</span><span class="hspace"></span></span>, which is implemented by the <a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/xml/index.html">XML: Parsing and Writing</a> package in Racket specifically. And our following examples are about having something to do with the <span class="RktInBG"><span class="hspace"></span><span class="RktIn">X-expression</span><span class="hspace"></span></span>.</p>
+
+<h2>2.2
+ <tt>&nbsp;</tt><a name="(part._basic_usage_of_.X-expression)"></a>basic usage of X-expression</h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">"do I love you?"</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p&gt;do I love you?&lt;/p&gt;"</span></p></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">p</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"question"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">"do I love you?"</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;p class=\"question\"&gt;do I love you?&lt;/p&gt;"</span></p></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">div</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"main"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">ul</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"questions"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">li</span><span class="hspace">&nbsp;</span><span class="RktVal">"do I love Lily?"</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">li</span><span class="hspace">&nbsp;</span><span class="RktVal">"do I love Lucy?"</span><span class="RktVal">)</span><span class="RktVal">)</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;div class=\"main\"&gt;&lt;ul class=\"questions\"&gt;&lt;li&gt;do I love Lily?&lt;/li&gt;&lt;li&gt;do I love Lucy?&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"</span></p></td></tr></tbody></table></div>
+
+<h2>2.3
+ <tt>&nbsp;</tt><a name="(part._generating_.X-expression_with_for_list)"></a>generating X-expression with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flist%29%29">for/list</a></span></h2>
+
+<p></p>
+
+<div class="SIntrapara">Since literally Xexpr is just list, so we can use all kind functions of <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._quasiquote%29%29">quasiquote</a></span>\<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote%29%29">unquote</a></span>\<span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/quasiquote.html#%28form._%28%28quote._~23~25kernel%29._unquote-splicing%29%29">unquote-splicing</a></span> for the generating of Xexpr.
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">girls</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Lily"</span><span class="hspace">&nbsp;</span><span class="RktVal">"Lucy"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">div</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"main"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">ul</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"questions"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktRdr">,@</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flist%29%29">for/list</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktSym">girls</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">li</span><span class="hspace">&nbsp;</span><span class="RktVal">"do I love "</span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"?"</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktVal">)</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">"&lt;div class=\"main\"&gt;&lt;ul class=\"questions\"&gt;&lt;li&gt;do I love Lily?&lt;/li&gt;&lt;li&gt;do I love Lucy?&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"</span></p></td></tr></tbody></table></div></div>
+
+<h2>2.4
+ <tt>&nbsp;</tt><a name="(part._rewrite_the_preceding_example_with_for_fold)"></a>rewrite the preceding example with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Ffold%29%29">for/fold</a></span></h2>
+
+<div class="SCodeFlow">
+ <table cellpadding="0" cellspacing="0" class="RktBlk">
+  <tbody>
+   <tr>
+    <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/require.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._require%29%29">require</a></span><span class="hspace">&nbsp;</span><span class="RktSym">xml</span><span class="RktPn">)</span></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">girls</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"Lily"</span><span class="hspace">&nbsp;</span><span class="RktVal">"Lucy"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <table cellpadding="0" cellspacing="0" class="RktBlk">
+      <tbody>
+       <tr>
+        <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym">xexpr-&gt;string</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">`</span><span class="RktVal">(</span><span class="RktVal">div</span><span class="hspace">&nbsp;</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"main"</span><span class="RktVal">)</span><span class="RktVal">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktRdr">,</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Ffold%29%29">for/fold</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">acc</span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">class</span><span class="hspace">&nbsp;</span><span class="RktVal">"qustions"</span><span class="RktVal">)</span><span class="RktVal">)</span><span class="hspace">&nbsp;</span><span class="RktVal">ul</span><span class="RktVal">)</span><span class="RktPn">]</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">#:result</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._reverse%29%29">reverse</a></span><span class="hspace">&nbsp;</span><span class="RktSym">acc</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktSym">girls</span><span class="RktPn">]</span><span class="RktPn">)</span></td></tr>
+       <tr>
+        <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._cons%29%29">cons</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._list%29%29">list</a></span><span class="hspace">&nbsp;</span><span class="RktVal">'</span><span class="RktVal">li</span><span class="hspace">&nbsp;</span><span class="RktVal">"do I love "</span><span class="hspace">&nbsp;</span><span class="RktSym">name</span><span class="hspace">&nbsp;</span><span class="RktVal">"?"</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktSym">acc</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+   <tr>
+    <td>
+     <p><span class="RktRes">"&lt;div class=\"main\"&gt;&lt;ul class=\"qustions\"&gt;&lt;li&gt;do I love Lily?&lt;/li&gt;&lt;li&gt;do I love Lucy?&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"</span></p></td></tr></tbody></table></div>
+
+<h2>2.5
+ <tt>&nbsp;</tt><a name="(part._comparing_for_list_with_map__foldl_with_for_fold__for_last_with_findf)"></a>comparing <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flist%29%29">for/list</a></span> with <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Fmap..rkt%29._map%29%29">map</a></span>, <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._foldl%29%29">foldl</a></span> with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Ffold%29%29">for/fold</a></span>, <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flast%29%29">for/last</a></span> with <span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._findf%29%29">findf</a></span></h2>
+
+<p></p>
+
+<div class="SIntrapara">Those pair of functions basically have the same effects, except the <span class="RktInBG"><span class="hspace"></span><span class="RktIn">for</span><span class="hspace"></span></span>s are much more flexiable and the code of them are much more concise. Let&rsquo;s take the <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flast%29%29">for/last</a></span> for example.
+</div>
+
+<div class="SIntrapara">
+ <div class="SCodeFlow">
+  <table cellpadding="0" cellspacing="0" class="RktBlk">
+   <tbody>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29">define</a></span><span class="hspace">&nbsp;</span><span class="RktSym">cities</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">'</span><span class="RktVal">(</span><span class="RktVal">(</span><span class="RktVal">"&#21271;&#20140;"</span><span class="hspace">&nbsp;</span><span class="RktVal">. </span><span class="RktVal">"101010100"</span><span class="RktVal">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">"&#37073;&#24030;"</span><span class="hspace">&nbsp;</span><span class="RktVal">. </span><span class="RktVal">"101180101"</span><span class="RktVal">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">"&#19978;&#28023;"</span><span class="hspace">&nbsp;</span><span class="RktVal">. </span><span class="RktVal">"101020100"</span><span class="RktVal">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktVal">(</span><span class="RktVal">"&#26032;&#37073;"</span><span class="hspace">&nbsp;</span><span class="RktVal">. </span><span class="RktVal">"101180106"</span><span class="RktVal">)</span><span class="RktVal">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string-append%29%29">string-append</a></span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28lib._racket%2Fprivate%2Flist..rkt%29._findf%29%29">findf</a></span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/lambda.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._lambda%29%29">lambda</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym">i</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string~3d~3f%29%29">string=?</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"&#26032;&#37073;"</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktSym">i</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktSym">cities</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktVal">"&#24066;"</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">"&#26032;&#37073;&#24066;"</span></p></td></tr>
+    <tr>
+     <td>
+      <table cellpadding="0" cellspacing="0" class="RktBlk">
+       <tbody>
+        <tr>
+         <td><span class="stt">&gt; </span><span class="RktPn">(</span><span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flast%29%29">for/last</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktPn">[</span><span class="RktSym">i</span><span class="hspace">&nbsp;</span><span class="RktSym">cities</span><span class="RktPn">]</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="RktPn">#:when</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string~3d~3f%29%29">string=?</a></span><span class="hspace">&nbsp;</span><span class="RktVal">"&#26032;&#37073;"</span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktSym">i</span><span class="RktPn">)</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr>
+        <tr>
+         <td><span class="hspace">&nbsp;&nbsp;</span><span class="hspace">&nbsp;&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/strings.html#%28def._%28%28quote._~23~25kernel%29._string-append%29%29">string-append</a></span><span class="hspace">&nbsp;</span><span class="RktPn">(</span><span class="RktSym"><a class="RktValLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._car%29%29">car</a></span><span class="hspace">&nbsp;</span><span class="RktSym">i</span><span class="RktPn">)</span><span class="hspace">&nbsp;</span><span class="RktVal">"&#24066;"</span><span class="RktPn">)</span><span class="RktPn">)</span></td></tr></tbody></table></td></tr>
+    <tr>
+     <td>
+      <p><span class="RktRes">"&#26032;&#37073;&#24066;"</span></p></td></tr></tbody></table></div></div>
+
+<div class="SIntrapara">As you can see, with <span class="RktSym"><a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%2Flast%29%29">for/last</a></span>, since the logic deepth is flatten, it then becomes much more readable.</div>
+
+<p>Further more, if you are curious about how to implement a generated HTML page with Racket, you can start it up from a project of mine called <a href="https://github.com/yanyingwang/daily-report/pull/2/files">daily report</a>.</p>
+  </div>
+
+  <footer class="post-footer">
+    <!-- <script type="text/javascript">
+           !function(d,s,id){
+               var js,fjs=d.getElementsByTagName(s)[0];
+               if(!d.getElementById(id)){
+                   js=d.createElement(s);
+                   js.id=id;
+                   js.src="//platform.twitter.com/widgets.js";
+                   fjs.parentNode.insertBefore(js,fjs);
+               }
+           }(document,"script","twitter-wjs");
+         </script>
+         <a href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-url="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html"
+            data-dnt="true">
+           "Tweet"</a> -->
+    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+         <g:plusone size="medium" href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html"></g:plusone> -->
+    <!-- <div id="disqus_thread"></div>
+         <script type="text/javascript">
+           var disqus_config = function () {
+             this.page.identifier = undefined;
+             this.page.url = undefined;
+             this.page.title = undefined;
+             this.page.category_id = undefined;
+           };
+           var disqus_shortname = 'shortname';
+           (function() {
+               var dsq = document.createElement('script');
+               dsq.type = 'text/javascript';
+               dsq.async = true;
+               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+               dsq.setAttribute('data-timestamp', +new Date());
+               (document.head || document.body).appendChild(dsq);
+           })();
+         </script>
+         <noscript>
+           Please enable JavaScript to view the
+           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+         </noscript> -->
+
+    <!-- <br/>
+         <hr style="width: 400px;">
+         <div class="row justify-content-center">
+         <p> 如果你喜欢我的文章，可以扫描下面的二维码以示赞赏。 </p>
+         </div>
+         <div class="row justify-content-center">
+         <p> <img src="/wechat-reward-code.jpeg"  alt="微信赞赏码" width="300" height="300"> </p>
+         </div>
+
+         <hr style="width: 200px;">
+         <br/>
+    -->
+    </br></br></br></br>
+
+    <div class="row justify-content-center">
+      <nav aria-label="Page Navigation">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/2021/12/my-thought-and-announcing-of-racket-package-yijing.html"
+               aria-label="Previous">
+              <span aria-hidden="true">&larr; My thought and announcing of racket package Yijing</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/2022/03/%E4%BD%BF%E7%94%A8ubuntu.html"
+               aria-label="Next">
+              <span aria-hidden="true">使用Ubuntu &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <br>
+  </footer>
+</article>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        <!-- <p><a href="https://twitter.com/racketlang"
+                   class="twitter-follow-button"
+                   data-show-count="false"
+                   data-lang="en">
+                  "Follow RacketLang"
+                </a>
+                <script type="text/javascript">
+                  !function(d,s,id){
+                      var js,fjs=d.getElementsByTagName(s)[0];
+                      if(!d.getElementById(id)){
+                          js=d.createElement(s);
+                          js.id=id;
+                          js.src="//platform.twitter.com/widgets.js";
+                          fjs.parentNode.insertBefore(js,fjs);
+                      }
+                  }(document,"script","twitter-wjs");
+                </script></p> -->
+        <p>
+          Built by <a href="https://github.com/features/actions">Github Action</a>
+          with <a href="https://github.com/greghendershott/frog">Frog</a>,
+          the <strong>fr</strong>ozen bl<strong>og</strong> tool.
+        </p>
+        <p>
+          Serving by <a href="https://www.heroku.com/">Heroku</a>
+          and <a href="https://photo.google.com/">Google Photo</a>.
+        </p>
+        <p><em>Copyright © 2007-2026 www.yanying.wang 王彦迎 版权所有</em>.</p>
+      </footer>
+    </div>
+    <!-- </body> JS -->
+    <script type="text/javascript" src="/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/custom.js"></script>
+    <script type="text/javascript" src="/js/rainbow-delimiter.js"></script>
+    <script type="text/javascript" src="/js/highlight-jumping.js"></script>
+  </body>
+</html>
