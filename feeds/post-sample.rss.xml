@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged 'post-sample'</title>
+  <description>清空谈角之操: Posts tagged 'post-sample'</description>
+  <link>https://yanyingwang.github.io/tags/post-sample.html</link>
+  <lastBuildDate>Mon, 02 Dec 2019 00:00:00 UT</lastBuildDate>
+  <pubDate>Mon, 02 Dec 2019 00:00:00 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>A Markdown Post</title>
+   <link>https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=post-sample&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-a-markdown-post-html</guid>
+   <pubDate>Mon, 02 Dec 2019 00:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;这是一篇markdown格式写的样例文章。 Here is an example blog post.&lt;/p&gt;
+
+&lt;p&gt;Everything after this paragraph &amp;ldquo;after the break&amp;rdquo;. On index pages and Atom feeds, it will become &amp;ldquo;Continue reading&amp;hellip;&amp;rdquo;, if you configure them to include only the summary &amp;ldquo;blurb&amp;rdquo; before the break.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;some code&lt;/code&gt;&lt;/pre&gt;&lt;a href="https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=post-sample&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>A Scribble Post</title>
+   <link>https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=post-sample&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2013-06-a-scribble-post-html</guid>
+   <pubDate>Wed, 19 Jun 2013 00:00:00 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#31687;scribble&amp;#26684;&amp;#24335;&amp;#20889;&amp;#30340;&amp;#26679;&amp;#20363;&amp;#25991;&amp;#31456;&amp;#12290;
+ &lt;br /&gt;
+the source of this post is Scribble format (not Markdown).
+Here is some intro text, above "the jump".&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=post-sample&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>
