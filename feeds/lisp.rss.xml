@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged 'lisp'</title>
+  <description>清空谈角之操: Posts tagged 'lisp'</description>
+  <link>https://yanyingwang.github.io/tags/lisp.html</link>
+  <lastBuildDate>Sun, 02 Oct 2022 00:01:27 UT</lastBuildDate>
+  <pubDate>Sun, 02 Oct 2022 00:01:27 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>The significance of using Chinese instead of English as the interface of LISP for human</title>
+   <link>https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-10-the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human-html</guid>
+   <pubDate>Sun, 02 Oct 2022 00:01:27 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span class="Smaller"&gt;&amp;#26356;&amp;#26032;&amp;#20110;&amp;#65306;2022-10-13&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the &lt;a href="http://www.yanying.wang/ming"&gt;Ming Programing Language&lt;/a&gt;, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>MZhengma</title>
+   <link>https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2022-09-mzhengma-html</guid>
+   <pubDate>Thu, 15 Sep 2022 00:42:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;Recently I had hacked the &lt;a href="https://en.wikipedia.org/wiki/Zhengma_method"&gt;Zhengma method&lt;/a&gt; to make it more practical for people to input Chinese characters: &lt;a href="https://github.com/yanyingwang/mzhengma"&gt;https://github.com/yanyingwang/mzhengma&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>我的一种关于lisp方言式的汉语编程语言的构思</title>
+   <link>https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-10-E6-88-91-E7-9A-84-E4-B8-80-E7-A7-8D-E5-85-B3-E4-BA-8Elisp-E6-96-B9-E8-A8-80-E5-BC-8F-E7-9A-84-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E8-AF-AD-E8-A8-80-E7-9A-84-E6-9E-84-E6-80-9D-html</guid>
+   <pubDate>Sat, 31 Oct 2020 15:04:13 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&amp;#20174;&amp;#23567;&amp;#23398;&amp;#21040;&amp;#20013;&amp;#23398;&amp;#38454;&amp;#27573;&amp;#23545;&amp;#20889;&amp;#20316;&amp;#30340;&amp;#24863;&amp;#20852;&amp;#36259;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20986;&amp;#26469;&amp;#30340;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#30340;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#29305;&amp;#24449;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#21040;&amp;#24037;&amp;#20316;&amp;#20043;&amp;#21518;&amp;#20316;&amp;#20026;&amp;#19968;&amp;#20010;&amp;#31243;&amp;#24207;&amp;#21592;&amp;#20174;&amp;#20107;&amp;#32534;&amp;#31243;&amp;#24037;&amp;#20316;&amp;#23545;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#29305;&amp;#24449;&amp;#30340;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20102;&amp;#25105;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#36827;&amp;#32780;&amp;#20889;&amp;#36807;&amp;#19968;&amp;#31687;&lt;a href="/2019/12/由汉语编程所想到的.html"&gt;&amp;#12298;&amp;#30001;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#25152;&amp;#24819;&amp;#21040;&amp;#30340;&amp;#12299;&lt;/a&gt;&amp;#30340;&amp;#25991;&amp;#31456;&amp;#38646;&amp;#38646;&amp;#30862;&amp;#30862;&amp;#30340;&amp;#21435;&amp;#38416;&amp;#36848;&amp;#23545;&amp;#20013;&amp;#25991;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#21363;&amp;#26159;&amp;#20197;&amp;#27721;&amp;#35821;&amp;#20316;&amp;#20026;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#20803;&amp;#35821;&amp;#35328;&amp;#26469;&amp;#36827;&amp;#34892;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#36825;&amp;#20214;&amp;#20107;&amp;#24773;&amp;#30340;&amp;#24847;&amp;#20041;&amp;#30340;&amp;#19968;&amp;#20123;&amp;#31895;&amp;#30053;&amp;#30475;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>Announcing the release of Rainbow Delimiters</title>
+   <link>https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2020-10-announcing-the-release-of-rainbow-delimiters-html</guid>
+   <pubDate>Sun, 25 Oct 2020 19:04:44 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new web browser plugin/extention/add-ons called &lt;strong&gt;Rainbow Delimiters&lt;/strong&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/rainbow-delimiters"&gt;https://www.github.com/yanyingwang/rainbow-delimiters&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>由汉语编程所想到的</title>
+   <link>https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-E7-94-B1-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E6-89-80-E6-83-B3-E5-88-B0-E7-9A-84-html</guid>
+   <pubDate>Mon, 09 Dec 2019 01:22:47 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;&lt;span style="font-style: italic"&gt;&lt;span class="Smaller"&gt;&amp;#21407;&amp;#22238;&amp;#31572;&amp;#20110;&lt;a href="https://www.zhihu.com/question/33983820/answer/915352853"&gt;&amp;#30693;&amp;#20046;-&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#24847;&amp;#20041;&amp;#20309;&amp;#22312;&amp;#65311;&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#26356;&amp;#26032;&amp;#20110;: 2019-12-15&lt;/p&gt;
+
+&lt;table cellpadding="0" cellspacing="0"&gt;
+ &lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e6~88~91~e8~bf~99~e6~a0~b7~e7~9a~84~e4~b8~ad~e6~96~87~e6~af~8d~e8~af~ad~e8~80~85~e5~af~b9~e6~b1~89~e8~af~ad~e7~bc~96~e7~a8~8b~e7~9a~84~e7~9b~b4~e8~a7~82~e6~84~9f~e8~a7~89%29"&gt;&amp;#25105;&amp;#36825;&amp;#26679;&amp;#30340;&amp;#20013;&amp;#25991;&amp;#27597;&amp;#35821;&amp;#32773;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#30340;&amp;#30452;&amp;#35266;&amp;#24863;&amp;#35273;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e8~bf~9b~e4~b8~80~e6~ad~a5~e7~9a~84~e6~80~9d~e8~80~83~e5~92~8c~e6~8e~a2~e8~ae~a8%29"&gt;&amp;#36827;&amp;#19968;&amp;#27493;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#21644;&amp;#25506;&amp;#35752;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e5~b1~95~e6~9c~9b%29"&gt;&amp;#23637;&amp;#26395;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>一次博客的洗礼</title>
+   <link>https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-12-E4-B8-80-E6-AC-A1-E5-8D-9A-E5-AE-A2-E7-9A-84-E6-B4-97-E7-A4-BC-html</guid>
+   <pubDate>Sun, 08 Dec 2019 18:31:40 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;我早先的博客是使用&lt;a href="https://jekyllrb.com/"&gt;jekyll&lt;/a&gt;框架搭建的，那应该最起码已经是五年前的事情了。那时候的我正在全力的学习和提高自己对ruby语言的认知，是爱好，也更是为了增强自己的工作能力。时间转眼即逝，眼下ruby语言早已经是我养家糊口的技能了，我也自认为自己早已可以行云流水般的使用它到了炉火纯青的地步，对他的优点缺点也早已是心中有数，在工作中算是无所挂碍了的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>写在一九年新春后</title>
+   <link>https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2019-02-E5-86-99-E5-9C-A8-E4-B8-80-E4-B9-9D-E5-B9-B4-E6-96-B0-E6-98-A5-E5-90-8E-html</guid>
+   <pubDate>Mon, 11 Feb 2019 01:48:08 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;修订整理于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;农历新春的过完，在所有人的眼中，我想都应该是过去一年的真正终结了。现在都市中的人们，总觉得旅游是一件多么放松的事情，我是农村长大的孩子，没有太多的这种都市人需要旅游的情节。生活在大上海后，我也经历过一些游耍，但我最最真实的感受是，每次老家和上海的这种折返，才是真真正正可以触动我的事情。常常想来，短暂的活在老家爸妈照看中的日子里，才算是我最最惬意的旅行，我常常会在老家冬日漆黑的夜晚，或者夏秋平静的夜里，放掉所有工作亦或生活中的一切，我所在上海的生活工作人际中所有的焦虑也好，人生中无处选择无处安放自己的不安也罢，静静的想着这所有的一切，像是自己同时在做着两场不同的梦，梦互相交织缠绕着，自己在天平中不断的倾斜着。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/02/%E5%86%99%E5%9C%A8%E4%B8%80%E4%B9%9D%E5%B9%B4%E6%96%B0%E6%98%A5%E5%90%8E.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item>
+  <item>
+   <title>此致2017</title>
+   <link>https://yanyingwang.github.io/2018/01/%E6%AD%A4%E8%87%B42017.html?utm_source=lisp&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2018-01-E6-AD-A4-E8-87-B42017-html</guid>
+   <pubDate>Sun, 14 Jan 2018 23:51:04 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;
+ &lt;sub&gt;整理于：2020&amp;ndash;04&amp;ndash;19&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;眼见2017就要这么悄无声息的过去了，每当要这么的辞旧迎新的时候，我总要想起那句『年年岁岁花相似，岁岁年年人不同』的诗词，然后忍不住的去感叹一番岁月远逝，伊人不在。信誓旦旦的人们都在2017年年初的时候发过什么样子的誓言啊，我想这样的誓言如同往年今日，不过是在今年今日继续雷同罢了。而2017年对我来说，无疑是非常悲苦的一年。我所经历的事情，过往记忆昔日中人们，不管言语交谈中是有多少的是非争论，情感控诉中使包含了多少的爱恨情仇，都是历历在目，清晰的如对镜自视。我想，我是没有办法轻易的淡忘掉这一切的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2018/01/%E6%AD%A4%E8%87%B42017.html?utm_source=lisp&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>

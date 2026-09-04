@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">清空谈角之操: Posts tagged 'racket'</title>
+ <link rel="self" href="https://yanyingwang.github.io/feeds/racket.atom.xml" />
+ <link href="https://yanyingwang.github.io/tags/racket.html" />
+ <id>urn:https-yanyingwang-github-io:-tags-racket-html</id>
+ <updated>2023-09-03T20:17:59Z</updated>
+ <entry>
+  <title type="text">GGFSM project and my next plan about Ming</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2023-09-ggfsm-project-and-my-next-plan-about-ming-html</id>
+  <published>2023-09-03T20:17:59Z</published>
+  <updated>2023-09-03T20:17:59Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;For the past month, I&amp;rsquo;ve been dedicating myself on the developing of &lt;a href="https://www.yanying.wang/ggfsm/"&gt;GGFSM&lt;/a&gt;, which is a website that draw graphs with the given prices and volumes data of stocks from Shanghai and Shengzhen stock exchange. As one of my toys wrote in racket and &lt;a href="https://www.yanying.wang/ming/"&gt;ming-language&lt;/a&gt;, the main purpose of this project is enhancing ming lang, and making clear what the next plan should be about it.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2023/09/ggfsm-project-and-my-next-plan-about-ming.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">The significance of using Chinese instead of English as the interface of LISP for human</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-10-the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human-html</id>
+  <published>2022-10-02T00:01:27Z</published>
+  <updated>2022-10-02T00:01:27Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;&amp;#26356;&amp;#26032;&amp;#20110;&amp;#65306;2022-10-13&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;In recent few months, as a result of my thought and inspiration over the last two years, I scratched out the &lt;a href="http://www.yanying.wang/ming"&gt;Ming Programing Language&lt;/a&gt;, which is basically a dialect PL of Racket that I translated parts of its keyword names to Chinese.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/10/the-significance-of-using-chinese-instead-of-english-as-the-interface-of-lisp-for-human.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">MZhengma</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-09-mzhengma-html</id>
+  <published>2022-09-15T00:42:49Z</published>
+  <updated>2022-09-15T00:42:49Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Recently I had hacked the &lt;a href="https://en.wikipedia.org/wiki/Zhengma_method"&gt;Zhengma method&lt;/a&gt; to make it more practical for people to input Chinese characters: &lt;a href="https://github.com/yanyingwang/mzhengma"&gt;https://github.com/yanyingwang/mzhengma&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/09/mzhengma.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">how to speed-read the book EOPL</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2022-04-how-to-speed-read-the-book-eopl-html</id>
+  <published>2022-04-23T22:47:47Z</published>
+  <updated>2022-04-23T22:47:47Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Cast my mind back to the first time I learn programming, around that time I was struggling to figure out all the ingredients about programming through reading books, back then I remember the boring feeling so clearly. Eventally I was obliged to give up the reading and tried to learn programming through directly writing code to resovle tiny problems I&amp;rsquo;d confronted.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2022/04/how-to-speed-read-the-book-eopl.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Racket's let and for</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-12-racket-s-let-and-for-html</id>
+  <published>2021-12-14T14:08:24Z</published>
+  <updated>2021-12-14T14:08:24Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;updated at: 2022-02-25&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Take a bite of racket&amp;rsquo;s &lt;a class="Sq" data-pltdoc="x" href="https://docs.racket-lang.org/guide/let.html"&gt;Local Binding&lt;/a&gt;, at the first sight we might already acquire the gist about the usage of &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/define.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._define%29%29"&gt;define&lt;/a&gt;&lt;/span&gt;. And then it will come to us with &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/let.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._let%29%29"&gt;let&lt;/a&gt;&lt;/span&gt; and &lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/for.html#%28form._%28%28lib._racket%2Fprivate%2Fbase..rkt%29._for%29%29"&gt;for&lt;/a&gt;&lt;/span&gt;, both of them can be used for loops.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/racket-s-let-and-for.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">My thought and announcing of racket package Yijing</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-12-my-thought-and-announcing-of-racket-package-yijing-html</id>
+  <published>2021-12-07T17:21:18Z</published>
+  <updated>2021-12-07T17:21:18Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Most recently, I&amp;rsquo;m very passionate about chinese classical culture. If we take a deep look at the core of chinese culture, we are going to notice all of them include Traditional Chinese Medicine and 24 solar terms and even the way how ancient chinese recording time as their calendar, which is a mix of solar calendar and lunar calendar, are derived from Yijing. In a way, we can say that almost all the chinese things are built on the top of ideas of Yijing, although to this day the importance of it has been diminished by the developing of modern western science.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/12/my-thought-and-announcing-of-racket-package-yijing.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Announcing scribble-rainbow-delimiters</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-05-announcing-scribble-rainbow-delimiters-html</id>
+  <published>2021-05-31T22:00:49Z</published>
+  <updated>2021-05-31T22:00:49Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Recently I extract my code from a former project &lt;a href="https://github.com/yanyingwang/rainbow-delimiters"&gt;rainbow-delimiters&lt;/a&gt; to &lt;a href="https://github.com/yanyingwang/scribble-rainbow-delimiters"&gt;scribble-rainbow-delimiters&lt;/a&gt;, which is useful for reading code on HTML page generated by &lt;a href="https://docs.racket-lang.org/scribble/index.html"&gt;Racket&amp;rsquo;s Scribble&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/05/announcing-scribble-rainbow-delimiters.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Fathoming out Racket Package's version</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-03-fathoming-out-racket-package-s-version-html</id>
+  <published>2021-03-29T01:30:34Z</published>
+  <updated>2021-03-29T01:30:34Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;Recently I received an email of &lt;a href="https://github.com/yanyingwang/http-client/commit/d7450cd2842f3d6da07e8167d4b1e0f1fa2572a6#r48314895"&gt;a github comment&lt;/a&gt; on a Racket Package of mine named &lt;a href="https://github.com/yanyingwang/http-client/"&gt;http-client&lt;/a&gt;, which was announced to release by my post of &lt;a href="2020/09/announcing-the-release-of-http-client.html"&gt;Announcing the release of http-client&lt;/a&gt;. Until then, I realized there really exist someone using my packages except me. This also make me realize I already came to the point to fathom out the design of Racket&amp;rsquo;s package version that I tried before and abandoned because of being short on time, and I should commit to add versions to my packages.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/03/fathoming-out-racket-package-s-version.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Announcing the release of Qweather</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2021-02-announcing-the-release-of-qweather-html</id>
+  <published>2021-02-28T22:54:13Z</published>
+  <updated>2021-02-28T22:54:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket package called &lt;span style="font-weight: bold"&gt;Qweather&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/qweather"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/qweather&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2021/02/announcing-the-release-of-qweather.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">我的一种关于lisp方言式的汉语编程语言的构思</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-10-E6-88-91-E7-9A-84-E4-B8-80-E7-A7-8D-E5-85-B3-E4-BA-8Elisp-E6-96-B9-E8-A8-80-E5-BC-8F-E7-9A-84-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E8-AF-AD-E8-A8-80-E7-9A-84-E6-9E-84-E6-80-9D-html</id>
+  <published>2020-10-31T15:04:13Z</published>
+  <updated>2020-10-31T15:04:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&amp;#20174;&amp;#23567;&amp;#23398;&amp;#21040;&amp;#20013;&amp;#23398;&amp;#38454;&amp;#27573;&amp;#23545;&amp;#20889;&amp;#20316;&amp;#30340;&amp;#24863;&amp;#20852;&amp;#36259;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20986;&amp;#26469;&amp;#30340;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#30340;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#29305;&amp;#24449;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#21040;&amp;#24037;&amp;#20316;&amp;#20043;&amp;#21518;&amp;#20316;&amp;#20026;&amp;#19968;&amp;#20010;&amp;#31243;&amp;#24207;&amp;#21592;&amp;#20174;&amp;#20107;&amp;#32534;&amp;#31243;&amp;#24037;&amp;#20316;&amp;#23545;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#29305;&amp;#24449;&amp;#30340;&amp;#24863;&amp;#30693;&amp;#65292;&amp;#25152;&amp;#24341;&amp;#21457;&amp;#20102;&amp;#25105;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#36827;&amp;#32780;&amp;#20889;&amp;#36807;&amp;#19968;&amp;#31687;&lt;a href="/2019/12/由汉语编程所想到的.html"&gt;&amp;#12298;&amp;#30001;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#25152;&amp;#24819;&amp;#21040;&amp;#30340;&amp;#12299;&lt;/a&gt;&amp;#30340;&amp;#25991;&amp;#31456;&amp;#38646;&amp;#38646;&amp;#30862;&amp;#30862;&amp;#30340;&amp;#21435;&amp;#38416;&amp;#36848;&amp;#23545;&amp;#20013;&amp;#25991;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#21363;&amp;#26159;&amp;#20197;&amp;#27721;&amp;#35821;&amp;#20316;&amp;#20026;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#30340;&amp;#20803;&amp;#35821;&amp;#35328;&amp;#26469;&amp;#36827;&amp;#34892;&amp;#32534;&amp;#31243;&amp;#65292;&amp;#36825;&amp;#20214;&amp;#20107;&amp;#24773;&amp;#30340;&amp;#24847;&amp;#20041;&amp;#30340;&amp;#19968;&amp;#20123;&amp;#31895;&amp;#30053;&amp;#30475;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/%E6%88%91%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B3%E4%BA%8Elisp%E6%96%B9%E8%A8%80%E5%BC%8F%E7%9A%84%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9E%84%E6%80%9D.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Announcing the release of http-client</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-09-announcing-the-release-of-http-client-html</id>
+  <published>2020-09-04T16:50:13Z</published>
+  <updated>2020-09-04T16:50:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new Racket Package called &lt;span style="font-weight: bold"&gt;http-client&lt;/span&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/http-client"&gt;&lt;span class="url"&gt;https://www.github.com/yanyingwang/http-client&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/09/announcing-the-release-of-http-client.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">My experience of using Racket</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-08-my-experience-of-using-racket-html</id>
+  <published>2020-08-08T15:37:13Z</published>
+  <updated>2020-08-08T15:37:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;updated_at: 2022-02-27&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#25105;&amp;#36234;&amp;#26159;&amp;#20351;&amp;#29992;Racket&amp;#35821;&amp;#35328;&amp;#65292;&amp;#36234;&amp;#26159;&amp;#26126;&amp;#30333;&amp;#33258;&amp;#24049;&amp;#22312;&amp;#24178;&amp;#20123;&amp;#20160;&amp;#20040;&amp;#65292;&amp;#36234;&amp;#26159;&amp;#24863;&amp;#21040;&amp;#33258;&amp;#24049;&amp;#38656;&amp;#35201;&amp;#25506;&amp;#32034;&amp;#30340;&amp;#19996;&amp;#35199;&amp;#26159;&amp;#26377;&amp;#20215;&amp;#20540;&amp;#30340;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/08/my-experience-of-using-racket.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Racket's match</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-08-racket-s-match-html</id>
+  <published>2020-08-08T15:37:13Z</published>
+  <updated>2020-08-08T15:37:13Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span class="Smaller"&gt;updated_at: 2022-02-27&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#35828;&amp;#21040;Racket&amp;#35821;&amp;#35328;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20854;&amp;#23454;&amp;#23427;&amp;#20027;&amp;#26159;&amp;#29992;&amp;#20110;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#30340;&amp;#65292;&amp;#32780;&amp;#35848;&amp;#21040;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#65292;&amp;#22312;&amp;#24403;&amp;#20195;&amp;#30340;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#20013;&amp;#65292;&amp;#26368;&amp;#20026;&amp;#22823;&amp;#23478;&amp;#29087;&amp;#30693;&amp;#30340;&amp;#33707;&amp;#36807;&amp;#20110;&lt;span class="RktInBG"&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;span class="RktIn"&gt;if&lt;/span&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/span&gt;&amp;#36825;&amp;#20010;&amp;#20851;&amp;#38190;&amp;#23383;&amp;#20102;&amp;#12290;&amp;#24403;&amp;#28982;Racket&amp;#35821;&amp;#35328;&amp;#20013;&amp;#20063;&amp;#26377;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28quote._~23~25kernel%29._if%29%29"&gt;if&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20294;&amp;#26159;&amp;#20854;&amp;#26159;&amp;#26368;&amp;#26368;&amp;#22522;&amp;#30784;&amp;#30340;&amp;#19968;&amp;#20010;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#12290;&amp;#20854;&amp;#20182;&amp;#35832;&amp;#22914;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/case.html#%28form._%28%28lib._racket%2Fprivate%2Fmore-scheme..rkt%29._case%29%29"&gt;case&lt;/a&gt;&lt;/span&gt;&amp;#12289;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/if.html#%28form._%28%28lib._racket%2Fprivate%2Fletstx-scheme..rkt%29._cond%29%29"&gt;cond&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#20134;&amp;#25110;&amp;#26412;&amp;#25991;&amp;#22312;&amp;#21518;&amp;#38754;&amp;#21363;&amp;#23558;&amp;#38138;&amp;#23637;&amp;#24320;&amp;#26469;&amp;#35762;&amp;#30340;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#23588;&amp;#20854;&amp;#26159;&lt;span class="RktSym"&gt;&lt;a class="RktStxLink Sq" data-pltdoc="x" href="https://docs.racket-lang.org/reference/match.html#%28form._%28%28lib._racket%2Fmatch..rkt%29._match%29%29"&gt;match&lt;/a&gt;&lt;/span&gt;&amp;#65292;&amp;#22312;Racket&amp;#35821;&amp;#35328;&amp;#30340;&amp;#26465;&amp;#20214;&amp;#21028;&amp;#26029;&amp;#20013;&amp;#65292;&amp;#22240;&amp;#20026;LISP&amp;#35821;&amp;#35328;&amp;#39640;&amp;#24230;&lt;a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E5%83%8F%E6%80%A7"&gt;&amp;#21516;&amp;#20687;&amp;#24615;&lt;/a&gt;&amp;#30340;S-expression&amp;#35821;&amp;#27861;&amp;#65292;&amp;#36171;&amp;#20104;&amp;#20854;&amp;#20102;&amp;#38750;&amp;#24120;&amp;#22810;&amp;#39640;&amp;#38454;&amp;#20351;&amp;#29992;&amp;#26041;&amp;#27861;&amp;#12290;&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/08/racket-s-match.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">Frog</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-04-frog-html</id>
+  <published>2020-04-06T02:00:55Z</published>
+  <updated>2020-04-06T02:00:55Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;
+ &lt;sub&gt;更新于：2020&amp;ndash;04&amp;ndash;12&lt;/sub&gt;&lt;/p&gt;
+
+&lt;p&gt;在我之前写&lt;a href="/2019/12/一次博客的洗礼.html"&gt;《一次博客的洗礼》&lt;/a&gt;的时候，我已经将我原本使用jekyll搭建的博客迁移到了使用&lt;a href="https://docs.racket-lang.org/frog/index.html"&gt;Frog&lt;/a&gt;搭建的新博客之上。期间曾为了自己博客的某种特定文章格式，写过一个插件&lt;a href="https://docs.racket-lang.org/scribble-frog-helper/index.html"&gt;scribble-frog-helper&lt;/a&gt;。现如今，因为某种原因，打算以private仓库的方式来提供我博客的对外访问服务，所以使用了heroku来完成的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/04/frog.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">由汉语编程所想到的</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2019-12-E7-94-B1-E6-B1-89-E8-AF-AD-E7-BC-96-E7-A8-8B-E6-89-80-E6-83-B3-E5-88-B0-E7-9A-84-html</id>
+  <published>2019-12-09T01:22:47Z</published>
+  <updated>2019-12-09T01:22:47Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&lt;span style="font-style: italic"&gt;&lt;span class="Smaller"&gt;&amp;#21407;&amp;#22238;&amp;#31572;&amp;#20110;&lt;a href="https://www.zhihu.com/question/33983820/answer/915352853"&gt;&amp;#30693;&amp;#20046;-&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#35821;&amp;#35328;&amp;#24847;&amp;#20041;&amp;#20309;&amp;#22312;&amp;#65311;&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#26356;&amp;#26032;&amp;#20110;: 2019-12-15&lt;/p&gt;
+
+&lt;table cellpadding="0" cellspacing="0"&gt;
+ &lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e6~88~91~e8~bf~99~e6~a0~b7~e7~9a~84~e4~b8~ad~e6~96~87~e6~af~8d~e8~af~ad~e8~80~85~e5~af~b9~e6~b1~89~e8~af~ad~e7~bc~96~e7~a8~8b~e7~9a~84~e7~9b~b4~e8~a7~82~e6~84~9f~e8~a7~89%29"&gt;&amp;#25105;&amp;#36825;&amp;#26679;&amp;#30340;&amp;#20013;&amp;#25991;&amp;#27597;&amp;#35821;&amp;#32773;&amp;#23545;&amp;#27721;&amp;#35821;&amp;#32534;&amp;#31243;&amp;#30340;&amp;#30452;&amp;#35266;&amp;#24863;&amp;#35273;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e8~bf~9b~e4~b8~80~e6~ad~a5~e7~9a~84~e6~80~9d~e8~80~83~e5~92~8c~e6~8e~a2~e8~ae~a8%29"&gt;&amp;#36827;&amp;#19968;&amp;#27493;&amp;#30340;&amp;#24605;&amp;#32771;&amp;#21644;&amp;#25506;&amp;#35752;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td&gt;
+    &lt;p&gt;&lt;span class="hspace"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a class="toptoclink" data-pltdoc="x" href="#%28part._~e5~b1~95~e6~9c~9b%29"&gt;&amp;#23637;&amp;#26395;&lt;/a&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E7%94%B1%E6%B1%89%E8%AF%AD%E7%BC%96%E7%A8%8B%E6%89%80%E6%83%B3%E5%88%B0%E7%9A%84.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">一次博客的洗礼</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=racket&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2019-12-E4-B8-80-E6-AC-A1-E5-8D-9A-E5-AE-A2-E7-9A-84-E6-B4-97-E7-A4-BC-html</id>
+  <published>2019-12-08T18:31:40Z</published>
+  <updated>2019-12-08T18:31:40Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;我早先的博客是使用&lt;a href="https://jekyllrb.com/"&gt;jekyll&lt;/a&gt;框架搭建的，那应该最起码已经是五年前的事情了。那时候的我正在全力的学习和提高自己对ruby语言的认知，是爱好，也更是为了增强自己的工作能力。时间转眼即逝，眼下ruby语言早已经是我养家糊口的技能了，我也自认为自己早已可以行云流水般的使用它到了炉火纯青的地步，对他的优点缺点也早已是心中有数，在工作中算是无所挂碍了的。&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2019/12/%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B4%97%E7%A4%BC.html?utm_source=racket&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
