@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<rss version="2.0">
+ <channel>
+  <title>清空谈角之操: Posts tagged 'Tutorial'</title>
+  <description>清空谈角之操: Posts tagged 'Tutorial'</description>
+  <link>https://yanyingwang.github.io/tags/Tutorial.html</link>
+  <lastBuildDate>Fri, 16 Aug 2024 17:20:49 UT</lastBuildDate>
+  <pubDate>Fri, 16 Aug 2024 17:20:49 UT</pubDate>
+  <ttl>1800</ttl>
+  <item>
+   <title>Archlinux installation</title>
+   <link>https://yanyingwang.github.io/2024/08/archlinux-installation.html?utm_source=Tutorial&amp;utm_medium=RSS</link>
+   <guid isPermaLink="false">urn:https-yanyingwang-github-io:-2024-08-archlinux-installation-html</guid>
+   <pubDate>Fri, 16 Aug 2024 17:20:49 UT</pubDate>
+   <author>Yanying Wang</author>
+   <description>
+&lt;p&gt;I&amp;rsquo;ve heard the reputation of Archlinux for a very long time, and perpetually notice some issues I am trying to fix are documented by ArchWiki. But the truth is I never tried to use it, because the installation seems too tedious and Ubuntu is still workable at present. What dictates me to use Archlinux is the prolonged audio issue spread through multiple versions of Ubuntu on my Chromebook.&lt;/p&gt;
+
+&lt;p&gt;(A few months later, I install ArchLinux again on my desktop, and then I extened this article and change the title from ArchLinux on Chromebook to Archlinux installation.)&lt;/p&gt;
+
+&lt;p&gt;updated at: 2026&amp;ndash;1&amp;ndash;13&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2024/08/archlinux-installation.html?utm_source=Tutorial&amp;amp;utm_medium=RSS"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</description></item></channel></rss>
