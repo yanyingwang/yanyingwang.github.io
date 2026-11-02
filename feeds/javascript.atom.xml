@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">清空谈角之操: Posts tagged 'javascript'</title>
+ <link rel="self" href="https://yanyingwang.github.io/feeds/javascript.atom.xml" />
+ <link href="https://yanyingwang.github.io/tags/javascript.html" />
+ <id>urn:https-yanyingwang-github-io:-tags-javascript-html</id>
+ <updated>2020-10-25T19:04:44Z</updated>
+ <entry>
+  <title type="text">Announcing the release of Rainbow Delimiters</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=javascript&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2020-10-announcing-the-release-of-rainbow-delimiters-html</id>
+  <published>2020-10-25T19:04:44Z</published>
+  <updated>2020-10-25T19:04:44Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;I&amp;rsquo;m writing this post to announce the release of a new web browser plugin/extention/add-ons called &lt;strong&gt;Rainbow Delimiters&lt;/strong&gt;, the source code of it is at: &lt;a href="https://www.github.com/yanyingwang/rainbow-delimiters"&gt;https://www.github.com/yanyingwang/rainbow-delimiters&lt;/a&gt;.&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2020/10/announcing-the-release-of-rainbow-delimiters.html?utm_source=javascript&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
