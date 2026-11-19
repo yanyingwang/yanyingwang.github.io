@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+ <title type="text">清空谈角之操: Posts tagged 'post-sample'</title>
+ <link rel="self" href="https://yanyingwang.github.io/feeds/post-sample.atom.xml" />
+ <link href="https://yanyingwang.github.io/tags/post-sample.html" />
+ <id>urn:https-yanyingwang-github-io:-tags-post-sample-html</id>
+ <updated>2019-12-02T00:00:00Z</updated>
+ <entry>
+  <title type="text">A Markdown Post</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=post-sample&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2019-12-a-markdown-post-html</id>
+  <published>2019-12-02T00:00:00Z</published>
+  <updated>2019-12-02T00:00:00Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;这是一篇markdown格式写的样例文章。 Here is an example blog post.&lt;/p&gt;
+
+&lt;p&gt;Everything after this paragraph &amp;ldquo;after the break&amp;rdquo;. On index pages and Atom feeds, it will become &amp;ldquo;Continue reading&amp;hellip;&amp;rdquo;, if you configure them to include only the summary &amp;ldquo;blurb&amp;rdquo; before the break.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;some code&lt;/code&gt;&lt;/pre&gt;&lt;a href="https://yanyingwang.github.io/2019/12/a-markdown-post.html?utm_source=post-sample&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry>
+ <entry>
+  <title type="text">A Scribble Post</title>
+  <link rel="alternate" href="https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=post-sample&amp;utm_medium=Atom" />
+  <id>urn:https-yanyingwang-github-io:-2013-06-a-scribble-post-html</id>
+  <published>2013-06-19T00:00:00Z</published>
+  <updated>2013-06-19T00:00:00Z</updated>
+  <author>
+   <name>Yanying Wang</name></author>
+  <content type="html">
+&lt;p&gt;&amp;#36825;&amp;#26159;&amp;#19968;&amp;#31687;scribble&amp;#26684;&amp;#24335;&amp;#20889;&amp;#30340;&amp;#26679;&amp;#20363;&amp;#25991;&amp;#31456;&amp;#12290;
+ &lt;br /&gt;
+the source of this post is Scribble format (not Markdown).
+Here is some intro text, above "the jump".&lt;/p&gt;&lt;a href="https://yanyingwang.github.io/2013/06/a-scribble-post.html?utm_source=post-sample&amp;amp;utm_medium=Atom"&gt;&lt;em&gt;More&amp;hellip;&lt;/em&gt;&lt;/a&gt;</content></entry></feed>
